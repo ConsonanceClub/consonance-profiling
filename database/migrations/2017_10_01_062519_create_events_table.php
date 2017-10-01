@@ -25,7 +25,7 @@ class CreateEventsTable extends Migration
             $table->dateTime('end_date');
             $table->timestamps();
 
-            $table->foreign('posted_id')->references('id')->on('users');
+            $table->foreign('posted_by_id')->references('id')->on('users');
             $table->foreign('type_id')->references('id')->on('event_types');
         });
     }

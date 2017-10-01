@@ -30,9 +30,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('active');
             $table->rememberToken();
             $table->timestamps();
-
-
-            $table->foreign('school_id')->references('id')->on('schools');
+            
         });
     }
 
