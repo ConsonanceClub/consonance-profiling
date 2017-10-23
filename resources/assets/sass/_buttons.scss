@@ -1,0 +1,16 @@
+/*
+    Created on : 2017-10-23
+    Author     : Michael Akanji
+*/
+
+button, button.btn {
+  @include round-corner(0, 0, 0, 0)
+}
+
+a {
+  
+  &.btn {
+	@include round-corner(0, 0, 0, 0)
+  }
+  
+}

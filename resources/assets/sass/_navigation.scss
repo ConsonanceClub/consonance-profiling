@@ -1,0 +1,49 @@
+/*
+    Created on : 2017-10-22
+    Author     : Michael Akanji
+*/
+
+.navbar {
+  background-color: black;
+  
+  .navbar-header {
+	.navbar-brand {
+	  margin: 0px;
+	  padding: 10px;
+	  
+	  img {
+		height: 100%;
+	  }
+	}
+  }
+  
+  .nav {
+	font-weight: bold;
+	margin-right: 30px;
+	
+	li > a {
+	  color: white;
+	  
+	  &:hover {
+		background-color: #333;
+	  }
+	}
+  }
+  
+  a {
+	color: white;
+	
+	&.navbar-btn {
+	  background-color: black;
+	  border: {
+		color: white;
+		width: 1px;
+		//padding: ;
+	  }
+	}
+	
+	&:hover {
+	
+	}
+  }
+}

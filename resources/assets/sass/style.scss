@@ -2,8 +2,26 @@
 @import 'margin';
 @import 'padding';
 @import 'utilities';
-
+@import 'inputs';
+@import 'buttons';
+@import 'navigation';
 
 body {
+  padding-top: 100px;
+}
 
+a {
+  @include text-decoration(none)
+}
+
+.center-block {
+  display: block;
+  margin: {
+	left: auto;
+	right: auto;
+  }
+}
+
+.text-white {
+  color: white;
 }

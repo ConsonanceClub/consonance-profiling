@@ -6,3 +6,11 @@
 input[type="file"] {
   overflow: hidden;
 }
+
+input.form-control,
+textarea.form-control,
+.input-group .input-group-addon,
+a.btn, button.btn,
+select.form-control {
+  @include round-corner(0, 0, 0, 0);
+}
