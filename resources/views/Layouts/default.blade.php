@@ -25,6 +25,7 @@
 		@push('styles')
 		{{--Default CSS Files--}}
 		<link rel="stylesheet" href="/css/bootstrap.css">
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
 		<link rel="stylesheet" href="/css/style.css">
 		{{--Using png as a fix for favicon ico format--}}
 		<link rel="icon" href="/images/logo-32x33.png">
@@ -32,9 +33,9 @@
 
 		@push('scripts')
 		{{--Default Javascript Files--}}
-		<script src="/js/angular.min.js"></script>
 		<script src="/js/jquery-3.1.1.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/angular.min.js"></script>
 		<script src="/js/holder.min.js"></script>
 		@endpush
 

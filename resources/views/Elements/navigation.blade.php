@@ -18,8 +18,7 @@
 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-			        aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
+			        aria-expanded="false">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -30,7 +29,7 @@
 		</div>
 
 		{{--point of navbar collapse--}}
-		<div id="navbar" class="navbar-collapse collapse">
+		<div id="navbar" class="collapse navbar-collapse">
 
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
@@ -39,7 +38,6 @@
 					</li>
 					<li>
 						<a href="#">BLOG</a>
-
 					</li>
 					<li>
 						<a href="#">GROUPS</a>
@@ -52,7 +50,10 @@
 					</li>
 				</ul>
 
-				<a class="btn navbar-btn">SIGN IN</a>
+				{{--Make visible on Mobile--}}
+				<a class="btn navbar-btn visible-xs" href="#">SIGN IN</a>
+				{{--Make visible on Desktop--}}
+				<a class="btn navbar-btn hidden-xs margin-left-20" href="#">SIGN IN</a>
 			</div>
 
 		</div><!--/.navbar-collapse -->
