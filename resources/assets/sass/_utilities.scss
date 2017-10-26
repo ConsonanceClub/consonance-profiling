@@ -2,3 +2,25 @@
 .text-bold {
   font-weight: bold;
 }
+
+.text-white {
+  color: white;
+}
+
+.center-block {
+  display: block;
+  margin: {
+	left: auto;
+	right: auto;
+  }
+}
+
+.hr {
+  border: {
+	bottom: {
+	  style: solid;
+	  color: $border-color;
+	  width: 1px;
+	}
+  }
+}

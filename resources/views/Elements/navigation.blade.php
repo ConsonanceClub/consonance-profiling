@@ -34,7 +34,7 @@
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#">ACTIVITY</a>
+						<a href="/activity">ACTIVITY</a>
 					</li>
 					<li>
 						<a href="#">BLOG</a>
@@ -51,9 +51,9 @@
 				</ul>
 
 				{{--Make visible on Mobile--}}
-				<a class="btn navbar-btn visible-xs" href="#">SIGN IN</a>
+				<a class="btn navbar-btn visible-xs" href="member/sign-in">SIGN IN</a>
 				{{--Make visible on Desktop--}}
-				<a class="btn navbar-btn hidden-xs margin-left-20" href="#">SIGN IN</a>
+				<a class="btn navbar-btn hidden-xs margin-left-20" href="member/sign-in">SIGN IN</a>
 			</div>
 
 		</div><!--/.navbar-collapse -->

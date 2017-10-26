@@ -1,29 +1,23 @@
-@import 'reset';
+/*
+    Created on : 2017-10-26
+    Author     : Michael Akanji
+*/
+
+/*Import Order is very important*/
+@import 'vars';
 @import 'mixins';
 @import 'margin';
 @import 'padding';
 @import 'utilities';
+@import 'reset';
 @import 'inputs';
 @import 'buttons';
 @import 'navigation';
+@import 'topLevelMenu';
 
 body {
   padding-top: 100px;
   padding-bottom: 30px;
-}
-
-a {
-  @include text-decoration(none)
-}
-
-.center-block {
-  display: block;
-  margin: {
-	left: auto;
-	right: auto;
-  }
-}
-
-.text-white {
-  color: white;
+  
+  background-color: $main-bg-color;
 }

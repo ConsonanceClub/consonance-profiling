@@ -1,26 +1,5 @@
 /* Consonance Default Color Selection */
 
-$yellow: lighten(#f0ff00, 15%);
-$pink: #d13996;
-$green: #22e1ad;
-$blue: #39abd1;
-
-$conk-yellow: saturate($yellow, 10%);
-$conk-pink: #d13996;
-$conk-green: #22e1ad;
-$conk-blue: #39abd1;
-
-$light-yellow: lighten($yellow, 15%);
-$light-pink: lighten($pink, 35%);
-$light-green: #22e1ad;
-$light-blue: #39abd1;
-
-$dark-yellow: darken($yellow, 30%);
-$dark-pink: darken($pink, 30%);
-$dark-green: darken($green, 30%);
-$dark-blue: darken($blue, 30%);
-
-
-/*more: setting color values*/
-$border-default-color: #bbb;
-$border-default-darker-color: #999;
+$main-bg-color: #fafafa;
+$border-color: #ddd;
+$border-darker-color: darken($border-color, 50%);
