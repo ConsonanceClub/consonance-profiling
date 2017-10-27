@@ -1,0 +1,53 @@
+/*
+    Created on : 2017-10-27
+    Author     : Michael Akanji
+*/
+
+#activities {
+  
+  background-color: #fff;
+  padding: {
+	top: 10px;
+	bottom: 40px;
+	
+	left: 10px;
+	right: 10px;
+  }
+  
+  .activity {
+	@extend .center-block;
+	text-align: left;
+	
+	.gfx {
+	  padding: 0px;
+	  
+	  img {
+		width: 100%;
+	  }
+	  
+	  span.category {
+		position: absolute;
+		left: 13px;
+		top: 120px;
+		
+		background-color: $info-color;
+		padding: 5px 15px;
+		
+		@extend .text-white;
+		
+		text-transform: uppercase;
+	  }
+	  
+	}
+	
+	p.summary {
+	  font-size: 0.95em;
+	  height: 6em * $line-height-base;
+	  
+	  text-align: left !important;
+	  
+	  @extend .text-clip;
+	}
+  }
+  
+}

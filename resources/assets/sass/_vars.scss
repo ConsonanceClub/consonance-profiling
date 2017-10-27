@@ -1,0 +1,9 @@
+/* Consonance Styles Defaults - cares needed to be taken to avoid name clash with thirdparty variables*/
+
+$main-bg-color: #f6f6f6;
+$border-color: #ddd;
+$border-darker-color: darken($border-color, 50%);
+
+$line-height-base: 1.4;
+
+$info-color: #33DAFF;

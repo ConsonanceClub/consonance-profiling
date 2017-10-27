@@ -1,0 +1,48 @@
+@mixin margin($top, $right, $bottom, $left) {
+  margin: {
+	top: $top;
+
+	right: $right;
+
+	bottom: $bottom;
+
+	left: $left;
+  };
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding: {
+	top: $top;
+
+	right: $right;
+
+	bottom: $bottom;
+
+	left: $left;
+  };
+}
+
+@mixin box-shadow($hoff, $voff, $blur, $color){
+  -webkit-box-shadow: $hoff $voff $blur $color;
+  -moz-box-shadow: $hoff $voff $blur $color;
+  box-shadow: $hoff $voff $blur $color;
+}
+
+@mixin round-corner($top, $right, $bottom, $left){
+  -webkit-border-radius: $top $right $bottom $left;
+  -moz-border-radius: $top $right $bottom $left;
+  border-radius: $top $right $bottom $left;
+}
+
+@mixin text-decoration ($value){
+  -webkit-text-decoration: $value !important;
+  text-decoration: $value !important;
+  -moz-text-decoration: $value !important;
+  -o-text-decoration: $value !important;
+  -ms-text-decoration: $value !important;
+}
+
+@mixin title($size, $color){
+  font-size: $size;
+  color: $color;
+}

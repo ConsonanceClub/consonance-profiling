@@ -1,0 +1,142 @@
+// Requires Mixins be Imported first
+@import "mixins";
+/*---------------------
+padding all
+------------------------*/
+.padding-5 {
+  @include padding(5px, 5px , 5px, 5px);
+}
+
+.padding-10 {
+  @include padding(10px, 10px , 10px, 10px);
+}
+
+.padding-20 {
+  @include padding(20px, 20px , 20px, 20px);
+}
+
+.padding-40 {
+  @include padding(40px, 40px , 40px, 40px);
+}
+
+
+/*---------------------
+padding veritcal - y axis
+----------------------------*/
+.padding-vertical-5 {
+  @include padding(5px, null, 5px, null);
+}
+
+.padding-vertical-10 {
+  @include padding(10px, null, 10px, null);
+}
+
+.padding-vertical-20 {
+  @include padding(20px, null, 20px, null);
+}
+
+.padding-vertical-40 {
+  @include padding(40px, null, 40px, null);
+}
+
+
+
+/*---------------------
+padding horizontal - x axis
+-----------------------------*/
+.padding-horizontal-5 {
+  @include padding(null, 5px, null, 5px);
+}
+
+.padding-horizontal-10 {
+  @include padding(null, 10px, null, 10px);
+}
+
+.padding-horizontal-20 {
+  @include padding(null, 20px, null, 20px);
+}
+
+.padding-horizontal-40 {
+  @include padding(null, 40px, null, 40px);
+}
+
+
+
+/*---------------------
+padding top
+------------------------*/
+.padding-top-5 {
+  @include padding(5px, null, null, null);
+}
+
+.padding-top-10 {
+  @include padding(10px, null, null, null);
+}
+
+.padding-top-20 {
+  @include padding(20px, null, null, null);
+}
+
+.padding-top-40 {
+  @include padding(40px, null, null, null);
+}
+
+
+/*---------------------
+padding right
+------------------------*/
+.padding-right-5 {
+  @include padding(null, 5px, null, null);
+}
+
+.padding-right-10 {
+  @include padding(null, 10px, null, null);
+}
+
+.padding-right-20 {
+  @include padding(null, 20px, null, null);
+}
+
+.padding-right-40 {
+  @include padding(null, 40px, null, null);
+}
+
+
+/*---------------------
+padding bottom
+------------------------*/
+.padding-bottom-5 {
+  @include padding(null, null, 5px, null);
+}
+
+.padding-bottom-10 {
+  @include padding(null, null, 10px, null);
+}
+
+.padding-bottom-20 {
+  @include padding(null, null, 20px, null);
+}
+
+.padding-bottom-40 {
+  @include padding(null, null, 20px, null);
+}
+
+
+/*---------------------
+padding left
+------------------------*/
+.padding-left-5 {
+  @include padding(null, null, null, 5px);
+}
+
+.padding-left-10 {
+  @include padding(null, null, null, 10px);
+}
+
+.padding-left-20 {
+  @include padding(null, null, null, 20px);
+}
+
+.padding-left-40 {
+  @include padding(null, null, null, 40px);
+}

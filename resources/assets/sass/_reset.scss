@@ -1,0 +1,20 @@
+/*
+    Created on : 2017-10-26
+    Author     : Michael Akanji
+*/
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+a, button {
+  text-decoration: none !important;
+}
+
+a, button {
+  @include text-decoration(none)
+}

@@ -1,0 +1,35 @@
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-white {
+  color: white;
+}
+
+.center-block {
+  display: block;
+  margin: {
+	left: auto;
+	right: auto;
+  }
+}
+
+.hr {
+  border: {
+	bottom: {
+	  style: solid;
+	  color: $border-color;
+	  width: 1px;
+	}
+  }
+}
+
+.text-clip {
+  /*Only to be used when box height isset*/
+  overflow: hidden;
+  
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}

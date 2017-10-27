@@ -1,0 +1,27 @@
+/*
+    Created on : 2017-10-26
+    Author     : Michael Akanji
+*/
+
+/*Import Order is very important*/
+@import 'vars';
+@import 'mixins';
+@import 'margin';
+@import 'padding';
+@import 'utilities';
+@import 'reset';
+@import 'inputs';
+@import 'buttons';
+@import 'navigation';
+@import 'topLevelMenu';
+@import 'eventsTicker';
+@import 'activities';
+
+body {
+  font-size: 14px;
+  
+  padding-top: 100px;
+  padding-bottom: 30px;
+  
+  background-color: $main-bg-color;
+}

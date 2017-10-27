@@ -1,0 +1,16 @@
+/*-------------------
+RESET to Bootstrap
+------------------------- */
+
+/*123456
+.card {
+  //margin-bottom: $line-height-computed;
+  background-color: white;
+  border: 1px solid transparent;
+  //@include box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
+*/
+
+.panel {
+  @include round-corner(0px, 0px, 0px, 0px);
+}

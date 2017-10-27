@@ -1,0 +1,29 @@
+/*-----------------------
+RESET - bootstrap reset
+---------------------------*/
+input.form-control,
+textarea.form-control,
+.input-group .input-group-addon,
+a.btn, button.btn,
+select.form-control {
+  @include round-corner(0, 0, 0, 0);
+}
+
+
+/*--------------------
+FORMS
+-----------------------*/
+.contact-form {
+  background: #222;
+  
+  margin: {
+	bottom: 30px;
+  }
+  padding: 30px;
+  	
+  div.form-group {
+	margin: {
+	  bottom: 40px;
+	}
+  }
+}
