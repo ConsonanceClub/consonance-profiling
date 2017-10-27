@@ -41,7 +41,7 @@
 				<div class="col-sm-3">
 					{{--Feasibility to Append or Override--}}
 					@section('Events')
-						@include('Elements.events')
+						@include('Elements.eventTicker')
 					@show
 				</div>
 
