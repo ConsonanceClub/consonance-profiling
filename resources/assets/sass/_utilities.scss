@@ -24,3 +24,12 @@
 	}
   }
 }
+
+.text-clip {
+  /*Only to be used when box height isset*/
+  overflow: hidden;
+  
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}

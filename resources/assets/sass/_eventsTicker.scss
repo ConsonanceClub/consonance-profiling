@@ -1,0 +1,43 @@
+/*
+    Created on : 2017-10-27
+    Author     : Michael Akanji
+*/
+
+#event-ticker {
+  
+  div.event {
+	margin-bottom: 10px ;
+	
+	img {
+	  width: 100%;
+	}
+	
+	.heading {
+	  @extend .text-bold;
+	}
+	
+	.description {
+	  
+	  /*border: {
+		style: solid;
+		width: 1px;
+	  }*/
+	  
+	  margin: auto;
+	  font-size: 0.8em;
+	  height: 2em * $line-height-base;
+	  
+	  @extend .text-clip;
+	  
+	  /*todo: Find a future fix to add the ellipis*/
+	  &:after {
+		content: '...';
+	  }
+	  
+	}
+	
+	.date {
+	
+	}
+  }
+}

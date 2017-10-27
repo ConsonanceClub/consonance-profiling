@@ -14,8 +14,12 @@
 @import 'buttons';
 @import 'navigation';
 @import 'topLevelMenu';
+@import 'eventsTicker';
+@import 'activities';
 
 body {
+  font-size: 14px;
+  
   padding-top: 100px;
   padding-bottom: 30px;
   
