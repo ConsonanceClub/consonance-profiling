@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -80,5 +82,26 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function logout()
+    {
+        if (Auth::check()) {
+            Auth::logout();
+            return Redirect::to('login')->with('message','You are now logged out');
+        } else {
+            return Redirect::to('/');
+        }
+    }
+
+    function is_email($x) {
+
+        if (strpos($x, "@") !== false) {
+            $split = explode("@", $x);
+            if (strpos($split['1'], ".") !== false) { return true; }
+            else { return false; }
+        }
+        else { return false; }
+
     }
 }
