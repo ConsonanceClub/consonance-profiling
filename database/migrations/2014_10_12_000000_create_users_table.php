@@ -20,9 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('state');
+            $table->string('skills');
             $table->string('short_bio', 1024);
             $table->string('medium_username', 45);
-            $table->string('instagram_username', 45);
             $table->string('twitter_username', 45);
             $table->string('github_username', 45);
             $table->string('slack_username', 45);
