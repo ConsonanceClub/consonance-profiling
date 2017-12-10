@@ -48,6 +48,18 @@
 <![endif]-->
 @endpush
 
+@push('styles')
+{{--CSS for datatbles too--}}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+@endpush
+
+@push('scripts')
+{{--scripts for datatables--}}
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="/js/components/members.js"></script>
+@endpush
+
 {{--Additional Meta Data Current--}}
 @stack('metas')
 {{-- CSS Definitions --}}

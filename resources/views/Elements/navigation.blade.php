@@ -43,7 +43,7 @@
 						<a href="#">GROUPS</a>
 					</li>
 					<li>
-						<a href="#">MEMBERS</a>
+						<a href="{{url('/members')}}">MEMBERS</a>
 					</li>
 					<li>
 						<a href="#">ABOUT US</a>

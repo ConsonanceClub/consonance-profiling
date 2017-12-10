@@ -22,3 +22,9 @@ Route::get('/member/sign-in', function () {
 Route::get('/activity', function () {
     return view('activity');
 });
+
+Route::get('/members', function () {
+    return view('members');
+});
+
+Route::get('/getMembers', 'MembersController@getAllMembers');
