@@ -96,7 +96,7 @@
 
 						<div class="form-group text-right">
 							<button class="btn btn-link" type="submit">
-								NEXT <i class="fa fa-angle-right fa-fw fa-2x text-bold"
+								SIGN UP <i class="fa fa-angle-right fa-fw fa-2x text-bold"
 								        style="vertical-align: -15%;"></i>
 							</button>
 						</div>
