@@ -108,11 +108,26 @@
 
 						</div>
 
-						<div class="form-group">
-							<input type="text"
+						<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+							<input type="password"
 							       name="password"
+								   id="password"
 							       placeholder="Password"
-							       class="form-control input-lg">
+							       class="form-control input-lg" required>
+							@if ($errors->has('password'))
+								<span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+							@endif
+						</div>
+
+						<div class="form-group">
+							<input type="password"
+								   id="password-confirm"
+								   placeholder="Confirm Password"
+								   class="form-control input-lg"
+								   name="password_confirmation" required>
+
 						</div>
 
 						<div class="form-group text-right">
