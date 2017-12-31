@@ -65,7 +65,8 @@
 				<div class="panel-body padding-20">
 					<h3 class="text-bold">Personal Information</h3>
 
-					<form action="">
+					<form class="form-horizontal" method="POST" action="{{ route('register') }}">
+						{{ csrf_field() }}
 						<div class="form-group">
 							<input type="text"
 							       name="first_name"
@@ -80,11 +81,17 @@
 							       class="form-control input-lg">
 						</div>
 
-						<div class="form-group">
-							<input type="text"
-							       name="email"
-							       placeholder="Email"
-							       class="form-control input-lg">
+
+						<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+
+								<input id="email" type="email" placeholder="Email" class="form-control input-lg" name="email" value="{{ old('email') }}" required>
+
+								@if ($errors->has('email'))
+									<span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+								@endif
+							
 						</div>
 
 						<div class="form-group">
