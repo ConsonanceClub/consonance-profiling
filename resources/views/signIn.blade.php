@@ -67,18 +67,32 @@
 
 					<form class="form-horizontal" method="POST" action="{{ route('register') }}">
 						{{ csrf_field() }}
-						<div class="form-group">
-							<input type="text"
-							       name="first_name"
-							       placeholder="First Name"
-							       class="form-control input-lg">
+						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+							<input id="name" type="text"
+								   placeholder="First Name"
+								   class="form-control input-lg"
+								   name="first_name"
+								   value="{{ old('name') }}" required autofocus>
+
+							@if ($errors->has('name'))
+								<span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+							@endif
 						</div>
 
-						<div class="form-group">
-							<input type="text"
-							       name="last_name"
-							       placeholder="Surname"
-							       class="form-control input-lg">
+						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+							<input id="name" type="text"
+								   placeholder="Surname"
+								   class="form-control input-lg"
+								   name="last_name"
+								   value="{{ old('name') }}" required autofocus>
+
+							@if ($errors->has('name'))
+								<span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+							@endif
 						</div>
 
 
@@ -91,7 +105,7 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
 								@endif
-							
+
 						</div>
 
 						<div class="form-group">
