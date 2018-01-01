@@ -121,14 +121,7 @@
 							@endif
 						</div>
 
-						<div class="form-group">
-							<input type="password"
-								   id="password-confirm"
-								   placeholder="Confirm Password"
-								   class="form-control input-lg"
-								   name="password_confirmation" required>
-
-						</div>
+						
 
 						<div class="form-group text-right">
 							<button class="btn btn-link" type="submit">
