@@ -14,7 +14,7 @@ class AddFkSchoolToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('school_id')->references('id')->on('schools');
+            //$table->foreign('school_id')->references('id')->on('schools');
         });
     }
 
