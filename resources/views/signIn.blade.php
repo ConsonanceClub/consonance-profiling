@@ -81,7 +81,19 @@
 							@endif
 						</div>
 
+						<div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+							<input id="last_name" type="text"
+								   placeholder="Surname"
+								   class="form-control input-lg"
+								   name="last_name"
+								   value="{{ old('name') }}" required autofocus>
 
+							@if ($errors->has('name'))
+								<span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+							@endif
+						</div>
 
 
 						<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
