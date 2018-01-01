@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/sign-in', function (){
+    return view('auth.register');
+});
+
 Route::get('/', function () {
     return view('signIn');
 });
@@ -28,3 +32,8 @@ Route::get('/members', function () {
 });
 
 Route::get('/getMembers', 'MembersController@getAllMembers');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
