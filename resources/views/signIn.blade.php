@@ -68,7 +68,7 @@
 					<form class="form-horizontal" method="POST" action="{{ route('register') }}">
 						{{ csrf_field() }}
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-							<input id="name" type="text"
+							<input id="first_name" type="text"
 								   placeholder="First Name"
 								   class="form-control input-lg"
 								   name="first_name"
@@ -82,7 +82,7 @@
 						</div>
 
 						<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-							<input id="name" type="text"
+							<input id="last_name" type="text"
 								   placeholder="Surname"
 								   class="form-control input-lg"
 								   name="last_name"
