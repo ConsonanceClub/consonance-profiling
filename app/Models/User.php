@@ -55,6 +55,6 @@ class User extends Authenticatable
     }
 
     function school(){
-        return $this->hasOne('App\Models\School', 'id');
+        //return $this->hasOne('App\Models\School', 'id');
     }
 }
