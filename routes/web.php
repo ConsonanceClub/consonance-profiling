@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('signIn');
 });
 
-Route::get('/member/sign-in', function () {
+Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
     return view('signIn');
-});
+}]);
 
 Route::get('/member/sign-up',[ 'as'=>'member.sign-up', function () {
     return view('signUp');
