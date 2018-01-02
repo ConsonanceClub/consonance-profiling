@@ -27,16 +27,10 @@
 
 				<form class="form-horizontal" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
-					<div class="form-group">
-						<input type="text"
-						       name="email"
-						       placeholder="Email"
-						       class="form-control input-lg">
-					</div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 
-                        <input id="email" 
+                        <input id="sign-email"
                                type="email"
                                placeholder="Email"
                                class="form-control input-lg"
