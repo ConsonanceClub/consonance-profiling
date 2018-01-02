@@ -60,6 +60,12 @@
 					</div>
 
 
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me?
+						</label>
+					</div>
+
 
 					<div class="form-group text-right">
 						<button class="btn btn-primary" type="submit">
