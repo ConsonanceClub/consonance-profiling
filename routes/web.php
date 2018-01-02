@@ -24,7 +24,7 @@ Route::get('/member/sign-in', function () {
 });
 
 Route::get('/member/sign-up', function () {
-    return view('signIn');
+    return view('signUp');
 });
 
 Route::get('/activity', function () {
