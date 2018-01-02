@@ -23,6 +23,10 @@ Route::get('/member/sign-in', function () {
     return view('signIn');
 });
 
+Route::get('/member/sign-up', function () {
+    return view('signIn');
+});
+
 Route::get('/activity', function () {
     return view('activity');
 });
