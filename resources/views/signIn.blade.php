@@ -25,7 +25,7 @@
 			<div class="padding-20">
 				<h3 class="text-bold">Sign In</h3>
 
-				<form action="">
+				<form class="form-horizontal" method="POST" action="{{ route('login') }}">
 					<div class="form-group">
 						<input type="text"
 						       name="email"
