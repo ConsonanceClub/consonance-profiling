@@ -47,7 +47,7 @@
 
 					<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 
-						<input id="password"
+						<input id="sign-password"
 							   type="password"
 							   class="form-control input-lg"
 							   name="password" required>
@@ -60,11 +60,6 @@
 					</div>
 
 
-					<div class="checkbox">
-						<label>
-							<input type="checkbox"> Remember Me?
-						</label>
-					</div>
 
 					<div class="form-group text-right">
 						<button class="btn btn-primary" type="submit">
