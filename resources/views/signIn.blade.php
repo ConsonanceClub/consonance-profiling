@@ -44,12 +44,21 @@
                         @endif
                     </div>
 
-					<div class="form-group">
-						<input type="text"
-						       name="password"
-						       placeholder="Password"
-						       class="form-control input-lg">
+
+					<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+
+						<input id="password"
+							   type="password"
+							   class="form-control input-lg"
+							   name="password" required>
+
+						@if ($errors->has('password'))
+							<span class="help-block">
+									<strong>{{ $errors->first('password') }}</strong>
+								</span>
+						@endif
 					</div>
+
 
 					<div class="checkbox">
 						<label>
