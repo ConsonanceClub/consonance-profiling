@@ -77,6 +77,9 @@
 							Forgot Your Password?
 						</a>
 					</div>
+					<a class="btn btn-link" href="{{ route('/member/sign-up') }}">
+						Got no account yet? No qualms. Register Now! :)
+					</a>
 
 				</form>
 			</div>
