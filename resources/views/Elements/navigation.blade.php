@@ -51,9 +51,9 @@
 				</ul>
 
 				{{--Make visible on Mobile--}}
-				<a class="btn navbar-btn visible-xs" href="member/sign-in">SIGN IN</a>
+				<a class="btn navbar-btn visible-xs" href="{{ route('member.sign-in') }}">SIGN IN</a>
 				{{--Make visible on Desktop--}}
-				<a class="btn navbar-btn hidden-xs margin-left-20" href="member/sign-in">SIGN IN</a>
+				<a class="btn navbar-btn hidden-xs margin-left-20" href="{{ route('member.sign-in') }}">SIGN IN</a>
 			</div>
 
 		</div><!--/.navbar-collapse -->
