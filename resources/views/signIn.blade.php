@@ -19,7 +19,6 @@
 
 {{--set content--}}
 @section('content')
-
 	<div class="row">
 		<div class="col-sm-offset-1 col-sm-5">
 
@@ -58,6 +57,7 @@
 
 		</div>
 
+	@if(!Auth::check())
 		<div class="col-sm-5">
 
 			<div class="panel panel-default">
@@ -142,6 +142,7 @@
 			</div>
 
 		</div>
+		@endif
 		<div class="col-sm-offset-1"></div>
 	</div>
 
