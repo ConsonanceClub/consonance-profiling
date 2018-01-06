@@ -86,7 +86,18 @@
 
 		</div>
 
+		<!-- Alternate sign in-->
+		<div class="col-sm-offset-1 col-sm-5">
 
+			<div class="padding-20">
+
+				<h3 class="text-bold">Sign In with</h3>
+				<a class="navbar-brand" href="{{route('github.auth', ['driver' => 'github'])}}">
+					<img src="/images/GitHub-Mark-32px.png" alt="Consonance">
+				</a>
+			</div>
+
+		</div>
 
 
 
