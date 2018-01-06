@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Http\Request;
 
 Route::get('/sign-in', function (){
     return view('auth.register');
@@ -46,7 +47,8 @@ Route::get('auth/login/{driver}',['as' => 'social.auth', 'uses' => 'Auth\LoginCo
 
 Route::get('auth/login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 
-Route::get('/welcome/member', function (){
+
+Route::get('/welcome/member', function (Request $request){
     return view('welcome');
 });
 
