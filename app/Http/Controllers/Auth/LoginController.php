@@ -50,7 +50,7 @@ class LoginController extends Controller
      */
     public function redirectToProvider($driver)
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver($driver)->redirect();
     }
 
     /**
@@ -60,7 +60,7 @@ class LoginController extends Controller
      */
     public function handleProviderCallback($driver)
     {
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver($driver)->user();
 
         return $user;
     }
