@@ -43,12 +43,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('auth/login/{driver}',['as' => 'social.auth', 'uses' => 'Auth\LoginController@redirectToProvider']);
+Route::get('auth/login/{driver}',[
+    'uses' => 'Auth\LoginController@redirectToProvider',
+    'as' => 'social.auth'
+]);
 
-Route::get('auth/login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('auth/login/{driver}/callback',[
+    'uses' => 'Auth\LoginController@handleProviderCallback',
+    'as' => 'social.callback'
+]);
 
 
-Route::get('/welcome/member', function (Request $request){
+Route::get('/welcome/member', function (){
     return view('welcome');
 });
 
