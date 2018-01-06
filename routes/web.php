@@ -13,7 +13,7 @@
 use Illuminate\Http\Request;
 
 
-Route::group(['midleware' => ['web']], function (){
+Route::group(['middleware' => ['web']], function (){
 
     Route::get('/sign-in', function (){
         return view('auth.register');
