@@ -45,10 +45,10 @@ class LoginController extends Controller
 
     /**
      * Redirect the user to the GitHub authentication page.
-     *
+     * @param driver
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider($driver)
     {
         return Socialite::driver('github')->redirect();
     }
@@ -58,7 +58,7 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($driver)
     {
         $user = Socialite::driver('github')->user();
 
