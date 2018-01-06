@@ -46,3 +46,7 @@ Route::get('auth/login/{driver}',['as' => 'social.auth', 'uses' => 'Auth\LoginCo
 
 Route::get('auth/login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
 
+Route::get('/welcome/member', function (){
+    return view('welcome');
+});
+
