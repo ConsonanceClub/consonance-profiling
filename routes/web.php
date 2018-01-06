@@ -45,6 +45,10 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get('/welcome/member', function (){
+        return view('welcome');
+    });
+
 
     Route::get('auth/login/{driver}',[
         'uses' => 'Auth\LoginController@redirectToProvider',
@@ -57,9 +61,10 @@ Route::group(['middleware' => ['web']], function (){
     ]);
 
 
-    Route::get('/welcome/member', function (){
-        return view('welcome');
-    });
+    Route::get('/auth/github/login/accepted', [
+        'uses' => 'Auth\SocialAuthenticationController@execute',
+        'as' => ''
+    ]);
 });
 
 
