@@ -45,7 +45,7 @@ class LoginController extends Controller
 
     /**
      * Redirect the user to the GitHub authentication page.
-     * @param driver
+     * @param $driver
      * @return \Illuminate\Http\Response
      */
     public function redirectToProvider($driver)
@@ -56,6 +56,7 @@ class LoginController extends Controller
     /**
      * Obtain the user information from GitHub.
      *
+     * @param $driver
      * @return \Illuminate\Http\Response
      */
     public function handleProviderCallback($driver)
