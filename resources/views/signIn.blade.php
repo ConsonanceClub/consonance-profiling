@@ -92,8 +92,11 @@
 			<div class="padding-20">
 
 				<h3 class="text-bold">Sign In with</h3>
-				<a class="navbar-brand" href="{{route('github.auth', ['driver' => 'github'])}}">
+				<a class="navbar-brand" href="{{route('social.auth', ['driver' => 'github'])}}">
 					<img src="/images/GitHub-Mark-32px.png" alt="Consonance">
+				</a>
+				<a class="navbar-brand" href="{{route('social.auth', ['driver' => 'twitter'])}}">
+					<img src="/images/Twitter_Social_Icon_Circle_Color.png" alt="Consonance">
 				</a>
 			</div>
 
