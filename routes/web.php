@@ -41,9 +41,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('auth/{driver}', ['as' => 'socialAuth', 'uses' => 'Auth\SocialController@redirectToProvider']);
-
-//Route::get('auth/{driver}/callback', ['as' => 'socialAuthCallback', 'uses' => 'Auth\SocialController@handleProviderCallback']);
 
 Route::get('auth/login/{driver}',['as' => 'social.auth', 'uses' => 'Auth\LoginController@redirectToProvider']);
 
