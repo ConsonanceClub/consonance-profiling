@@ -45,9 +45,10 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('/welcome/member', function (){
-        return view('welcome');
-    });
+    Route::get('/welcome/member',[
+        'uses' => 'Auth\SocialAuthenticationController@welcome',
+        'as' => 'welcome'
+    ]);
 
 
     Route::get('auth/login/{driver}',[
