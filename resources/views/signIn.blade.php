@@ -98,6 +98,10 @@
 				<a class="navbar-brand" href="{{route('social.auth', ['driver' => 'twitter'])}}">
 					<img src="/images/Twitter_Social_Icon_Circle_Color.png" alt="Consonance">
 				</a>
+				<a class="navbar-brand" href="{{route('social.auth', ['driver' => 'linkedin'])}}">
+					<img src="/images/Logo-2C-28px-TM.png" alt="Consonance">
+				</a>
+
 			</div>
 
 		</div>
