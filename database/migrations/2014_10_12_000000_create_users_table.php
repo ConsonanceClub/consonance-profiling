@@ -23,9 +23,13 @@ class CreateUsersTable extends Migration
             $table->string('state')->default();
             $table->string('skills')->default();
             $table->string('short_bio', 1024)->default();
+            $table->string('avatar', 1024)->default();
             $table->string('medium_username', 45)->default();
+            $table->string('medium_url', 45)->default();
             $table->string('twitter_username', 45)->default();
+            $table->string('twitter_url', 45)->default();
             $table->string('github_username', 45)->default();
+            $table->string('github_url', 45)->default();
             $table->string('slack_username', 45)->default();
             $table->integer('school_id')->unsigned()->default();
             $table->tinyInteger('active')->default();
