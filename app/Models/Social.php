@@ -22,8 +22,8 @@ class Social
     public function __construct($user,$firstName, $lastName, $email, $username, $url,$avatar,$bio)
     {
         $user = $user->user;
-        $this->firstName = $user[$firstName];
-        $this->lastName = $user[$lastName];
+        $this->firstName = (is_array($firstName))?explode(' ',$user['name'])[0]:$user[$firstName];
+        $this->lastName = (is_array($lastName))?explode(' ',$user['name'])[1]:$user[$lastName];
         $this->userName = $user[$username];
         $this->email = $user[$email];
         $this->url = $user[$url];
