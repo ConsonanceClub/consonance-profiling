@@ -30,6 +30,10 @@ class UserServiceProvider
 
         $user->save();
         return $user;
+    }
 
+    public static function userExists($userDetails){
+
+        return true;
     }
 }
