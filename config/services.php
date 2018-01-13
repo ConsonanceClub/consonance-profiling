@@ -42,8 +42,8 @@ return [
     ],
 
     'twitter' => [
-        'consumer_key' => env('TWITTER_CLIENT'),
-        'consumer_secret' => env('TWITTER_CLIENT_SECRET'),
+        'client_id' => env('TWITTER_CLIENT'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' =>  'http://localhost:9000/auth/login/twitter/accepted',
     ],
 
