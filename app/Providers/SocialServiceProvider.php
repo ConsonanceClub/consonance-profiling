@@ -11,7 +11,7 @@ namespace App\Providers;
 class SocialServiceProvider
 {
 
-    public function gitHub($user){
+    public static function gitHub($user){
         return new GithubServiceProvider($user);
     }
 
