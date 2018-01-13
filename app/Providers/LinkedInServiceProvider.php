@@ -9,54 +9,22 @@
 namespace app\Providers;
 
 
-class LinkedInServiceProvider
-{
+use App\Models\Social;
 
-    private $firstName;
-    private $lastName;
-    private $userName;
-    private $email;
-    private $bio;
-    private $url;
-    private $avatar;
+class LinkedInServiceProvider extends Social
+{
 
     public function __construct($user)
     {
-        $user = $user->user;
-        $this->firstName = explode(' ',$user['name'])[0];
-        $this->lastName = explode(' ',$user['name'])[1];
-        $this->userName = $user['username'];
-        $this->email = $user['email'];
-        $this->url = $user['url'];
-        $this->avatar = $user['avatar_url'];
-        $this->bio = $user['bio'];
+        parent::__construct($user,
+            'firstName',
+            'lastName',
+            'emailAddress',
+            'firstName',
+            'publicProfileUrl',
+            'pictureUrl',
+            'headline');
     }
 
-    public function getFirstName(){
-        return $this->firstName;
-    }
-
-    public function getLastName(){
-        return $this->lastName;
-    }
-
-    public function getUserName(){
-        return $this->userName;
-    }
-
-    public function getEmail(){
-        return $this->email;
-    }
-
-    public function getBio(){
-        return $this->bio;
-    }
-
-    public function getUrl(){
-        return $this->url;
-    }
-
-    public function getAvatar(){
-        return $this->avatar;
-    }
 }
+
