@@ -14,14 +14,6 @@ use App\Models\Social;
 class GithubServiceProvider extends Social
 {
 
-    private $firstName;
-    private $lastName;
-    private $userName;
-    private $email;
-    private $bio;
-    private $url;
-    private $avatar;
-
     public function __construct($user)
     {
 
