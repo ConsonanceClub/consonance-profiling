@@ -30,6 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('twitter_url', 45)->default();
             $table->string('github_username', 45)->default();
             $table->string('github_url', 45)->default();
+            $table->string('linkedin_username', 45)->default();
+            $table->string('linkedin_url', 45)->default();
             $table->string('slack_username', 45)->default();
             $table->integer('school_id')->unsigned()->default();
             $table->tinyInteger('active')->default();
