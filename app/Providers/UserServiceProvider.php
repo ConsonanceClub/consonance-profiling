@@ -25,6 +25,8 @@ class UserServiceProvider
             $user->github_url = $userDetails['github_url'];
         }else if($driver == 'twitter'){
             $user->twitter_url = $userDetails['twitter_url'];
+        }else if($driver == 'linkedin'){
+            $user->linkedin_url = $userDetails['linkedin_url'];
         }
         $user->avatar = $userDetails['avatar'];
 
