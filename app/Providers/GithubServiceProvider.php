@@ -25,6 +25,7 @@ class GithubServiceProvider
         $user = $user->user;
         $this->firstName = explode(' ',$user['name'])[0];
         $this->lastName = explode(' ',$user['name'])[1];
+        $this->userName = $user['username'];
         $this->email = $user['email'];
         $this->url = $user['url'];
         $this->avatar = $user['avatar_url'];
