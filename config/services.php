@@ -47,4 +47,9 @@ return [
         'redirect' =>  'http://localhost:9000/auth/login/twitter/accepted',
     ],
 
+    'linkedin' => [
+        'client_id' => env('LINKEDIN_KEY'),
+        'client_secret' => env('LINKEDIN_SECRET'),
+        'redirect' =>  'http://localhost:9000/auth/login/linkedin/accepted',
+    ],
 ];
