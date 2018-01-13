@@ -16,7 +16,11 @@ class SocialServiceProvider
     }
 
     public static function twitter($user){
+        return new TwitterServiceProvider($user);
+    }
 
+    public static function linkedIn($user){
+        return new LinkedInServiceProvider($user);
     }
 
 
