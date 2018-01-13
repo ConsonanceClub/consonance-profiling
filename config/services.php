@@ -38,7 +38,7 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:9000/welcome/member',
+        'redirect' => 'http://localhost:9000/auth/login/github/accepted',
     ],
 
 ];
