@@ -16,15 +16,7 @@ class SocialServiceProvider
     }
 
     public static function twitter($user){
-        return new class($user){
-            private $user;
 
-            public function __construct($user)
-            {
-                $this->user = $user;
-            }
-
-        };
     }
 
 
