@@ -41,4 +41,10 @@ return [
         'redirect' => 'http://localhost:9000/auth/login/github/accepted',
     ],
 
+    'twitter' => [
+        'consumer_key' => env('TWITTER_CLIENT'),
+        'consumer_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' =>  'http://localhost:9000/auth/login/twitter/accepted',
+    ],
+
 ];
