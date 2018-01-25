@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class CategoryController extends Controller
 {
@@ -14,6 +17,9 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $categories = Category::all();
+
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -24,6 +30,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin.category.create');
+
     }
 
     /**
@@ -35,6 +43,25 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+
+        $this->validate(request(), [
+            'name' => 'required|max:45|unique:category',
+            'description' => 'required|max:255',
+
+        ]);
+
+        $input =  $request->all();
+
+        $category = new Category;
+
+        $category->name = $request->name;
+
+        $category->description = $request->description;
+
+        $category->save();
+
+
+        return redirect(route('category.index'));
     }
 
     /**
@@ -57,6 +84,10 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+
+        $category = Category::findOrfail($id);
+
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -69,6 +100,27 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $this->validate(request(), [
+            'name' => 'required|max:45',
+            'description' => 'required|max:255',
+
+
+        ]);
+
+        $input =  $request->all();
+
+        $category =  Category::findOrFail($id);
+
+        $category->name = $request->name;
+
+        $category->description = $request->description;
+
+
+        $category->save();
+
+
+        return redirect(route('category.index'));
     }
 
     /**
@@ -80,5 +132,9 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        Category::findOrFail($id)->delete();
+
+        return back();
+
     }
 }

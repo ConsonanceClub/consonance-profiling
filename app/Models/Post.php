@@ -6,17 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    //
+
     protected $fillable = [
         'title',
         'description',
         'image_url',
     ];
 
-    function category(){
-        return $this->belongsTo('Category');
+    function group(){
+
+        return $this->belongsTo('App\Models\Post');
     }
 
     function user(){
-        return $this->belongsTo('User');
+
+        return $this->belongsTo('App\User');
+
     }
 }

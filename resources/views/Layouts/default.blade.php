@@ -13,6 +13,8 @@
 <html>
 
 	<head>
+		{{--<link href="{{asset('css/app.css')}}" rel="stylesheet">--}}
+
 		@include('Elements.headContent')
 	</head>
 

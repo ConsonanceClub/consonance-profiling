@@ -70,3 +70,30 @@ Route::group(['middleware' => ['web']], function (){
 
 
 
+
+
+
+Route::group(['middleware' => 'admin', 'namespace'=>'Admin'], function (){
+
+    Route::resource('admins/admin', 'AdminUsersController');
+
+    Route::resource('admins/category', 'CategoryController');
+
+    Route::resource('admin/activity', 'ActivityController');
+
+    Route::resource('admin/group', 'GroupController');
+
+    Route::get('admin/post/{group}', 'PostController@index')->name('post.index');
+
+    Route::get('admin/post/create/{group}', 'PostController@create')->name('post.create');
+
+    Route::post('admin/post/{group}', 'PostController@store')->name('post.store');
+
+    Route::get('admin/post/edit/{post}', 'PostController@edit')->name('post.edit');
+
+    Route::patch('admin/post/edit/{post}', 'PostController@update')->name('post.update');
+
+    Route::delete('admin/post/delete/{post}', 'PostController@delete')->name('post.destroy');
+
+
+});

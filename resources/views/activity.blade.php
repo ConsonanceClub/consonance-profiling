@@ -19,11 +19,47 @@
 
 {{--set content--}}
 @section('content')
+	<div class="row col-lg-6 col-lg-offset-3">
+
+		<h4>Make a post</h4>
+
+		<form class="form-horizontal" method="POST" action="">
+			{{ csrf_field() }}
+			<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+				<input id="name" type="text"
+					   placeholder="First Name"
+					   class="form-control input-lg"
+					   name="name"
+					   value="{{ old('name') }}" required autofocus>
+
+			</div>
+
+
+			<div class="form-group col-lg-12">
+				<label>Message</label>
+				<textarea rows="10" class="form-control" placeholder="Place message Here....." id="description" name="description" required></textarea>
+			</div>
+
+
+
+			<div class="form-group text-right">
+				<button class="btn btn-link" type="submit">
+					SIGN UP <i class="fa fa-angle-right fa-fw fa-2x text-bold"
+							   style="vertical-align: -15%;"></i>
+				</button>
+			</div>
+
+		</form>
+
+	</div>
 	<section id="activities">
+
 
 		<div class="row">
 
+
 			<div class="col-sm-6">
+
 
 				<div class="activity">
 					<div class="gfx img-responsive">

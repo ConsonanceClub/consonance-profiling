@@ -38,8 +38,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    function roles(){
-        return $this->belongsToMany('App\Models\Role');
+    function role(){
+        return $this->belongsTo('App\Models\Role');
     }
 
     function badge(){
@@ -50,8 +50,20 @@ class User extends Authenticatable
         return $this->belongsToMany('Interest');
     }
 
-    function post(){
-        return $this->hasMany('Post');
+    public function posts(){
+
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function isAdmin(){
+
+        if( $this->role->name == 'Administrator' && $this->active == 1){
+
+            return true;
+
+        }
+
+        return false;
     }
 
     function school(){
