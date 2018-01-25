@@ -38,7 +38,18 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:9000/welcome/member',
+        'redirect' => 'http://localhost:9000/auth/login/github/accepted',
     ],
 
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' =>  'http://localhost:9000/auth/login/twitter/accepted',
+    ],
+
+    'linkedin' => [
+        'client_id' => env('LINKEDIN_KEY'),
+        'client_secret' => env('LINKEDIN_SECRET'),
+        'redirect' =>  'http://localhost:9000/auth/login/linkedin/accepted',
+    ],
 ];
