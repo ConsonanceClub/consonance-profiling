@@ -63,62 +63,62 @@
             <h3 class="text-white text-uppercase"><strong>INTRESTS</strong></h3>            
             <div class="bio-text row margin-bottom-10">
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-            </div>
-            <div class="bio-text row margin-bottom-10">
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
-                </div>
-                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
             </div>
             <div class="bio-text row margin-bottom-10">
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
                 <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
-                    <div class="box" style="height:40px;border:1px solid #aaa"></div>
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+            </div>
+            <div class="bio-text row margin-bottom-10">
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
+                </div>
+                <div class="col-xs-2 col-sm-2 s-boxes padding-horizontal-5">
+                    <input type="checkbox" class="interest-cbox" name="" id="">
                 </div>
             </div>
 

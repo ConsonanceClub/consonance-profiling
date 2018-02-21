@@ -12,3 +12,7 @@ input.form-control {
   padding: 25px;
   font-size: 2rem;
 }
+.interest-cbox {
+  height: 30px;
+  width: 30px;
+}
