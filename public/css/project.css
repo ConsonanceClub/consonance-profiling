@@ -1,0 +1,26 @@
+.project {
+  padding: 30px;
+}
+.card {
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  box-shadow: 0px 1px 2px 3px rgba(0, 0, 0, 0.05);
+  border-radius: 7px;
+  transition: all 500ms;
+}
+.card:hover {
+  box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.3)
+}
+.card .card-image {
+  max-width: 100%;
+}
+
+.card .card-header {
+  border-top: 1px solid #AAA;
+  margin: 0
+}
+.card .card-body .tags {
+  padding: 10px 0px;
+}
+.card .card-header, .card .card-body {
+  padding: 5px 10px 10px 10px;
+}
