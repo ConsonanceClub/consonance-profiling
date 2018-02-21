@@ -47,6 +47,8 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
 
+    Route::get('/projects', 'ProjectController@index')->name('profile');
+
     Route::get('/welcome/member',[
         'uses' => 'Auth\SocialAuthenticationController@welcome',
         'as' => 'welcome'
