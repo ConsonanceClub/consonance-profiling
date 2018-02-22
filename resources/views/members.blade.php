@@ -14,6 +14,7 @@
 
 <head>
     @include('Elements.headContent')
+    <link rel="stylesheet" href="css/members.css">
 </head>
 
 <body>
@@ -23,22 +24,33 @@
 
 <div class="container-fluid">
     <div class="row">
-        <table id="members" class="display" cellspacing="0" width="100%" style="padding-left: 10px; padding-right: 10px">
-            <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>State</th>
-                <th>School</th>
-                <th>Skills</th>
-                <th>Medium Username</th>
-                <th>Slack Username</th>
-                <th>Twitter Username</th>
-                <th>Github Username</th>
-            </tr>
-            </thead>
-        </table>
+        <div class="filter">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#" class="filter-item">Popular</a></li>
+                <li role="presentation" ><a href="#" class="filter-item">active</a></li>
+                <li role="presentation" ><a href="#" class="filter-item">alphbetical</a></li>
+                <li role="presentation" ><a href="#" class="filter-item">groups</a></li>
+                <li role="presentation" ><a href="#" class="filter-item">school</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="search-container">
+            <input type="search" placeholder="search for members" class="form-control searchbar text-center">
+        </div>
+        <div class="row member-list">
+            @for ($i = 0;$i < 12; $i++)
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="member">
+                    <img src="/images/logo-146x150.png" class="avatar">
+                    <div class="text">
+                        <div class="name">John Doe</div>
+                        <div class="job">Graphic Designer</div>
+                    </div>
+                </div>
+            </div>
+            @endfor
+        </div>
     </div>
 
 </div>

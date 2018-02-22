@@ -1,0 +1,57 @@
+.filter  {
+  padding: 20px;
+}
+.filter .filter-item {
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0;
+}
+.filter li.active .filter-item {
+  border-bottom: 3px solid #333;
+  background: none;
+  color: #333;
+}
+.form-control.searchbar {
+  border-radius: 20px;
+  position: relative;
+  font-size: 1.2em;
+  padding: 20px;
+}
+.form-control.searchbar::after {
+  content: " ";
+  left:20px;
+  width: "30px";
+  height: "30px";
+}
+
+.member-list {
+  padding-top: 30px
+}
+.member {
+  display: block;
+  padding: 15px;
+  max-width: 250px;
+  margin: auto;
+}
+.member .avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+}
+.member .text {
+  padding: 5px;
+  color: #888;
+  text-align: center;
+}
+.member .text .name {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.3rem
+}
+.member .text .job {
+  font-style: italic;
+}
+
+

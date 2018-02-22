@@ -16,7 +16,6 @@
 
 @push('scripts')
 <link rel="stylesheet" href="/css/profile.css">
-</style>
 @endpush
 {{--set Title--}}
 @section('title', 'Profile')
