@@ -36,6 +36,7 @@
     </div>
     <div class="container">
         <div class="search-container">
+            <!-- <i class="fa fa-search"></i> -->
             <input type="search" placeholder="search for members" class="form-control searchbar text-center">
         </div>
         <div class="row member-list">
