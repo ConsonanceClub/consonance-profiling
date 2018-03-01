@@ -18,7 +18,9 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/sign-in', function (){
         return view('auth.register');
     });
-
+    Route::get('/groups', function (){
+        return view('groups');
+    });
     Route::get('/', function () {
         return view('signIn');
     });
