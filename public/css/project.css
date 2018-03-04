@@ -1,3 +1,34 @@
+.filter {
+  padding: 20px;
+}
+.filter .filter-item {
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0;
+}
+.filter li.active .filter-item {
+  border-bottom: 3px solid #333;
+  background: none;
+  color: #333;
+}
+.form-control.searchbar {
+  border-radius: 20px;
+  position: relative;
+  font-size: 1.2em;
+  padding: 20px;
+}
+.search-container {
+  position: relative;
+}
+.search-container::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAKUSURBVEhLrZTZTlpRFIYXhymMUumVttZya6N4IQXpvVLfwPQBGx+goo21XlWxwSHFUFMs4A0lIcxDmNr9L/chwGEy9ksIcPY6/xr30v0V0BCpdJrS9/dUKBSo2WyS0Wikubk5erm4SB6PR1pNZ0D8TzZLX46P+bfBYCBFUfg36Ha71O50qCs+74JBerW0JE/G0xP/eXtLZ5EI2Ww26opHLRExjkwmE0ev0+k4Azis1Wr0ZmWF1r1eFhkHi2dFxOHDQxZutVrkcDjorc9Hz91uaUaUy+Xo7PycisUimc1mqlarnMHr5WVpoYXFP+7tcVQQRroBv18ea4kIB4m7O86oXq/Th91deaJFQeOQPmqKiCcJA9/GBj1zudgeffkRi8kTLSwOI0SNUsyCXwQAe7z3O5mUT7UoGDc0CdH313gSLjGWAE1GD8ahYBKASTTpMaD5CGgSClIDGL3HUBPNROST5BWXbA7I5/P8PQ2MIS4TInfY7fKpFuXFwgJ1hCFGEXM8C7DDKOK9STdVwa6AEZqKyKMXF/JoNLGbG8pkMmyP97yrq/JECy+P4OYm1xDRxMUa+Hx0xKn302g06OvJCV1eX/MNRUmwzHR9+2eY3m75Ho1SPB4ni8XCPVC3odVq5ZvI/4VzvRxbRN5ut3lqdkIhFhtmYCv+SiTo2+kpZ6DX6x+mQRyr3ygDPhiCSqXSu3x20dRRDgbEVS6vriiZSlFZCOjEf5ggQjRvfW2NFOEYiw4XSN1JdrE6dra3HwQkI8X7QYlQglHsHxxQqVTqOcBuet/nYKr4NCY5GN/qGQltbZHT6WRhOCiXy7QfDvPZkyNX+SQEIaxm4J6ff3rkKiiFU5QEwuiTRYzwf4tcBRcQdyMYCNA/XWhtkkPcD6wAAAAASUVORK5CYII=);
+  left: 20px;
+  position: absolute;
+  width: 30px;
+  top: 11px;
+  height: 30px;
+}
 .project {
   padding: 30px;
 }
@@ -8,19 +39,20 @@
   transition: all 500ms;
 }
 .card:hover {
-  box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.3)
+  box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.3);
 }
 .card .card-image {
   max-width: 100%;
 }
 
 .card .card-header {
-  border-top: 1px solid #AAA;
-  margin: 0
+  border-top: 1px solid #aaa;
+  margin: 0;
 }
 .card .card-body .tags {
   padding: 10px 0px;
 }
-.card .card-header, .card .card-body {
+.card .card-header,
+.card .card-body {
   padding: 5px 10px 10px 10px;
 }
