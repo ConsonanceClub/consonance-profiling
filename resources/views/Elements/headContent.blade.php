@@ -27,6 +27,8 @@
 <link rel="stylesheet" href="/css/bootstrap.css">
 <link rel="stylesheet" href="/css/font-awesome.min.css">
 <link rel="stylesheet" href="/css/ionicons.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/theme.css">
 <link rel="stylesheet" href="/css/style.css">
 {{--Using png as a fix for favicon ico format--}}
 <link rel="icon" href="/images/logo-32x33.png">
@@ -38,6 +40,9 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/angular.min.js"></script>
 <script src="/js/holder.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/isotope.min.js"></script>
+<script src="js/scripts.js"></script>
 @endpush
 
 @push('scripts')
