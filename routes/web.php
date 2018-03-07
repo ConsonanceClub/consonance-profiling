@@ -21,6 +21,9 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/groups', function (){
         return view('groups');
     });
+    Route::get('/group-view', function (){
+        return view('group-view');
+    });
     Route::get('/', function () {
         return view('signIn');
     });
