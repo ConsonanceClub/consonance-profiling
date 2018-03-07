@@ -5,8 +5,8 @@
  *
  * @package        Consonance
  * @category       Source
- * @author         Michael Akanji <matscode@gmail.com> {@link http://michaelakanji.com}
- * @date           2017-10-18
+ * @author         Ani Kenechi <anikenechi.c@gmail.com> {@link http://anikenechi.remote.com}
+ * @date           2018-02-26
  *
  */
 ?>
@@ -74,7 +74,7 @@
 
                                 <div class="align-vertical">
                                      
-                                    <a href="#" class="kbtn kbtn-primary kbtn-white">View Group</a>
+                                    <a href="/group-view" class="kbtn kbtn-primary kbtn-white">View Group</a>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                             <div class="hover-state">
                                 <div class="align-vertical">
                                      
-                                    <a href="#" class="kbtn kbtn-primary kbtn-white">View Group</a>
+                                    <a href="/group-view" class="kbtn kbtn-primary kbtn-white">View Group</a>
                                 </div>
                             </div>
                         </div>
