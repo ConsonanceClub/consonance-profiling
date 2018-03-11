@@ -24,7 +24,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-6 login-container">
             <h3>LOG IN</h3>
             <hr>
             <form action="">
@@ -40,8 +40,15 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-12 col-md-6">
-
+        <div class="col-sm-12 col-md-6 right">
+            <div class="personal-info-container">
+                <h3>PERSONAL INFORMATION</h3>
+                <input type="text" placeholder="first name" class="form-control login-input">
+                <input type="text" placeholder="last name" class="form-control login-input">
+                <input type="text" placeholder="emal address" class="form-control login-input">
+                <input type="password" placeholder="password" class="form-control login-input">
+                <input type="text" placeholder="school" class="form-control login-input">
+            </div>
         </div>
     </div>
 </div>
