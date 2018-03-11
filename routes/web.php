@@ -27,6 +27,9 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/', function () {
         return view('signIn');
     });
+    Route::get('/log-in', function () {
+        return view('logIn');
+    });
 
     Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
         return view('signIn');

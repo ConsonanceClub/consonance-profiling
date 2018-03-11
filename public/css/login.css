@@ -1,0 +1,36 @@
+body {
+  background: url('/images/bg1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.login {
+  font-weight: 500;
+}
+.login-input {
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+hr {
+  padding: 6px;
+}
+.checkbox {
+  border: 5px solid white;
+  background: transparent;
+  height: 30px;
+  font-size: 20px;
+  width: 30px;
+  display: inline-block;
+}
+.log-in-btn {
+  border: 5px solid white;
+  background: transparent;
+  padding: 5px 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
