@@ -40,7 +40,7 @@
 						<a href="#">BLOG</a>
 					</li>
 					<li>
-						<a href="#">GROUPS</a>
+						<a href="/groups">GROUPS</a>
 					</li>
 					<li>
 						<a href="{{url('/members')}}">MEMBERS</a>
