@@ -11,8 +11,16 @@
  */
 ?>
 
-    {{--use Default Layout--}} @extends('Layouts.default') @push('scripts')
-    <link rel="stylesheet" href="/css/project.css"> @endpush {{--set Title--}} @section('title', 'Profile') {{--set content--}} @section('content')
+    {{--use Default Layout--}} 
+    @extends('Layouts.default') 
+    {{--set Title--}}
+    @section('title', 'Projects')
+    {{-- Add css for projects--}}
+    @push('scripts')
+    <link rel="stylesheet" href="/css/project.css">
+    @endpush
+    {{--set content--}}
+    @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="filter">
