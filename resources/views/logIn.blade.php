@@ -41,14 +41,24 @@
             </form>
         </div>
         <div class="col-sm-12 col-md-6 right">
-            <div class="personal-info-container">
+            <div class="personal-info-container clearfix">
                 <h3>PERSONAL INFORMATION</h3>
                 <input type="text" placeholder="first name" class="form-control login-input">
                 <input type="text" placeholder="last name" class="form-control login-input">
                 <input type="text" placeholder="emal address" class="form-control login-input">
                 <input type="password" placeholder="password" class="form-control login-input">
                 <input type="text" placeholder="school" class="form-control login-input">
+                <div class="pull-right">
+                    <div class="next">NEXT <i class="fa fa-chevron-right"></i></div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-5 col-sm-offset-7 col-md-4 col-md-offset-8">
+            <p class="text-right">SKIP TO HOMEPAGE</p>
+            <p class="text-right">YOU CAN CONTINUE YOUR REGISTRATION LATER</p>
+            <hr>
         </div>
     </div>
 </div>
