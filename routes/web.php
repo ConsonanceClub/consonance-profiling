@@ -24,7 +24,10 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/group-view', function (){
         return view('group-view');
     });
-    Route::get('/', function () {
+    Route::get('/', function (){
+        return view('home');
+    });
+    Route::get('/signIn', function () {
         return view('signIn');
     });
     Route::get('/log-in', function () {
@@ -50,8 +53,6 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/getMembers', 'MembersController@getAllMembers');
 
     Auth::routes();
-
-    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
 
