@@ -5,14 +5,22 @@
  *
  * @package        Consonance
  * @category       Source
- * @author         Michael Akanji <matscode@gmail.com> {@link http://michaelakanji.com}
- * @date           2017-10-18
+ * @author         Ashinze Ekene <ashinzekene@gmail.com> {@link http://github.com/ashinzekene}
+ * @date           2018-02-22
  *
  */
 ?>
 
-    {{--use Default Layout--}} @extends('Layouts.default') @push('scripts')
-    <link rel="stylesheet" href="/css/project.css"> @endpush {{--set Title--}} @section('title', 'Profile') {{--set content--}} @section('content')
+    {{--use Default Layout--}} 
+    @extends('Layouts.default') 
+    {{--set Title--}}
+    @section('title', 'Projects')
+    {{-- Add css for projects--}}
+    @push('scripts')
+    <link rel="stylesheet" href="/css/project.css">
+    @endpush
+    {{--set content--}}
+    @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="filter">

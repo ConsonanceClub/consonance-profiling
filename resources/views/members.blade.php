@@ -5,8 +5,8 @@
  *
  * @package        Consonance
  * @category       View
- * @author         Mayowa
- * @date           10th of December, that year.
+ * @author         Ashinze Ekene <ashinzekene@gmail.com> {@link http://github.com/ashinzekene}
+ * @date           2018-02-22
  *
  */
 ?>

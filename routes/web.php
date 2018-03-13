@@ -24,11 +24,11 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/group-view', function (){
         return view('group-view');
     });
-    Route::get('/', function (){
-        return view('home');
-    });
-    Route::get('/signIn', function () {
+    Route::get('/', function () {
         return view('signIn');
+    });
+    Route::get('/log-in', function () {
+        return view('logIn');
     });
 
     Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
@@ -51,7 +51,7 @@ Route::group(['middleware' => ['web']], function (){
 
     Auth::routes();
 
-//    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
 
