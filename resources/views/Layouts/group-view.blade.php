@@ -5,7 +5,7 @@
  *
  * @package        Consonance
  * @category       Source
- * @author         Ani Kenechi <anikenechi.c@gmail.com> {@link http://anikenechi.remote.com}
+ * @author         Ani Kenechi <anikenechi.c@gmail.com> {@link http://remote.com/anikenechi}
  * @date           2018-03-06
  *
  */
