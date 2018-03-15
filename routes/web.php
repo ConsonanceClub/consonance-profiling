@@ -18,6 +18,9 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/sign-in', function (){
         return view('auth.register');
     });
+
+
+
     Route::get('/groups', function (){
         return view('groups');
     });
@@ -53,6 +56,11 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/getMembers', 'MembersController@getAllMembers');
 
     Auth::routes();
+
+    Route::get('/group', 'GroupController@index')->name('groupn.index');
+
+    Route::get('group/{group}', 'GroupController@show')->name('groupn.show');
+
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
 
