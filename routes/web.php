@@ -19,8 +19,22 @@ Route::group(['middleware' => ['web']], function (){
         return view('auth.register');
     });
 
-    Route::get('/', function () {
+
+
+    Route::get('/groups', function (){
+        return view('groups');
+    });
+    Route::get('/group-view', function (){
+        return view('group-view');
+    });
+    Route::get('/', function (){
+        return view('home');
+    });
+    Route::get('/signIn', function () {
         return view('signIn');
+    });
+    Route::get('/log-in', function () {
+        return view('logIn');
     });
 
     Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
@@ -43,7 +57,14 @@ Route::group(['middleware' => ['web']], function (){
 
     Auth::routes();
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/group', 'GroupController@index')->name('groupn.index');
+
+    Route::get('group/{group}', 'GroupController@show')->name('groupn.show');
+
+
+    Route::get('/profile', 'ProfileController@index')->name('profile');
+
+    Route::get('/projects', 'ProjectController@index')->name('profile');
 
     Route::get('/welcome/member',[
         'uses' => 'Auth\SocialAuthenticationController@welcome',

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -14,6 +16,10 @@ class GroupController extends Controller
     public function index()
     {
         //
+        $groups = Group::all();
+
+        return view('group.index', compact('groups'));
+
     }
 
     /**
@@ -21,21 +27,7 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -43,9 +35,15 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Group $group){
+
+        $posts  = Post::where('group_id', $group->id)->get();
+
+        $postsAll = Post::latest()->take(4)->get();
+
+        return view('group.post.index', compact('group','posts', 'postsAll'));
+
+
     }
 
     /**

@@ -23,8 +23,21 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				<img src="/images/logo-146x150.png" alt="Consonance">
+			<a class="navbar-brand" href="/">
+				<img class="col-md-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
+				<h2 class="cons col-md-8 right text-white"><b>Consonance</b></h2>
+				<style>
+					.cons {
+						margin-bottom: 40px;
+						vertical-align: text-top;
+					}
+
+					@media screen and (max-width: 700px) {
+						.cons {
+							display: none;
+						}
+					}
+				</style>
 			</a>
 		</div>
 
@@ -40,7 +53,7 @@
 						<a href="#">BLOG</a>
 					</li>
 					<li>
-						<a href="#">GROUPS</a>
+						<a href="/groups">GROUPS</a>
 					</li>
 					<li>
 						<a href="{{url('/members')}}">MEMBERS</a>

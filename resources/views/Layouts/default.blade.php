@@ -15,7 +15,10 @@
 	<head>
 		{{--<link href="{{asset('css/app.css')}}" rel="stylesheet">--}}
 
+		@yield('styles')
+
 		@include('Elements.headContent')
+
 	</head>
 
 	<body>
@@ -27,8 +30,12 @@
 			@yield('content')
 
 		</div>
+			@yield('content_new')
 
 		{{--call on footer--}}
 		@include('Elements.footer')
+
+		@yield('scripts')
+
 	</body>
 </html>
