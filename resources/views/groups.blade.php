@@ -5,7 +5,7 @@
  *
  * @package        Consonance
  * @category       Source
- * @author         Ani Kenechi <anikenechi.c@gmail.com> {@link http://anikenechi.remote.com}
+ * @author         Ani Kenechi <anikenechi.c@gmail.com> {@link http://remote.com/anikenechi}
  * @date           2018-02-26
  *
  */
@@ -19,17 +19,6 @@
 
 {{--set content--}}
 @section('content')
-    {{--<div class="container-fluid">--}}
-        {{--<div>--}}
-            {{--<div class="col-md-3">--}}
-                {{--<div class="card card-block">--}}
-                    {{--<h4 class="modal-header text-md-center">Novice</h4>--}}
-                    {{--Donate N5000 and Get N10,000 in 7days--}}
-                    {{--<button type="button" class="btn btn-primary flex-center" data-toggle="modal" data-target="#PH1">Select</button>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
     <div class="container-fluid banner">
         <h2>Groups</h2>
     </div>
