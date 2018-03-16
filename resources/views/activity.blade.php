@@ -16,41 +16,27 @@
 
 {{--set Title--}}
 @section('title', 'Activity')
-
+@push('scripts')
+	<link rel="stylesheet" href="/css/activity.css">
+@endpush
 {{--set content--}}
 @section('content')
-	<div class="row col-lg-6 col-lg-offset-3">
-
-		<h4>Make a post</h4>
-
-		<form class="form-horizontal" method="POST" action="">
-			{{ csrf_field() }}
-			<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-				<input id="name" type="text"
-					   placeholder="First Name"
-					   class="form-control input-lg"
-					   name="name"
-					   value="{{ old('name') }}" required autofocus>
-
+	<div class="row">
+		<div class="main-post">
+			<div class="hero">
 			</div>
-
-
-			<div class="form-group col-lg-12">
-				<label>Message</label>
-				<textarea rows="10" class="form-control" placeholder="Place message Here....." id="description" name="description" required></textarea>
-			</div>
-
-
-
-			<div class="form-group text-right">
-				<button class="btn btn-link" type="submit">
-					SIGN UP <i class="fa fa-angle-right fa-fw fa-2x text-bold"
-							   style="vertical-align: -15%;"></i>
-				</button>
-			</div>
-
-		</form>
-
+			<div class="category">Consonance</div>
+			<h1 class="post-header text-uppercase text-center">This is the header of a post</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi dignissimos assumenda aliquam! Quidem nisi voluptas enim. Temporibus cum, iusto ipsa, laudantium dicta perferendis ut dolorem officiis sapiente dolorum quasi.
+			<br>
+			<br>
+			Magni, tempore odio minus dicta quod ea repellendus ad minima soluta! Deleniti corporis provident asperiores atque, nam consequatur suscipit, illum a quisquam, ea facilis modi explicabo incidunt dolor ab temporibus.
+			Alias officiis, deleniti, doloribus at numquam consequatur quis ipsum magnam corporis eius explicabo delectus aliquam. Optio cum non magnam ipsa dignissimos error! Cumque id facilis temporibus obcaecati, repudiandae dolorem ab!</p>
+		</div>
+		<div class="navigation">
+			<div class="prev left">Previous Post</div>
+			<div class="next right">Next Post</div>
+		</div>
 	</div>
 	<section id="activities">
 
