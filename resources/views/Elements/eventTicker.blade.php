@@ -13,7 +13,7 @@
 
 <section id="event-ticker">
 
-	<h3 class="margin-bottom-20"><i class="fa fa-file-text fa fw"></i> Events</h3>
+	<h4 class="margin-bottom-20 event-ticker-title text-uppercase"><strong>Upcoming Events</strong></h4>
 
 	<div class="event row">
 		<div class="col-sm-3">
