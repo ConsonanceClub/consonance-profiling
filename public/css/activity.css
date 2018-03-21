@@ -42,3 +42,10 @@
   color: white;
   border: none;
 }
+#event-ticker .event-ticker-title::after {
+  width: 60%;
+  border-bottom: 2px solid rgb(12,12,200);
+}
+#event-ticker .event > .col-sm-3 {
+  overflow: hidden;
+}

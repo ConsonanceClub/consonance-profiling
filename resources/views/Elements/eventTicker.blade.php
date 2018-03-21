@@ -17,7 +17,7 @@
 
 	<div class="event row">
 		<div class="col-sm-3">
-			<img data-src="holder.js/70x70?random=yes" alt="Event">
+			<img height="auto" data-src="holder.js/70x70?random=yes" alt="Event">
 		</div>
 		<div class="col-sm-9">
 			<div class="heading">ForLoop Uyo</div>
@@ -34,7 +34,7 @@
 
 	<div class="event row">
 		<div class="col-sm-3">
-			<img data-src="holder.js/70x70?random=yes" alt="Event">
+			<img height="auto" data-src="holder.js/70x70?random=yes" alt="Event">
 		</div>
 		<div class="col-sm-9">
 			<div class="heading">Android Dev</div>
@@ -52,7 +52,7 @@
 
 	<div class="event row">
 		<div class="col-sm-3">
-			<img data-src="holder.js/70x70?random=yes" alt="Event">
+			<img height="auto" data-src="holder.js/70x70?random=yes" alt="Event">
 		</div>
 		<div class="col-sm-9">
 			<div class="heading">WordPress MeetUp</div>
