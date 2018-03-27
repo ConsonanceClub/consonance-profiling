@@ -52,13 +52,13 @@
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="/activity">ACTIVITY</a>
+						<a href="{{route('activity')}}">ACTIVITY</a>
 					</li>
 					<li>
 						<a href="#">BLOG</a>
 					</li>
 					<li>
-						<a href="/groups">GROUPS</a>
+						<a href="{{route('groupn.index')}}">GROUPS</a>
 					</li>
 					<li>
 						<a href="{{url('/members')}}">MEMBERS</a>

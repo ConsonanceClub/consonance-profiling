@@ -46,7 +46,7 @@ class GroupController extends Controller
         $this->validate(request(), [
 
             'icon_url' => 'required',
-            'name' => 'required|unique:groups',
+            'name' => 'required|unique:groups|max:45',
 
 
         ]);
@@ -116,7 +116,7 @@ class GroupController extends Controller
         $this->validate(request(), [
 
             'icon_url' => 'required',
-            'name' => 'required',
+            'name' => 'required|max:45',
 
 
         ]);

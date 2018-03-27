@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Post;
+use App\Models\PostComment;
 use Illuminate\Http\Request;
+use App\Models\Likeable;
+
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -11,74 +17,81 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function __construct()
     {
-        //
+
+        $this->middleware('auth')->except('show');
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function show(Post $post){
+
+        $postsAll = Post::latest()->take(4)->get();
+
+
+        $activiti = Activity::whereActive(1)->latest()->take(4)->get();
+
+
+
+        return view('group.post.show', compact('post','postsAll','activiti'));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function comment(Request $request, $post){
+
+        $this->validate($request, [
+
+            'comment' => 'required',
+
+        ]);
+
+        $postn = Post::find($post);
+
+        $comment = new PostComment;
+
+        $comment->comment = $request->comment;
+
+        $comment->user_id = auth()->id();
+
+        $comment->post_id = $postn->id;
+
+        $comment->save();
+
+        return back();
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function likePost($id)
     {
-        //
+        // here you can check if product exists or is valid or whatever
+
+        $this->handleLike('App\Models\Post', $id);
+        $post = Post::where('id', $id)->first();
+
+        return $post;
+
+//        return auth()->guest() ?  $design : redirect(route('login'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+
+    public function handleLike($type, $id)
     {
-        //
+        $existing_like = Likeable::withTrashed()->whereLikeableType($type)->whereLikeableId($id)->whereUserId(Auth::id())->first();
+
+        if (is_null($existing_like)) {
+            Likeable::create([
+                'user_id'       => Auth::id(),
+                'likeable_id'   => $id,
+                'likeable_type' => $type,
+            ]);
+        } else {
+            if (is_null($existing_like->deleted_at)) {
+                $existing_like->delete();
+            } else {
+                $existing_like->restore();
+            }
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

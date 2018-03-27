@@ -53,7 +53,7 @@ class ActivityController extends Controller
         $this->validate(request(), [
 
             'image_url' => 'required',
-            'title' => 'required',
+            'title' => 'required|max:50',
             'category_id' => 'required',
             'user_id' => 'required',
             'body' => 'required',
@@ -144,7 +144,7 @@ class ActivityController extends Controller
         $this->validate(request(), [
 
             'image_url' => 'required',
-            'title' => 'required',
+            'title' => 'required|max:50',
             'category_id' => 'required',
             'user_id' => 'required',
             'body' => 'required',
