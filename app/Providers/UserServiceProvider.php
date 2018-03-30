@@ -36,7 +36,7 @@ class UserServiceProvider
     }
 
     public static function getUserDetails($user, $driver){
-
+        
         $socialDetails = SocialServiceProvider::getSocialProvider($driver,$user);
 
         $email = $socialDetails->getEmail();
