@@ -6,7 +6,7 @@
  * Time: 2:38 PM
  */
 
-namespace app\Providers;
+namespace App\Providers;
 
 use app\Models\Social;
 use App\Providers\SocialServiceProvider;
