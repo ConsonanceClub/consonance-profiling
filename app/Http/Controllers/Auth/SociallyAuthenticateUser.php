@@ -9,10 +9,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Providers\UserServiceProvider;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Laravel\Socialite\One\User;
 use Laravel\Socialite\Two\InvalidStateException;
 use Mockery\Exception;
 use Socialite;
