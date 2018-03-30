@@ -11,6 +11,17 @@ namespace App\Providers;
 class SocialServiceProvider
 {
 
+    public static function getSocialProvider($driver,$user){
+        switch ($driver){
+            case 'github':
+                return static::gitHub($user);
+                break;
+            case 'linkedin':
+                return static::linkedIn($user);
+                break;
+        }
+    }
+
     public static function gitHub($user){
         return new GithubServiceProvider($user);
     }
