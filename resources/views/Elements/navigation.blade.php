@@ -64,7 +64,7 @@
 						<a href="{{url('/members')}}">MEMBERS</a>
 					</li>
 					<li>
-						<a href="#">ABOUT US</a>
+						<a href="{{url('/profile')}}">PROFILE</a>
 					</li>
 				</ul>
 

@@ -15,8 +15,8 @@
 <head>
     @include('Elements.headContent')
     <link rel="stylesheet" href="css/members.css">
-    <link rel="stylesheet" type="text/css" href="../../css/special/css/shortcode/shortcode.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/special/plugins-css.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/special/css/shortcodes/shortcodes.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/special/css/plugins-css.css" />
 </head>
 
 <body>

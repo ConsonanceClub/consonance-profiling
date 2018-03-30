@@ -92,9 +92,9 @@ Route::group(['middleware' => ['web']], function (){
     ]);
 
 
-    Route::get('/auth/github/login/accepted', [
-        'uses' => 'Auth\SocialAuthenticationController@execute',
-        'as' => ''
+    Route::get('/auth/login/{driver}/accepted', [
+        'uses' => 'Auth\SocialAuthController@execute',
+        'as' => 'auth.accept'
     ]);
 });
 

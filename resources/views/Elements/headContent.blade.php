@@ -36,7 +36,7 @@
 
 @push('scripts')
 {{--Default Javascript Files--}}
-<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="{{asset('/js/jquery-3.1.1.min.js')}}"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/angular.min.js"></script>
 <script src="/js/holder.min.js"></script>
