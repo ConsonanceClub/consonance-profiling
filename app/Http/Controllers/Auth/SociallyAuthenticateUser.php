@@ -9,6 +9,7 @@
 namespace App\Http\Controllers\Auth;
 use App\Providers\UserServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\One\User;
 use Laravel\Socialite\Two\InvalidStateException;
 use Mockery\Exception;
@@ -33,10 +34,10 @@ class SociallyAuthenticateUser
         }catch (InvalidStateException $exception){
             return redirect(`auth/login/{$this->driver}`);
         }catch (Exception $exception){
-            return redirect('/');
+            return Redirect::route('/');;
         }
 
-        return redirect(route('home'))->with('Error authenticating user.');
+        return Redirect::route('/');//redirect('/')->with('Error authenticating user.');
     }
 
 
@@ -59,7 +60,7 @@ class SociallyAuthenticateUser
             Auth::login($user);
         }
 
-        return redirect(route('activity'));
+        return Redirect::route('/activity');
     }
 
     public function redirectToProvider($driver)
