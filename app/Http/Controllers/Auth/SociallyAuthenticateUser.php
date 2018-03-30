@@ -7,13 +7,16 @@
  */
 
 namespace App\Http\Controllers\Auth;
+
 use App\Providers\UserServiceProvider;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\One\User;
 use Laravel\Socialite\Two\InvalidStateException;
 use Mockery\Exception;
 use Socialite;
+use Auth;
 
 class SociallyAuthenticateUser
 {
@@ -28,16 +31,17 @@ class SociallyAuthenticateUser
             $user = Socialite::driver($this->driver)->user();
 
             if($user = $this->userIsAuthenticable($user)){
+
                 return $this->authenticateUser($user);
             }
 
         }catch (InvalidStateException $exception){
             return redirect(`auth/login/{$this->driver}`);
         }catch (Exception $exception){
-            return Route::redirect('/signIn');;
+            return redirect()->route('signIn');
         }
 
-        return Route::redirect('/signIn');//redirect('/')->with('Error authenticating user.');
+        return redirect()->route('signIn');
     }
 
 
@@ -48,7 +52,7 @@ class SociallyAuthenticateUser
     private function userIsAuthenticable($user){
         $authenticatedUser = UserServiceProvider::getUserDetails($user,$this->driver);
 
-        if($authenticatedUser instanceof User){
+        if(isset($authenticatedUser) ){
             return $authenticatedUser;
         }
 
@@ -56,11 +60,12 @@ class SociallyAuthenticateUser
     }
 
     private function authenticateUser($user){
+
         if(!Auth::check()) {
             Auth::login($user);
         }
 
-        return Route::redirect('/activity');
+        return redirect()->route('activity');
     }
 
     public function redirectToProvider($driver)
