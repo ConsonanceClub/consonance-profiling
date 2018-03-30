@@ -15,7 +15,10 @@
 <section id="top-level-menu">
 
 	<section class="projects-overview text-right">
-		<h3><i class="fa fa-folder fa fw"></i> Projects</h3>
+		<h4 class="text-uppercase projects-text">
+			<i class="fa fa-folder fa fw"></i> 
+			<strong>Projects</strong>
+		</h4>
 		<p class="help-block text-muted small">
 			View completed and on-going projects handled by consonance members.
 		</p>

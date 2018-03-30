@@ -45,20 +45,10 @@
                     </div>
                     <!-- /input-group -->
                 </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="{{route('admin.index')}}"><i class="fa fa-wrench fa-fw"></i> Users</a>
-
-                </li>
-                <li>
-                    <a href="{{route('admin.create')}}"><i class="fa fa-wrench fa-fw"></i> Create a User</a>
-
-                </li>
-                <li>
-                    <a href="{{route('category.index')}}"><i class="fa fa-dashboard fa-fw"></i> All Categories</a>
-                </li>
+                <li><a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a></li>
+                <li><a href="{{route('admin.index')}}"><i class="fa fa-wrench fa-fw"></i> Users</a></li>
+                <li><a href="{{route('admin.create')}}"><i class="fa fa-wrench fa-fw"></i> Create a User</a></li>
+                <li><a href="{{route('category.index')}}"><i class="fa fa-dashboard fa-fw"></i> All Categories</a></li>
                 <li>
                     <a href="{{route('category.create')}}"><i class="fa fa-dashboard fa-fw"></i> Create Category</a>
                 </li>

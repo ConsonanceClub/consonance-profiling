@@ -23,18 +23,23 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">
-				<img class="col-md-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
-				<h2 class="cons col-md-8 right text-white"><b>Consonance</b></h2>
+			<a class="navbar-brand row" href="/">
+				<img class="col-sm-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
+				<h2 class="cons col-sm-8 right text-white"><b>Consonance</b></h2>
 				<style>
-					.cons {
-						margin-bottom: 40px;
-						vertical-align: text-top;
-					}
-
 					@media screen and (max-width: 700px) {
 						.cons {
 							display: none;
+						}
+					}
+					@media screen and (max-width: 1024px) {
+						body {
+							padding-top: 130px !important;
+						}
+					}
+					@media screen and (max-width: 767px) {
+						body {
+							padding-top: 70px !important;
 						}
 					}
 				</style>
@@ -47,19 +52,19 @@
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="/activity">ACTIVITY</a>
+						<a href="{{route('activity')}}">ACTIVITY</a>
 					</li>
 					<li>
 						<a href="#">BLOG</a>
 					</li>
 					<li>
-						<a href="/groups">GROUPS</a>
+						<a href="{{route('groupn.index')}}">GROUPS</a>
 					</li>
 					<li>
 						<a href="{{url('/members')}}">MEMBERS</a>
 					</li>
 					<li>
-						<a href="#">ABOUT US</a>
+						<a href="{{url('/profile')}}">PROFILE</a>
 					</li>
 				</ul>
 

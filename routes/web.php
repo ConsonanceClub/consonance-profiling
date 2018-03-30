@@ -19,8 +19,6 @@ Route::group(['middleware' => ['web']], function (){
         return view('auth.register');
     });
 
-
-
     Route::get('/groups', function (){
         return view('groups');
     });
@@ -61,6 +59,17 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('group/{group}', 'GroupController@show')->name('groupn.show');
 
+    Route::get('/post/like/{id}', ['as' => 'post.like', 'uses' => 'PostController@likePost']);
+
+    Route::get('/group/post/{post}', 'PostController@show')->name('postn.show');
+
+    Route::post('/group/post/comment/{post}', 'PostController@comment')->name('postn.comment');
+
+    Route::get('/activity', 'ActivityController@index')->name('activity');
+
+    Route::get('/activity/like/{id}', ['as' => 'activity.like', 'uses' => 'ActivityController@likeActivity']);
+
+    Route::post('/activity/comment/{activity}', 'ActivityController@comment')->name('activity.comment');
 
     Route::get('/profile', 'ProfileController@index')->name('profile');
 
@@ -83,9 +92,9 @@ Route::group(['middleware' => ['web']], function (){
     ]);
 
 
-    Route::get('/auth/github/login/accepted', [
-        'uses' => 'Auth\SocialAuthenticationController@execute',
-        'as' => ''
+    Route::get('/auth/login/{driver}/accepted', [
+        'uses' => 'Auth\SocialAuthController@execute',
+        'as' => 'auth.accept'
     ]);
 });
 

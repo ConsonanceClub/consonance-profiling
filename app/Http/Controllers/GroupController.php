@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Group;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -16,9 +17,13 @@ class GroupController extends Controller
     public function index()
     {
         //
-        $groups = Group::all();
+        $groups = Group::whereActive(1)->latest()->paginate(6);
 
-        return view('group.index', compact('groups'));
+        $postsAll = Post::latest()->take(4)->get();
+
+        $activiti = Activity::whereActive(1)->latest()->take(4)->get();
+
+        return view('group.index', compact('groups', 'postsAll','activities','activiti'));
 
     }
 
@@ -37,11 +42,14 @@ class GroupController extends Controller
      */
     public function show(Group $group){
 
-        $posts  = Post::where('group_id', $group->id)->get();
+        $posts  = Post::where('group_id', $group->id)->latest()->paginate(4);
 
         $postsAll = Post::latest()->take(4)->get();
 
-        return view('group.post.index', compact('group','posts', 'postsAll'));
+        $activiti = Activity::whereActive(1)->latest()->take(4)->get();
+
+
+        return view('group.post.index', compact('group','posts', 'postsAll', 'activiti'));
 
 
     }

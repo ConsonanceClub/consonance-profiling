@@ -22,7 +22,6 @@ class CreatePostsTable extends Migration
                 $table->string('image_url');
                 $table->timestamps();
 
-                $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

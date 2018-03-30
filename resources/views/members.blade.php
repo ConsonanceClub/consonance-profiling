@@ -15,6 +15,8 @@
 <head>
     @include('Elements.headContent')
     <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" type="text/css" href="../../css/special/css/shortcodes/shortcodes.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/special/css/plugins-css.css" />
 </head>
 
 <body>
@@ -43,9 +45,9 @@
             @for ($i = 0;$i < 12; $i++)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="member">
-                    <img src="/images/logo-146x150.png" class="avatar">
+                    <a href="#" data-toggle="modal" data-target="#id-modal"><img src="/images/logo-146x150.png" class="avatar"></a>
                     <div class="text">
-                        <div class="name">John Doe</div>
+                        <div class="name"><a href="#" data-toggle="modal" data-target="#id-modal">John Doe</a></div>
                         <div class="job">Graphic Designer</div>
                     </div>
                 </div>
@@ -54,9 +56,55 @@
         </div>
     </div>
 
+     <div class="modal fade" id="id-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="section-title mb-10">
+                    <div class="event-modal-image text-center member">
+                      <img src="/images/logo-146x150.png" class="avatar">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="modal-body text-left">
+                    <label>Name:</label>
+                    <h5>John Doe</h5>
+                    <label>Job:</label>
+                    <p>Graphic Designer</p>
+                    <label>Description:</label>
+                    <p>I'm a Graphic designer who has a passion for Art and Design</p>
+                    <label>School:</label>
+                    <p>University of Lagos, Akoka</p>
+                    <label>Location (Address):</label>
+                    <p>Lagos</p>
+                    <label>Joined:</label>
+                    <p>31 - 03 - 2018</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="button gray" type="button" data-dismiss="modal">CLOSE</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- =========== MODAL  END   ===========-->
+
 </div>
 
 {{--call on footer--}}
 @include('Elements.footer')
+
+<!--====jquery==== -->
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/plugins-jquery.js"></script>
+<script type="text/javascript">var plugin_path = 'js/';</script>
+<script type="text/javascript" src="js/custom.js"></script>
+
 </body>
 </html>

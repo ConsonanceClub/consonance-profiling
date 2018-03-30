@@ -18,6 +18,14 @@
 .page-item:first-child .page-link,
 .pagination-lg .page-item:last-child .page-link,
 .pagination-lg .page-item:first-child .page-link,
+a.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a.navbar-brand .text {
+    line-height: 146px;
+}
 .pagination-sm .page-item:first-child .page-link,
 .pagination-sm .page-item:last-child .page-link,
 .list-group .list-group-item,

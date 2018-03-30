@@ -39,7 +39,7 @@ class PostController extends Controller
         $this->validate(request(), [
 
             'image_url' => 'required',
-            'title' => 'required',
+            'title' => 'required|max:50',
             'description' => 'required',
 
         ]);
@@ -93,7 +93,7 @@ class PostController extends Controller
         $this->validate(request(), [
 
             'image_url' => 'required',
-            'title' => 'required',
+            'title' => 'required|max:50',
             'description' => 'required',
 
         ]);

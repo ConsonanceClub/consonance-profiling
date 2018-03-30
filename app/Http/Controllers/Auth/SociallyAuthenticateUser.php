@@ -18,10 +18,11 @@ class SociallyAuthenticateUser
 
     public function execute($request = null){
 
-        if($request == null)
+        if($request == null){
             return $this->needsAuthentication();
+        }
         try{
-            $user = Socialite::driver($this->driver)->user;
+            $user = Socialite::driver($this->driver)->user();
             return $user;
 
         }catch (InvalidStateException $exception){
@@ -30,10 +31,9 @@ class SociallyAuthenticateUser
             return redirect('/');
         }
 
-        return '';
     }
 
     private function needsAuthentication(){
-        return '';
+        return redirect('/member/sign-in');
     }
 }

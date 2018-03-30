@@ -25,7 +25,6 @@ class CreateActivitiesTable extends Migration
             $table->dateTime('end_date');
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
         });
     }
 
