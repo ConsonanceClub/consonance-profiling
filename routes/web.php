@@ -80,20 +80,13 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'welcome'
     ]);
 
-
     Route::get('auth/login/{driver}',[
-        'uses' => 'Auth\LoginController@redirectToProvider',
+        'uses' => 'Auth\SocialAuthController@loginUserViaDriver',
         'as' => 'social.auth'
     ]);
 
-    Route::get('auth/login/{driver}/callback',[
-        'uses' => 'Auth\LoginController@handleProviderCallback',
-        'as' => 'social.callback'
-    ]);
-
-
     Route::get('/auth/login/{driver}/accepted', [
-        'uses' => 'Auth\SocialAuthController@execute',
+        'uses' => 'Auth\SocialAuthController@login',
         'as' => 'auth.accept'
     ]);
 });
