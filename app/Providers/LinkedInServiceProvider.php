@@ -17,10 +17,9 @@ class LinkedInServiceProvider extends Social
     public function __construct($user)
     {
         parent::__construct($user,
-            'firstName',
-            'lastName',
-            'emailAddress',
-            'firstName',
+            'name',
+            'email',
+            'name',
             'publicProfileUrl',
             'pictureUrl',
             'headline');
