@@ -49,7 +49,7 @@ $(document).ready(function(){
 	
 	// Smooth scroll
 	
-	$('.inner-link').smoothScroll({offset: -96, speed: 800});
+	$('.inner-link').length && $('.inner-link').smoothScroll({offset: -96, speed: 800});
 	
 	// Mobile Toggle
 	
@@ -141,7 +141,7 @@ $(document).ready(function(){
 	// Scroll Reveal
 	
 	if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-       window.scrollReveal = new scrollReveal();
+		if (typeof scrollReveal === 'function') window.scrollReveal = new scrollReveal();
     }else{
     	$('body').addClass('pointer');
     }
@@ -386,32 +386,36 @@ $(window).load(function(){
 	});
 	
 	// Isotope Projects
-	
-	$('.projects-container').isotope({
-	  itemSelector: '.project',
-	  layoutMode: 'fitRows'
-	});
-	
-	$('.filters li').click(function() {
-	  var current = $(this);
-	  
-	  current.siblings('li').removeClass('active');
-	  current.addClass('active');
-	  
-	  var filterValue = current.attr('data-filter');
-	  var container = current.closest('.projects-wrapper').find('.projects-container');
-	  container.isotope({ filter: filterValue });
-	});
+	if ($('.projects-container').length) {
+		
+		$('.projects-container').isotope({
+		  itemSelector: '.project',
+		  layoutMode: 'fitRows'
+		});
+		
+		$('.filters li').click(function() {
+		  var current = $(this);
+		  
+		  current.siblings('li').removeClass('active');
+		  current.addClass('active');
+		  
+		  var filterValue = current.attr('data-filter');
+		  var container = current.closest('.projects-wrapper').find('.projects-container');
+		  container.isotope({ filter: filterValue });
+		});
+	}
 	
 	// Isotope contained feature boxes
 	
-	$('.contained-features-wrapper').isotope({
-	  itemSelector: '.no-pad',
-	  layoutMode: 'masonry',
-	  masonry: {
-		  gutter: 0
-		}
-	});
+	if ($('.contained-features-wrapper').length) {
+		$('.contained-features-wrapper').isotope({
+		  itemSelector: '.no-pad',
+		  layoutMode: 'masonry',
+		  masonry: {
+			  gutter: 0
+			}
+		});
+	}
 	
 	// Instagram Feed
 	
@@ -481,22 +485,25 @@ $(window).load(function(){
 	});
 	
 	// Blog Masonry
-	
-	$('.blog-masonry-container').isotope({
-	  itemSelector: '.blog-masonry-item',
-	  layoutMode: 'masonry'
-	});
-	
-	$('.blog-filters li').click(function() {
-	  var current = $(this);
-	  
-	  current.siblings('li').removeClass('active');
-	  current.addClass('active');
-	  
-	  var filterValue = current.attr('data-filter');
-	  var container = current.closest('.blog-masonry').find('.blog-masonry-container');
-	  container.isotope({ filter: filterValue });
-	});
+	if ($('.blog-masonry-container').length) {
+		
+		$('.blog-masonry-container').isotope({
+		  itemSelector: '.blog-masonry-item',
+		  layoutMode: 'masonry'
+		});
+		
+		$('.blog-filters li').click(function() {
+		  var current = $(this);
+		  
+		  current.siblings('li').removeClass('active');
+		  current.addClass('active');
+		  
+		  var filterValue = current.attr('data-filter');
+		  var container = current.closest('.blog-masonry').find('.blog-masonry-container');
+		  container.isotope({ filter: filterValue });
+		});
+
+	}
 
 
 

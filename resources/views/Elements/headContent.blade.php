@@ -41,6 +41,7 @@
 <script src="/js/angular.min.js"></script>
 <script src="/js/holder.min.js"></script>
 <script src="js/jquery.min.js"></script>
+<script src="js/smooth-scroll.js"></script>
 <script src="js/isotope.min.js"></script>
 <script src="js/scripts.js"></script>
 @endpush
