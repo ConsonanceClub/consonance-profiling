@@ -19,8 +19,6 @@ Route::group(['middleware' => ['web']], function (){
         return view('auth.register');
     });
 
-
-
     Route::get('/groups', function (){
         return view('groups');
     });
