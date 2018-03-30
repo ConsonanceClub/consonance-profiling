@@ -7,7 +7,7 @@
  */
 
 namespace App\Http\Controllers\Auth;
-use app\Providers\UserServiceProvider;
+use App\Providers\UserServiceProvider;
 use Illuminate\Http\Request;
 use Laravel\Socialite\One\User;
 use Laravel\Socialite\Two\InvalidStateException;
