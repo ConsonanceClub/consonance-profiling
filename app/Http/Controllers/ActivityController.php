@@ -26,6 +26,7 @@ class ActivityController extends Controller
 
         $activities = Activity::whereActive(1)->latest()->paginate(2);
 
+
         $activiti = Activity::whereActive(1)->latest()->take(4)->get();
 
         $postsAll = Post::latest()->take(4)->get();
