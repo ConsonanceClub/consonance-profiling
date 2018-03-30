@@ -40,6 +40,7 @@ class UserServiceProvider
         $socialDetails = SocialServiceProvider::getSocialProvider($driver,$user);
 
         $email = $socialDetails->getEmail();
+
         if(!is_null($email)){
             $existingUser = User::where('email', $email)->first();
         }else $existingUser = null;
