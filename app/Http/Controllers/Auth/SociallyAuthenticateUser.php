@@ -34,10 +34,10 @@ class SociallyAuthenticateUser
         }catch (InvalidStateException $exception){
             return redirect(`auth/login/{$this->driver}`);
         }catch (Exception $exception){
-            return Redirect::route('/');;
+            return Route::redirect('/signIn');;
         }
 
-        return Redirect::route('/');//redirect('/')->with('Error authenticating user.');
+        return Route::redirect('/signIn');//redirect('/')->with('Error authenticating user.');
     }
 
 
@@ -60,7 +60,7 @@ class SociallyAuthenticateUser
             Auth::login($user);
         }
 
-        return Redirect::route('/activity');
+        return Route::redirect('/activity');
     }
 
     public function redirectToProvider($driver)
