@@ -25,15 +25,18 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/group-view', function (){
         return view('group-view');
     });
+
     Route::get('/', function (){
         return view('home');
     })->name('home');
+
     Route::get('/signIn', function () {
         return view('signIn');
-    });
-    Route::get('/log-in', function () {
+    })->name('signIn');
+
+    /*Route::get('/log-in', function () {
         return view('logIn');
-    });
+    });*/
 
     Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
         return view('signIn');
@@ -65,7 +68,7 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::post('/group/post/comment/{post}', 'PostController@comment')->name('postn.comment');
 
-    Route::get('/activity', 'ActivityController@index')->name('activity');
+    Route::get('/activity', 'ActivityController@index');
 
     Route::get('/activity/like/{id}', ['as' => 'activity.like', 'uses' => 'ActivityController@likeActivity']);
 
