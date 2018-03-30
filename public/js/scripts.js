@@ -148,9 +148,9 @@ $(document).ready(function(){
 
 	// Slider Initializations
 	
-	$('.hero-slider').flexslider({});
-	$('.image-slider').flexslider({ animation: "slide"});
-	$('.testimonials-slider').flexslider({ directionNav: false });
+	$('.hero-slider').length && $('.hero-slider').flexslider({});
+	$('.image-slider').length && $('.image-slider').flexslider({ animation: "slide"});
+	$('.testimonials-slider').length && $('.testimonials-slider').flexslider({ directionNav: false });
 	
 	// Slide Sizes
 	
@@ -226,9 +226,11 @@ $(document).ready(function(){
     });
     
     if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
-        skrollr.init({
-            forceHeight: false
-        });
+        if (typeof skrollr !== "undefined") {
+				skrollr.init({
+				forceHeight: false
+			});
+		}
         
         // Multi Layer Parallax
     
