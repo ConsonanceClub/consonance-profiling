@@ -19,16 +19,19 @@ class Social
     private $url;
     private $avatar;
 
-    public function __construct($user,$firstName, $lastName, $email, $username, $url,$avatar,$bio)
+    public function __construct($user, $name, $email, $username, $url,$avatar,$bio)
     {
-        $user = $user->user;
-        $this->firstName = (is_array($firstName))?explode(' ',$user['name'])[0]:$user[$firstName];
-        $this->lastName = (is_array($lastName))?explode(' ',$user['name'])[1]:$user[$lastName];
-        $this->userName = $user[$username];
-        $this->email = $user[$email];
-        $this->url = $user[$url];
-        $this->avatar = $user[$avatar];
-        $this->bio = $user[$bio];
+        $innerUser = isset($user->user)?$user->user:null;
+        $name = isset($user[$name])?:explode(' ',$user[$name]);['',''];
+        $this->firstName = $name[0];
+        $this->lastName = $name[1];
+        $this->userName = isset($user[$username])?$user[$username]:'';
+        $this->email = isset($user[$email])?$user[$email]:'';
+        if(!is_null($innerUser)){
+            $this->url = $innerUser[$url];
+            $this->avatar = $user[$avatar];
+            $this->bio = $user[$bio];
+        }
     }
 
     public function getFirstName(){
