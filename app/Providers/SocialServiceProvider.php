@@ -22,15 +22,15 @@ class SocialServiceProvider
         }
     }
 
-    public static function gitHub($user){
+    private static function gitHub($user){
         return new GithubServiceProvider($user);
     }
 
-    public static function twitter($user){
+    private static function twitter($user){
         return new TwitterServiceProvider($user);
     }
 
-    public static function linkedIn($user){
+    private static function linkedIn($user){
         return new LinkedInServiceProvider($user);
     }
 
