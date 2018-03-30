@@ -31,7 +31,7 @@ class SocialAuthController extends Controller
 
     public function logout(){
         Auth::logout();
-        return Redirect::route('/');
+        return redirect()->route('home');
     }
 
     private function checkDriver($driver){
