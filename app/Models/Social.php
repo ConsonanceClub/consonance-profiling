@@ -22,15 +22,15 @@ class Social
     public function __construct($user, $name, $email, $username, $url,$avatar,$bio)
     {
         $innerUser = isset($user->user)?$user->user:null;
-        $name = isset($user[$name])?explode(' ',$user[$name]):['',''];
+        $name = isset($user->{$name})?explode(' ',$user->{$name}):['',''];
         $this->firstName = $name[0];
         $this->lastName = $name[1];
-        $this->userName = isset($user[$username])?$user[$username]:'';
-        $this->email = isset($user[$email])?$user[$email]:'';
+        $this->userName = isset($user->{$username})?$user->{$username}:'';
+        $this->email = isset($user->{$email})?$user->{$email}:'';
         if(!is_null($innerUser)){
-            $this->url = $innerUser[$url];
-            $this->avatar = $user[$avatar];
-            $this->bio = $user[$bio];
+            $this->url = $innerUser->{$url};
+            $this->avatar = $user->{$avatar};
+            $this->bio = $user->{$bio};
         }
     }
 
