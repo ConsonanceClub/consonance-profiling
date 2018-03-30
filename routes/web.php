@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web']], function (){
     });
     Route::get('/', function (){
         return view('home');
-    });
+    })->name('home');
     Route::get('/signIn', function () {
         return view('signIn');
     });
@@ -45,7 +45,7 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('/activity', function () {
         return view('activity');
-    });
+    })->name('activity');
 
     Route::get('/members', function () {
         return view('members');
