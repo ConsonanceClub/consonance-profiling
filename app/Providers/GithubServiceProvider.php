@@ -18,15 +18,13 @@ class GithubServiceProvider extends Social
     {
 
         parent::__construct($user,
-            $user,
-            $user,
+            'name',
             'email',
-            'username',
-            'url',
+            'nickname',
+            'html_url',
             'avatar_url',
             'bio');
 
     }
-
 
 }
