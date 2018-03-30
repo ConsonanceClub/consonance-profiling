@@ -14,5 +14,8 @@ use App\Models\Social;
 class TwitterServiceProvider extends Social
 {
 
-
+    public function __construct($user)
+    {
+        //parent::__construct($user, $user, $user, $email, $username, $url, $avatar, $bio);
+    }
 }
