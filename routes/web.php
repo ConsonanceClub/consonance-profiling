@@ -46,9 +46,9 @@ Route::group(['middleware' => ['web']], function (){
         return view('signUp');
     }]);
 
-    Route::get('/activity', function () {
+    /*Route::get('/activity', function () {
         return view('activity');
-    })->name('activity');
+    })->name('activity');*/
 
     Route::get('/members', function () {
         return view('members');
@@ -68,7 +68,7 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::post('/group/post/comment/{post}', 'PostController@comment')->name('postn.comment');
 
-    Route::get('/activity', 'ActivityController@index');
+    Route::get('/activity', 'ActivityController@index')->name('activity');
 
     Route::get('/activity/like/{id}', ['as' => 'activity.like', 'uses' => 'ActivityController@likeActivity']);
 
