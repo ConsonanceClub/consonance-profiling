@@ -56,7 +56,11 @@ Route::group(['middleware' => ['user.auth']], function (){
     Route::get('/group-view', function (){
         return view('group-view');
     });
-
+    
+    Route::get('/update-profile',[
+       'uses' => 'ProfileController@updateProfile',
+       'as' => 'profile.update'
+    ]);
 
     Route::get('/members', function () {
         return view('members');
