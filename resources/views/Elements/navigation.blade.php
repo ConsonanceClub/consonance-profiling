@@ -75,7 +75,24 @@
 				<!--<a class="btn navbar-btn hidden-xs margin-left-20" href="{{--route('member.sign-in')--}}">SIGN IN</a>-->
 				<a class="btn navbar-btn hidden-xs margin-left-20" style="margin-top: 30px" href="{{ route('auth.logout') }}">LOG OUT</a>
 			</div>
+
+                <li class="list-box user-admin dropdown">
+                    <div class="admin-details">
+                        <div class="name">Mayowa</div>
+                        <div class="designation">System Admin</div>
+                    </div>
+                    <a id="drop4" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-account_circle"></i>
+                    </a>
+                    <ul class="dropdown-menu sm">
+                        <li class="dropdown-content">
+                            <a href="forgot-pwd.html">Change Password</a>
+                            <a href="login.html">Logout</a>
+                        </li>
+                    </ul>
+                </li>
 			@endif
+
 		</div><!--/.navbar-collapse -->
 
 	</div>
