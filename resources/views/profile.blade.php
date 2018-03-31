@@ -42,7 +42,7 @@
                         <input type="text" placeholder="Community Role" id="role" value="Active Contributor" class="form-control text-center padding-20">
                     </div>
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Conact Info" id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Contact Info" id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20">
                     </div>
                     <!--
                     <div class="p-info form-group col-lg-12">
@@ -64,7 +64,7 @@
             </div>
             <h3 class="text-white text-uppercase"><strong>SCHOOL</strong></h3>
             <div class="bio-text">
-                <input type="text" id="school" value="insert school name" class="form-control padding-20 text-center">
+                <input type="text" id="school" placeholder="Insert school name" value="{{--Auth::user()->school--}}" class="form-control padding-20 text-center">
             </div>
             <h3 class="text-white text-uppercase"><strong>INTRESTS</strong></h3>
             {{$count = 0}}
