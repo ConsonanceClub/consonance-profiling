@@ -32,10 +32,6 @@ class UserServiceProvider
         }
         $user->avatar = $socialDetails->getAvatar();
 
-        if(in_array($socialDetails->getEmail(),config('admin'))){
-            $user->role_id = 1;
-        }
-
         $user->save();
         return $user;
     }
