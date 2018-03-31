@@ -26,7 +26,7 @@ class User extends Authenticatable
         'twitter_username',
         'github_username',
         'slack_username',
-        'school_id',
+        'school',
     ];
 
     /**
@@ -66,7 +66,7 @@ class User extends Authenticatable
         return false;
     }
 
-    function school(){
+    /*function school(){
         //return $this->hasOne('App\Models\School', 'id');
-    }
+    }*/
 }
