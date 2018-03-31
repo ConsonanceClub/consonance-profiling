@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Auth\SociallyAuthenticateUser;
+use Auth;
 
 class SocialAuthController extends Controller
 {
