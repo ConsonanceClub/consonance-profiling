@@ -2,7 +2,7 @@
 
 @section('styles')
 
-    <link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap.min.css')}}">
 
 
 @endsection
@@ -119,19 +119,8 @@
 
 @section('scripts')
 
-    <script src="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
-
-
-    <script>
-        $(function () {
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
-            CKEDITOR.replace('editor1')
-            //bootstrap WYSIHTML5 - text editor
-            $('.textarea').wysihtml5()
-        })
-    </script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
     <script>
         $(function () {
             $('#example1').DataTable()

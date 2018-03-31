@@ -2,7 +2,7 @@
 
 @section('styles')
 
-    <link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dataTables.bootstrap.min.css')}}">
 
 
 @endsection
@@ -49,7 +49,6 @@
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>
-                                    <th>Updated at</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -60,7 +59,7 @@
                                             <td><img  height="30" width="30" src="/GroupPostPics/{{$post->image_url ? $post->image_url : "No photo"}}" alt=""></td>
                                             <td>{{$post->user->first_name}}</td>
                                             <td>{{$post->title}}</td>
-                                            <td>{{$post->description}}</td>
+                                            <td>{{str_limit($post->description, $limit = 100, $end = '...')}}</td>
                                             <td><a href="{{route('post.edit', $post->id)}}"><span class="fa fa-edit"></span></a></td>
                                             <td>
                                                 <form method="post" id="delete-form-{{$post->id}}" action="{{route('post.destroy', $post->id)}}">
@@ -95,7 +94,6 @@
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>
-                                    <th>Updated at</th>
                                 </tr>
                                 </tfoot>
                             </table>
@@ -119,19 +117,8 @@
 
 @section('scripts')
 
-    <script src="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
-    <script src="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
-
-
-    <script>
-        $(function () {
-            // Replace the <textarea id="editor1"> with a CKEditor
-            // instance, using default configuration.
-            CKEDITOR.replace('editor1')
-            //bootstrap WYSIHTML5 - text editor
-            $('.textarea').wysihtml5()
-        })
-    </script>
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
     <script>
         $(function () {
             $('#example1').DataTable()
