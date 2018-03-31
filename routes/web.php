@@ -63,6 +63,8 @@ Route::group(['middleware' => ['web']], function (){
 
     Route::get('/activity', 'ActivityController@index')->name('activity');
 
+    Route::get('/activity/{activity}', 'ActivityController@show')->name('activity.see');
+
     Route::get('/activity/like/{id}', ['as' => 'activity.like', 'uses' => 'ActivityController@likeActivity']);
 
     Route::post('/activity/comment/{activity}', 'ActivityController@comment')->name('activity.comment');
