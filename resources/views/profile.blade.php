@@ -32,14 +32,14 @@
                     </div>
                     <div class="p-info form-group col-lg-12">
                         @if(Auth::user()->role_id == 1)
-                            <input type="text" placeholder="Position" id="position" value="Admin" class="form-control text-center padding-20">
+                            <input type="text" placeholder="Position" readonly  id="position" value="Admin" class="form-control text-center padding-20" style="background-color: transparent">
                         @else
-                            <input type="text" placeholder="Position" id="position"  value="Member" class="form-control text-center padding-20">
+                            <input type="text" placeholder="Position" readonly  id="position"  value="Member" class="form-control text-center padding-20" style="background-color: transparent">
                         @endif
 
                     </div>
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Community Role" id="com_role" value="Active Contributor" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Community Role" readonly  id="com_role" value="Active Contributor" class="form-control text-center padding-20" style="background-color: transparent">
                     </div>
                     <div class="p-info form-group col-lg-12">
                         <input type="text" placeholder="Contact Info" id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20">
