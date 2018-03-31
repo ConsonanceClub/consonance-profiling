@@ -52,4 +52,9 @@ return [
         'client_secret' => env('LINKEDIN_SECRET'),
         'redirect' =>  'http://localhost:9000/auth/login/linkedin/accepted',
     ],
+
+    'admin' => [
+        'mtudonu85@gmail.com',
+        'mayor_ray2000@yahoo.com',
+    ]
 ];
