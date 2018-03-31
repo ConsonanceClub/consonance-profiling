@@ -56,41 +56,29 @@
 						<a href="{{route('activity')}}">ACTIVITY</a>
 					</li>
 					<li>
-						<a href="#">BLOG</a>
-					</li>
-					<li>
 						<a href="{{route('groupn.index')}}">GROUPS</a>
 					</li>
-					<li>
-						<a href="{{url('/members')}}">MEMBERS</a>
-					</li>
+					@if(Auth::user()->role_id == 1)
+						<li>
+							<a href="{{url('/members')}}">MEMBERS</a>
+						</li>
+					@endif
+					<li><a href="">Hi {{Auth::user()->first_name}}!</a></li>
 					<li>
 						<a href="{{url('/profile')}}">PROFILE</a>
 					</li>
+
+					<a class="btn navbar-btn hidden-xs margin-left-20" style="margin-top: 30px" href="{{ route('auth.logout') }}">LOG OUT</a>
+
 				</ul>
 
 				{{--Make visible on Mobile--}}
 				<!--<a class="btn navbar-btn visible-xs" href="{{-- route('member.sign-in') --}}">SIGN IN</a>-->
 				{{--Make visible on Desktop--}}
 				<!--<a class="btn navbar-btn hidden-xs margin-left-20" href="{{--route('member.sign-in')--}}">SIGN IN</a>-->
-				<a class="btn navbar-btn hidden-xs margin-left-20" style="margin-top: 30px" href="{{ route('auth.logout') }}">LOG OUT</a>
 			</div>
 
-                <li class="list-box user-admin dropdown">
-                    <div class="admin-details">
-                        <div class="name">Mayowa</div>
-                        <div class="designation">System Admin</div>
-                    </div>
-                    <a id="drop4" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-account_circle"></i>
-                    </a>
-                    <ul class="dropdown-menu sm">
-                        <li class="dropdown-content">
-                            <a href="forgot-pwd.html">Change Password</a>
-                            <a href="login.html">Logout</a>
-                        </li>
-                    </ul>
-                </li>
+
 			@endif
 
 		</div><!--/.navbar-collapse -->
