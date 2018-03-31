@@ -31,7 +31,7 @@ class UsersTableSeeder extends Seeder
             $members->twitter_username = $faker->userName;
             $members->github_username = $faker->userName;
             $members->slack_username = $faker->userName;
-            $members->school_id = $i;
+            $members->school = $faker->streetName;
             $members->active = rand(0,1);
             $members->save();
         }
