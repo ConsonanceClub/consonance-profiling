@@ -76,7 +76,7 @@
                                                         <span>
                                                             <i class="fa fa-calendar event-id"></i>
                                                                 </span>
-                                                        <a href="#" class="event"><h4>{{$activity->title}}</h4></a>
+                                                        <a href="{{route('activity.see', $activity->id)}}" class="event"><h4>{{$activity->title}}</h4></a>
                                                         <p>{{str_limit($activity->body, $limit = 180, $end = '...')}}</p>
                                                         <ul class="mt-20">
                                                             <li>
@@ -108,7 +108,7 @@
 
                                                             </li>
                                                             <li>
-                                                                <a href="#" data-toggle="modal" data-target="#modal-lg{{$activity->id}}"><span><i class="fa fa-comment"></i></span> Comment</a>
+                                                                <a href="{{route('activity.see', $activity->id)}}"><span><i class="fa fa-comment"></i></span> Comment</a>
                                                             </li>
                                                             <li>
                                                                 <a href="#">
@@ -122,86 +122,11 @@
                                                             </li>
 
                                                             <li class="view-btn">
-                                                                <a href="#" data-toggle="modal" data-target="#modal-lg{{$activity->id}}">view</a>
+                                                                <a href="{{route('activity.see', $activity->id)}}">view</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
-
-
-
-
-                                                    <!-- ============ MODAL =================-->
-
-                                                    <div class="modal fade" id="modal-lg{{$activity->id}}" tabindex="-1" role="dialog">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                    <div class="section-title mb-10">
-                                                                        <h6 class="text-center">EVENT</h6>
-                                                                        <div class="event-modal-image">
-                                                                            <img class="img-responsive" src="/ActivityPics/{{$activity->image_url ? $activity->image_url : "No photo"}}" alt="">
-                                                                        </div>
-                                                                        <h2>{{$activity->title}}</h2>
-                                                                        <p>{{$activity->body}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                                    <div class="modal-body text-center">
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-calendar-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('jS F, Y', strtotime($activity->start_date))}}</span>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('ga', strtotime($activity->start_date))}}</span>
-                                                                        </div>
-                                                                        {{--<div class="col-md-4 col-sm-4 info-col">--}}
-                                                                            {{--<i class="fa fa-map-pin"></i>--}}
-                                                                            {{--<br>--}}
-                                                                            {{--<span> Landmark Event Centre</span>--}}
-                                                                        {{--</div>--}}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-blog-comments mt-10 modal-body col-lg-12 col-md-12">
-                                                                    <form action="{{route('activity.comment', $activity->id)}}" role="form" method="post">
-                                                                        {{csrf_field()}}
-                                                                    <div class="section-field col-md-10 clearfix" style="display: inline;">
-                                                                        <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
-                                                                    </div>
-                                                                        <button type="submit" class="comment-btn1">SEND <i class="fa fa-send" style="font-size: 16px; margin-top: 5px; padding-left: 7px; "></i></button>
-                                                                    </form>
-                                                                    <h5 class="mt-10 mb-10">Comments</h5>
-                                                                    @foreach($activity->activity_comments as $comment)
-
-                                                                    <div class="comments-1">
-                                                                        <div class="comments-info">
-                                                                            <h4 class="comment-title">{{$comment->user->first_name}}
-                                                                                <span>{{date('jS F, Y', strtotime($comment->created_at))}}</span>
-                                                                            </h4>
-                                                                            <p>{{$comment->comment}}</p>
-                                                                        </div>
-                                                                    </div>
-                                                                    @endforeach
-
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-
-
-                                                    <!-- =========== MODAL  END   ===========-->
 
                                                 @endforeach
 
@@ -232,7 +157,7 @@
                                                                 <img class="img-responsive" src="/ActivityPics/{{$event->image_url ? $event->image_url : "No photo"}}" alt="">
                                                             </div>
                                                             <p class="post-time">{{date('jS F, Y', strtotime($event->start_date))}} | {{date('ga', strtotime($event->start_date))}}</p>
-                                                            <a href="#" class="event">
+                                                            <a href="{{route('activity.see', $event->id)}}" class="event">
                                                                 <h4>{{$event->title}}
                                                                     <span>
                                                                       <i class="fa fa-calendar event-id"></i>
@@ -261,14 +186,14 @@
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$event->id}}">
+                                                                    <a href="{{route('activity.see', $event->id)}}">
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$event->id}}">view</a>
+                                                                    <a href="{{route('activity.see', $event->id)}}">view</a>
 
                                                                 </li>
                                                             </ul>
@@ -276,83 +201,12 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="modal fade" id="modal-lg{{$event->id}}" tabindex="-1" role="dialog">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                    <div class="section-title mb-10">
-                                                                        <h6 class="text-center">EVENT</h6>
-                                                                        <div class="event-modal-image">
-                                                                            <img class="img-responsive" src="/ActivityPics/{{$event->image_url ? $event->image_url : "No photo"}}" alt="">
-                                                                        </div>
-                                                                        <h2>{{$event->title}}</h2>
-                                                                        <p>{{$event->body}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                                    <div class="modal-body text-center">
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-calendar-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('jS F, Y', strtotime($event->start_date))}}</span>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('ga', strtotime($event->start_date))}}</span>
-                                                                        </div>
-                                                                        {{--<div class="col-md-4 col-sm-4 info-col">--}}
-                                                                        {{--<i class="fa fa-map-pin"></i>--}}
-                                                                        {{--<br>--}}
-                                                                        {{--<span> Landmark Event Centre</span>--}}
-                                                                        {{--</div>--}}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-blog-comments mt-10 modal-body col-lg-12 col-md-12">
-                                                                    <form action="{{route('activity.comment', $event->id)}}" role="form" method="post">
-                                                                        {{csrf_field()}}
-                                                                        <div class="section-field col-md-10 clearfix" style="display: inline;">
-                                                                            <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
-                                                                        </div>
-                                                                        <button type="submit" class="comment-btn1">SEND <i class="fa fa-send" style="font-size: 16px; margin-top: 5px; padding-left: 7px; "></i></button>
-                                                                    </form>
-                                                                    <h5 class="mt-10 mb-10">Comments</h5>
-                                                                    @foreach($event->activity_comments as $comment)
-
-                                                                        <div class="comments-1">
-                                                                            <div class="comments-info">
-                                                                                <h4 class="comment-title">{{$comment->user->first_name}}
-                                                                                    <span>{{date('jS F, Y', strtotime($comment->created_at))}}</span>
-                                                                                </h4>
-                                                                                <p>{{$comment->comment}}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
 
                                                 @endforeach
 
 
                                             </div>
-
-
-
-
-                                            <!-- ===========Create event  Tab 2========== -->
-
-                                            <!-- ===============start of Meet-up activity tab ============= -->
-
 
 
                                             <div class="tab-pane fade" id="meetUps">
@@ -363,7 +217,7 @@
                                                     <div class="event-activity mt-20 mb-40">
                                                         <div class="event-info">
                                                             <p class="post-time">{{date('jS F, Y', strtotime($meetup->start_date))}} | {{date('ga', strtotime($meetup->start_date))}}</p>
-                                                            <a href="#" class="event">
+                                                            <a href="{{route('activity.see', $meetup->id)}}" class="event">
                                                                 <h4>{{$meetup->title}}
                                                                     <span>
                                                                       <i class="fa fa-users event-id"></i>
@@ -384,14 +238,14 @@
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$meetup->id}}">
+                                                                    <a href="{{route('activity.see', $meetup->id)}}">
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$meetup->id}}">view</a>
+                                                                    <a href="{{route('activity.see', $meetup->id)}}">view</a>
 
                                                                 </li>
                                                             </ul>
@@ -400,76 +254,10 @@
                                                     {{--</div>--}}
                                                 </div>
 
-                                                <div class="modal fade" id="modal-lg{{$meetup->id}}" tabindex="-1" role="dialog">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                    <div class="section-title mb-10">
-                                                                        <h6 class="text-center">MeetUp</h6>
-                                                                        <div class="event-modal-image">
-                                                                            <img class="img-responsive" src="/ActivityPics/{{$meetup->image_url ? $meetup->image_url : "No photo"}}" alt="">
-                                                                        </div>
-                                                                        <h2>{{$meetup->title}}</h2>
-                                                                        <p>{{$meetup->body}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                                    <div class="modal-body text-center">
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-calendar-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('jS F, Y', strtotime($meetup->start_date))}}</span>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('ga', strtotime($meetup->start_date))}}</span>
-                                                                        </div>
-                                                                        {{--<div class="col-md-4 col-sm-4 info-col">--}}
-                                                                        {{--<i class="fa fa-map-pin"></i>--}}
-                                                                        {{--<br>--}}
-                                                                        {{--<span> Landmark Event Centre</span>--}}
-                                                                        {{--</div>--}}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-blog-comments mt-10 modal-body col-lg-12 col-md-12">
-                                                                    <form action="{{route('activity.comment', $meetup->id)}}" role="form" method="post">
-                                                                        {{csrf_field()}}
-                                                                        <div class="section-field col-md-10 clearfix" style="display: inline;">
-                                                                            <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
-                                                                        </div>
-                                                                        <button type="submit" class="comment-btn1">SEND <i class="fa fa-send" style="font-size: 16px; margin-top: 5px; padding-left: 7px; "></i></button>
-                                                                    </form>
-                                                                    <h5 class="mt-10 mb-10">Comments</h5>
-                                                                    @foreach($meetup->activity_comments as $comment)
-
-                                                                        <div class="comments-1">
-                                                                            <div class="comments-info">
-                                                                                <h4 class="comment-title">{{$comment->user->first_name}}
-                                                                                    <span>{{date('jS F, Y', strtotime($comment->created_at))}}</span>
-                                                                                </h4>
-                                                                                <p>{{$comment->comment}}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
                                                 @endforeach
 
                                             </div>
-
-
-
 
                                             <!-- ========end of meet-up activity tab ============== -->
 
@@ -483,7 +271,7 @@
                                                     <div class="event-activity mt-20 mb-40">
                                                         <div class="event-info">
                                                             <p class="post-time">{{date('jS F, Y', strtotime($project->start_date))}} | {{date('ga', strtotime($project->start_date))}}</p>
-                                                            <a href="#" class="event">
+                                                            <a href="{{route('activity.see', $project->id)}}" class="event">
                                                                 <h4>{{$project->title}}
                                                                     <span>
                                                                       <i class="fa fa-folder event-id"></i>
@@ -503,14 +291,14 @@
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$project->id}}">
+                                                                    <a href="{{route('activity.see', $project->id)}}" >
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="#" data-toggle="modal" data-target="#modal-lg{{$project->id}}">view</a>
+                                                                    <a href="{{route('activity.see', $project->id)}}">view</a>
 
                                                                 </li>
                                                             </ul>
@@ -518,69 +306,6 @@
                                                     </div>
                                                 </div>
 
-                                                    <div class="modal fade" id="modal-lg{{$project->id}}" tabindex="-1" role="dialog">
-                                                        <div class="modal-dialog modal-lg" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                    <div class="section-title mb-10">
-                                                                        <h6 class="text-center">MeetUp</h6>
-                                                                        <div class="event-modal-image">
-                                                                            <img class="img-responsive" src="/ActivityPics/{{$project->image_url ? $project->image_url : "No photo"}}" alt="">
-                                                                        </div>
-                                                                        <h2>{{$project->title}}</h2>
-                                                                        <p>{{$project->body}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                                                    <div class="modal-body text-center">
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-calendar-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('jS F, Y', strtotime($project->start_date))}}</span>
-                                                                        </div>
-                                                                        <div class="col-md-4 col-sm-4 info-col">
-                                                                            <i class="fa fa-clock-o"></i>
-                                                                            <br>
-                                                                            <span>{{date('ga', strtotime($project->start_date))}}</span>
-                                                                        </div>
-                                                                        {{--<div class="col-md-4 col-sm-4 info-col">--}}
-                                                                        {{--<i class="fa fa-map-pin"></i>--}}
-                                                                        {{--<br>--}}
-                                                                        {{--<span> Landmark Event Centre</span>--}}
-                                                                        {{--</div>--}}
-                                                                    </div>
-                                                                </div>
-                                                                <div class="modal-blog-comments mt-10 modal-body col-lg-12 col-md-12">
-                                                                    <form action="{{route('activity.comment', $project->id)}}" role="form" method="post">
-                                                                        {{csrf_field()}}
-                                                                        <div class="section-field col-md-10 clearfix" style="display: inline;">
-                                                                            <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
-                                                                        </div>
-                                                                        <button type="submit" class="comment-btn1">SEND <i class="fa fa-send" style="font-size: 16px; margin-top: 5px; padding-left: 7px; "></i></button>
-                                                                    </form>
-                                                                    <h5 class="mt-10 mb-10">Comments</h5>
-                                                                    @foreach($project->activity_comments as $comment)
-
-                                                                        <div class="comments-1">
-                                                                            <div class="comments-info">
-                                                                                <h4 class="comment-title">{{$comment->user->first_name}}
-                                                                                    <span>{{date('jS F, Y', strtotime($comment->created_at))}}</span>
-                                                                                </h4>
-                                                                                <p>{{$comment->comment}}</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    @endforeach
-
-
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
 
                                                 @endforeach

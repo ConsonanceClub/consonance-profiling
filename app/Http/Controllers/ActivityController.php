@@ -18,13 +18,13 @@ class ActivityController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('index','show');
 
     }
 
     public function index(){
 
-        $activities = Activity::whereActive(1)->latest()->paginate(2);
+        $activities = Activity::whereActive(1)->latest()->paginate(6);
 
 
         $activiti = Activity::whereActive(1)->latest()->take(4)->get();
@@ -47,6 +47,20 @@ class ActivityController extends Controller
 //        return $projects;
 
         return view('activity.index', compact('activities', 'meetups', 'events', 'projects','activiti','postsAll'));
+
+    }
+
+
+    public function show(Activity $activity){
+
+
+        $postsAll = Post::latest()->take(4)->get();
+
+        $activiti = Activity::whereActive(1)->latest()->take(4)->get();
+
+
+        return view('activity.show', compact('activity','activiti','postsAll'));
+
 
     }
 
