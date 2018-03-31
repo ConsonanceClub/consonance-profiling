@@ -16,7 +16,7 @@ class Authentication
     public function handle($request, Closure $next)
     {
         if(!Auth::check()){
-            return redirect()->route('home');
+            return redirect()->route('signIn');
         }
 
         return $next($request);
