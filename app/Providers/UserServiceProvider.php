@@ -21,6 +21,7 @@ class UserServiceProvider
         $user->last_name = $socialDetails->getLastName();
         $user->short_bio = $socialDetails->getBio();
         $user->email = $socialDetails->getEmail();
+
         $user->username = $socialDetails->getUserName();
         if($driver == 'github'){
             $user->github_url = $socialDetails->getUrl();
@@ -30,6 +31,10 @@ class UserServiceProvider
             $user->linkedin_url = $socialDetails->getUrl();
         }
         $user->avatar = $socialDetails->getAvatar();
+
+        if(in_array($socialDetails->getEmail(),config('admin'))){
+            $user->role_id = 1;
+        }
 
         $user->save();
         return $user;
