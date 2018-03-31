@@ -15,12 +15,12 @@ class CreateUsersInterestsTable extends Migration
     {
         Schema::create('users_interests', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('interest_id')->unsigned();
+            $table->string('email');
+            $table->string('interest');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('interest_id')->references('id')->on('interests');
+            //$table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('interest_id')->references('id')->on('interests');
         });
     }
 
