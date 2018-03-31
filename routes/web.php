@@ -15,10 +15,6 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function (){
 
-    Route::get('/logout',[
-        'uses' => 'SocialAuthController@logout',
-        'as' => 'auth.logout'
-    ]);
 
     Route::get('/sign-in', function (){
         return view('auth.register');
@@ -89,6 +85,12 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'Auth\SocialAuthController@login',
         'as' => 'auth.accept'
     ]);
+
+    Route::get('/logout',[
+        'uses' => 'Auth\SocialAuthController@logout',
+        'as' => 'auth.logout'
+    ]);
+
 });
 
 
