@@ -13,19 +13,7 @@
 use Illuminate\Http\Request;
 
 
-Route::group(['middleware' => ['web']], function (){
-
-
-    Route::get('/sign-in', function (){
-        return view('auth.register');
-    });
-
-    Route::get('/groups', function (){
-        return view('groups');
-    });
-    Route::get('/group-view', function (){
-        return view('group-view');
-    });
+Route::group(['middleware' => 'web'], function (){
 
     Route::get('/', function (){
         return view('home');
@@ -42,6 +30,33 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('/member/sign-up',[ 'as'=>'member.sign-up', function () {
         return view('signUp');
     }]);
+
+    Route::get('auth/login/{driver}',[
+        'uses' => 'Auth\SocialAuthController@loginUserViaDriver',
+        'as' => 'social.auth'
+    ]);
+
+    Route::get('/auth/login/{driver}/accepted', [
+        'uses' => 'Auth\SocialAuthController@login',
+        'as' => 'auth.accept'
+    ]);
+});
+
+
+Route::group(['middleware' => ['user.auth']], function (){
+
+
+    Route::get('/sign-in', function (){
+        return view('auth.register');
+    });
+
+    Route::get('/groups', function (){
+        return view('groups');
+    });
+    Route::get('/group-view', function (){
+        return view('group-view');
+    });
+
 
     Route::get('/members', function () {
         return view('members');
@@ -78,15 +93,6 @@ Route::group(['middleware' => ['web']], function (){
         'as' => 'welcome'
     ]);
 
-    Route::get('auth/login/{driver}',[
-        'uses' => 'Auth\SocialAuthController@loginUserViaDriver',
-        'as' => 'social.auth'
-    ]);
-
-    Route::get('/auth/login/{driver}/accepted', [
-        'uses' => 'Auth\SocialAuthController@login',
-        'as' => 'auth.accept'
-    ]);
 
     Route::get('/logout',[
         'uses' => 'Auth\SocialAuthController@logout',
