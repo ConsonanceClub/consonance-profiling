@@ -23,7 +23,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand row" href="/">
+			<a class="navbar-brand row" href="/" style="margin-left: -130px; margin-top: 8px;">
 				<img class="col-sm-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
 				<h2 class="cons col-sm-8 right text-white"><b>Consonance</b></h2>
 				<style>
@@ -47,8 +47,9 @@
 		</div>
 
 		{{--point of navbar collapse--}}
-		<div id="navbar" class="collapse navbar-collapse">
 
+		<div id="navbar" class="collapse navbar-collapse">
+			@if(Auth::check())
 			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li>
@@ -69,11 +70,12 @@
 				</ul>
 
 				{{--Make visible on Mobile--}}
-				<a class="btn navbar-btn visible-xs" href="{{ route('member.sign-in') }}">SIGN IN</a>
+				<!--<a class="btn navbar-btn visible-xs" href="{{-- route('member.sign-in') --}}">SIGN IN</a>-->
 				{{--Make visible on Desktop--}}
-				<a class="btn navbar-btn hidden-xs margin-left-20" href="{{ route('member.sign-in') }}">SIGN IN</a>
+				<!--<a class="btn navbar-btn hidden-xs margin-left-20" href="{{--route('member.sign-in')--}}">SIGN IN</a>-->
+				<a class="btn navbar-btn hidden-xs margin-left-20" style="margin-top: 30px" href="{{ route('auth.logout') }}">LOG OUT</a>
 			</div>
-
+			@endif
 		</div><!--/.navbar-collapse -->
 
 	</div>
