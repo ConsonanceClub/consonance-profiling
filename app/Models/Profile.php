@@ -16,7 +16,7 @@ use DB;
 
 class Profile
 {
-    public function updateUserDetails($name, $bio, $email, $school){
+    public function updateUserDetails($name, $bio, $email, $school, $profession, $address){
         $id = Auth::user()->id;
         $user = User::find($id);
         if(isset($name)){
@@ -33,7 +33,9 @@ class Profile
         }
         $user->email = isset($email)?$email:"";
         $user->short_bio = isset($bio)?$bio:"";
-        $user->school = isset($school)?$school:" ";
+        $user->school = isset($school)?$school:"";
+        $user->profession = isset($profession)?$profession:"";
+        $user->address = isset($address)?$address:" ";
         $result =$user->save();
 
         return $result;
