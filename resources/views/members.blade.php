@@ -48,7 +48,7 @@
                     <a href="#" data-toggle="modal" data-target="#id-modal-{{$key}}"><img src="{{$value->avatar}}" class="avatar"></a>
                     <div class="text">
                         <div class="name"><a href="#" data-toggle="modal" data-target="#id-modal">{{$value->first_name . ' ' . $value->last_name}}</a></div>
-                        <div class="job">Graphic Designer</div>
+                        <div class="job">{{$value->profession}}</div>
                     </div>
                 </div>
             </div>
