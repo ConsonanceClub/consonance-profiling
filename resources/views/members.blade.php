@@ -42,21 +42,22 @@
             <input type="search" placeholder="search for members" class="form-control searchbar text-center">
         </div>
         <div class="row member-list">
-            @for ($i = 0;$i < 12; $i++)
+            @foreach (\App\User::all() as $key => $value)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="member">
-                    <a href="#" data-toggle="modal" data-target="#id-modal"><img src="/images/logo-146x150.png" class="avatar"></a>
+                    <a href="#" data-toggle="modal" data-target="#id-modal-{{$key}}"><img src="{{$value->avatar}}" class="avatar"></a>
                     <div class="text">
-                        <div class="name"><a href="#" data-toggle="modal" data-target="#id-modal">John Doe</a></div>
+                        <div class="name"><a href="#" data-toggle="modal" data-target="#id-modal">{{$value->first_name . ' ' . $value->last_name}}</a></div>
                         <div class="job">Graphic Designer</div>
                     </div>
                 </div>
             </div>
-            @endfor
+            @endforeach
         </div>
     </div>
 
-     <div class="modal fade" id="id-modal" tabindex="-1" role="dialog">
+    @foreach(\App\User::all() as $key => $value)
+     <div class="modal fade" id="id-modal-{{$key}}" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -65,24 +66,24 @@
                   </button>
                   <div class="section-title mb-10">
                     <div class="event-modal-image text-center member">
-                      <img src="/images/logo-146x150.png" class="avatar">
+                      <img src="{{$value->avatar}}" class="avatar">
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12">
                   <div class="modal-body text-left">
                     <label>Name:</label>
-                    <h5>John Doe</h5>
-                    <label>Job:</label>
-                    <p>Graphic Designer</p>
+                    <h5>{{$value->first_name . ' ' . $value->last_name}}</h5>
+                    <label>Profession:</label>
+                    <p>{{$value->profession}}</p>
                     <label>Description:</label>
-                    <p>I'm a Graphic designer who has a passion for Art and Design</p>
+                    <p>{{$value->short_bio}}</p>
                     <label>School:</label>
-                    <p>University of Lagos, Akoka</p>
+                    <p>{{$value->school}}</p>
                     <label>Location (Address):</label>
-                    <p>Lagos</p>
+                    <p>{{$value->address}}</p>
                     <label>Joined:</label>
-                    <p>31 - 03 - 2018</p>
+                    <p>{{explode(' ',$value->created_at)[0]}}</p>
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -91,7 +92,7 @@
               </div>
             </div>
           </div>
-
+    @endforeach
           
           <!-- =========== MODAL  END   ===========-->
 
