@@ -103,9 +103,9 @@
                                                 <span class="ml-40">Share: </span>
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u=consonance.club/activity/{{$activity->slug}}" target="_blank">
                                                     <i class="fa fa-facebook" style="margin-left: 10px;"></i> </a>
-                                                <a href="">
-                                                    <i class="fa fa-twitter" style="margin-left: 10px;"></i>
-                                                </a>
+                                                {{--<a href="">--}}
+                                                    {{--<i class="fa fa-twitter" style="margin-left: 10px;"></i>--}}
+                                                {{--</a>--}}
                                             </div>
                                         </div>
 
