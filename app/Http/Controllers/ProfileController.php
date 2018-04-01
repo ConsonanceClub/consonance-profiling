@@ -32,8 +32,10 @@ class ProfileController extends Controller {
         $email = $request->get('email');
         $interest = $request->get('interests');
         $school = $request->get('school');
+        $profession = $request->get('profession');
+        $address = $request->get('address');
 
-        $details_response = $this->profile->updateUserDetails($name, $bio, $email, $school);
+        $details_response = $this->profile->updateUserDetails($name, $bio, $email, $school, $profession, $address);
         $profile_response = $this->profile->updateUserInterests($interest);
 
         if( $details_response && $profile_response){
