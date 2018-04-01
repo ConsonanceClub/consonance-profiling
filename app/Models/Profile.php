@@ -69,7 +69,8 @@ class Profile
 
     public static function interests(){
         $interests = array();
-        foreach (UserInterests::all() as $key => $value){
+        $email = Auth::user()->email;
+        foreach (UserInterests::where('email', $email)->get() as $key => $value){
             array_push($interests, $value->interest);
         }
 
