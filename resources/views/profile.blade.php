@@ -64,7 +64,7 @@
             </div>
             <h3 class="text-white text-uppercase"><strong>SCHOOL</strong></h3>
             <div class="bio-text">
-                <input type="text" id="school" placeholder="Insert school name" value="{{--Auth::user()->school--}}" class="form-control padding-20 text-center">
+                <input type="text" id="school" placeholder="Insert school name" value="{{Auth::user()->school}}" class="form-control padding-20 text-center">
             </div>
             <h3 class="text-white text-uppercase"><strong>INTRESTS</strong></h3>
             {{$count = 0}}
@@ -72,7 +72,7 @@
                 <div class="bio-text row margin-bottom-10">
                     @foreach(\App\Models\Interest::all() as  $key => $value)
                         <div class="col-xs-2 col-sm-2 s-boxes "><a>{{$value->name}}</a>
-                            <input type="checkbox" class="interest-cbox" name="" id="{{$value->name}}">
+                            <input type="checkbox" class="interest-cbox" name="" {{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}} id="{{$value->name}}">
                         </div>
                     @endforeach
                 </div>
