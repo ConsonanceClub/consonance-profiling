@@ -42,7 +42,7 @@
                         <input type="text" placeholder="Community Role" readonly  id="com_role" value="Active Contributor" class="form-control text-center padding-20" style="background-color: transparent">
                     </div>
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Contact Info" readonly id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Contact Info" readonly id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20" style="background-color: transparent">
                     </div>
 
                     <div class="p-info form-group col-lg-12">
