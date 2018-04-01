@@ -64,4 +64,13 @@ class Profile
 
         return true;
     }
+
+    public static function interests(){
+        $interests = array();
+        foreach (UserInterests::all() as $key => $value){
+            array_push($interests, $value->interest);
+        }
+
+        return $interests;
+    }
 }
