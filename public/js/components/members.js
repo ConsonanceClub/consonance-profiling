@@ -31,6 +31,8 @@ function updateProfile() {
     const email = $('#email').val();
     const bio = $('#profile-bio').val();
     const school = $('#school').val();
+    const profession = $('#profession').val();
+    const address = $('#address').val();
     const checkedInterests = {};
 
 
@@ -45,7 +47,7 @@ function updateProfile() {
     $.ajax({
         url:'/update-profile',
         type:'GET',
-        data:{interests:checkedInterests, name:name, bio:bio, email:email, school:school},
+        data:{interests:checkedInterests, name:name, bio:bio, email:email, school:school, profession:profession, address:address},
         success:function (data) {
             const result = JSON.parse(data);
         }
