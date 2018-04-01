@@ -11,7 +11,7 @@ namespace App\Models;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
-use App\UserInterests;
+use App\Models\UserInterests;
 use DB;
 
 class Profile
@@ -41,13 +41,20 @@ class Profile
 
     public function updateUserInterests($interests){
         $email = Auth::user()->email;
-        $result = null;
-        $userInterests = new UserInterests;
+
         foreach ($interests as $interest => $condition){
-            if($condition === true){
-                $userInterests->email = $email;
-                $userInterests->interest = $interest;
-                $userInterests->save();
+
+            if($condition === 'true'){
+
+                if(UserInterests::where('email', $email)->where('interest', $interest)->first() instanceof UserInterests){
+
+                }else{
+                    $userInterests = new UserInterests;
+                    $userInterests->email = $email;
+                    $userInterests->interest = $interest;
+                    $userInterests->save();
+                }
+
             }else{
                 UserInterests::where('email', $email)
                     ->where('interest', $interest)
@@ -55,6 +62,6 @@ class Profile
             }
         }
 
-        return $result;
+        return true;
     }
 }
