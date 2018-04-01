@@ -46,10 +46,10 @@
                     </div>
 
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Profession"  value="{{Auth::user()->profession}}" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Profession" id="profession"  value="{{Auth::user()->profession}}" class="form-control text-center padding-20">
                     </div>
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Address" value="{{Auth::user()->address}}" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Address"  id="address" value="{{Auth::user()->address}}" class="form-control text-center padding-20">
                     </div>
 
                 </div>
