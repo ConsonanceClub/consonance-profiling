@@ -35,7 +35,7 @@ class Profile
         $user->short_bio = isset($bio)?$bio:"";
         $user->school = isset($school)?$school:"";
         $user->profession = isset($profession)?$profession:"";
-        $user->address = isset($address)?$address:" ";
+        $user->address = isset($address)?$address:"";
         $result =$user->save();
 
         return $result;
