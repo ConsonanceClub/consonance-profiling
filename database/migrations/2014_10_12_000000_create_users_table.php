@@ -34,8 +34,10 @@ class CreateUsersTable extends Migration
             $table->string('linkedin_username', 45)->default();
             $table->string('linkedin_url', 45)->default();
             $table->string('slack_username', 45)->default();
-            $table->string('school')->default();
+            $table->string('school', 1024)->default();
+            $table->string('address', 1024)->default();
             $table->tinyInteger('active')->default();
+            $table->string('profession', 45)->default();
             $table->rememberToken();
             $table->timestamps();
             
