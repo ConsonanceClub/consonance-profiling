@@ -69,16 +69,25 @@
                                         <p>{{$activity->body}}</p>
                                         <div class="event-detail">
                                             <div class="row mt-20">
-                                                <div class="col-lg-6 col-md-6">
+                                                <div class="col-lg-4 col-md-4">
                                                     <i class="fa fa-calendar-o"></i>
                                                     <br>
                                                     <span>{{date('jS F, Y', strtotime($activity->start_date))}} - {{date('jS F, Y', strtotime($activity->end_date))}}</span>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6">
+                                                <div class="col-lg-4 col-md-4">
                                                     <i class="fa fa-clock-o"></i>
                                                     <br>
                                                     <span> {{date('ga', strtotime($activity->start_date))}} - {{date('ga', strtotime($activity->end_date))}}</span>
                                                 </div>
+                                                @if($activity->location)
+
+                                                <div class="col-lg-4 col-md-4">
+                                                    <i class="fa fa-map-pin"></i>
+                                                    <br>
+                                                    <span>{{$activity->location}}</span>
+                                                </div>
+
+                                                @endif
 
                                             </div>
                                         </div>
@@ -92,11 +101,11 @@
                                                     <span class="text-muted likes-count" style="color:#2388db;">{{ $activity->likes()->count() }} Like(s)</span>
                                                 </a>
                                                 <span class="ml-40">Share: </span>
-                                                <a href="#">
+                                                <a href="https://www.facebook.com/sharer/sharer.php?u=consonance.club/activity/{{$activity->slug}}" target="_blank">
                                                     <i class="fa fa-facebook" style="margin-left: 10px;"></i> </a>
-                                                <a href="">
-                                                    <i class="fa fa-twitter" style="margin-left: 10px;"></i>
-                                                </a>
+                                                {{--<a href="">--}}
+                                                    {{--<i class="fa fa-twitter" style="margin-left: 10px;"></i>--}}
+                                                {{--</a>--}}
                                             </div>
                                         </div>
 

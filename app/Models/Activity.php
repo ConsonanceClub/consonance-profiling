@@ -17,6 +17,11 @@ class Activity extends Model
         'image_url',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     function user(){
         return $this->belongsTo('App\User');
     }

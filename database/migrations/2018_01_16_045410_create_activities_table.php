@@ -18,7 +18,9 @@ class CreateActivitiesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->string('title', 50);
+            $table->string('location', 191)->nullable();
             $table->longText('body');
+            $table->string('slug');
             $table->string('image_url');
             $table->tinyInteger('active');
             $table->dateTime('start_date');

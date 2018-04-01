@@ -44,7 +44,7 @@
                                     <th>Id</th>
                                     <th>Photo</th>
                                     <th>Group Name</th>
-                                    <th>Active</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>
@@ -55,8 +55,8 @@
                                     @foreach($groups as $group)
                                         <tr>
                                             <td>{{$group->id}}</td>
-                                            <td><a href="{{route('post.index', $group->id)}}"><img  height="30" width="30" src="/GroupProfilePic/{{$group->icon_url ? $group->icon_url : "No photo"}}" alt=""></a></td>
-                                            <td><a href="{{route('post.index', $group->id)}}">{{$group->name}}</a></td>
+                                            <td><a href="{{route('post.index', $group->slug)}}"><img  height="30" width="30" src="/GroupProfilePic/{{$group->icon_url ? $group->icon_url : "No photo"}}" alt=""></a></td>
+                                            <td><a href="{{route('post.index', $group->slug)}}">{{$group->name}}</a></td>
                                             <td>{{$group->active == 1 ? 'Active': 'Not Active' }}</td>
                                             <td><a href="{{route('group.edit', $group->id)}}"><span class="fa fa-edit"></span></a></td>
                                             <td>
@@ -87,7 +87,7 @@
                                     <th>Id</th>
                                     <th>Photo</th>
                                     <th>Group Name</th>
-                                    <th>Active</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>

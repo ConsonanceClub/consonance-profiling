@@ -28,13 +28,18 @@
                             <div class="col-lg-6 col-lg-offset-3">
                                 <div class="form-group">
                                     <label for="title">Name</label>
-                                    <input type="text" class="form-control" value="{{old('name') ? old('name') : $group->name}}" name="name" id="name" >
+                                    <input type="text" class="form-control" value="{{old('name') ? old('name') : $group->name}}" name="name" id="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="slug">Slug</label>
+                                    <input type="text"  name="slug" class="form-control" id="slug" value="{{$group->slug}}"placeholder="Enter slug" disabled>
                                 </div>
 
                                 <div class="row" style="margin-top: 25px; margin-bottom: 20px">
 
                                     <div class="form-group col-lg-4">
-                                        <label for="icon_url">Profile Pic</label>
+                                        <label for="icon_url">Group Pic - <img  height="30" width="30" src="/GroupProfilePic/{{$group->icon_url ? $group->icon_url : "No photo"}}" alt=""></label>
                                         <input type="file" id="icon_url" name="icon_url">
                                     </div>
 
@@ -45,7 +50,7 @@
 
                                 <div class="row">
                                     <div class="form-group col-lg-3">
-                                        <label for="status">Active </label>
+                                        <label for="status">Status </label>
                                         <div class="checkbox">
                                             <label><input type="checkbox" name="active" id="active"  @if(old('active') == 1 || $group->active == 1)checked @endif value="1">Active</label>
                                         </div>

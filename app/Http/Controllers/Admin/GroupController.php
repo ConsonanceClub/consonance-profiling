@@ -67,11 +67,13 @@ class GroupController extends Controller
 
         $group->name = $request->name;
 
+        $group->slug = str_slug($request->name, '-');
+
         $group->active = $request->active ? $request->active : 0;
 
         $group->save();
 
-        return redirect(route('group.index'));
+        return redirect(route('group.index'))->with('message', 'The Group has been created successfully');
 
     }
 
@@ -115,7 +117,6 @@ class GroupController extends Controller
 
         $this->validate(request(), [
 
-            'icon_url' => 'required',
             'name' => 'required|max:45',
 
 
@@ -133,15 +134,21 @@ class GroupController extends Controller
 
         $group = Group::findOrFail($id);
 
-        $group->icon_url = $name;
+        if ($file = $request->file('icon_url')) {
+
+            $group->icon_url = $name;
+
+        }
 
         $group->name = $request->name;
+
+        $group->slug = str_slug($request->name, '-');
 
         $group->active = $request->active ? $request->active : 0;
 
         $group->save();
 
-        return redirect(route('group.index'));
+        return redirect(route('group.index'))->with('message_update', 'The Group has been updated successfully');
 
     }
 
@@ -160,6 +167,6 @@ class GroupController extends Controller
 
         $group->delete();
 
-        return back();
+        return back()->with('message_delete', 'The Group has been deleted successfully');
     }
 }

@@ -10,12 +10,12 @@
                     <img class="img-responsive" src="/ActivityPics/{{$activity->image_url ? $activity->image_url : "No photo"}}" alt="">
                 </div>
                 <div class="recent-event-info">
-                    <a href="#"><strong>{{$activity->title}}</strong></a>
+                    <a href="{{route('activity.see', $activity->slug)}}"><strong>{{$activity->title}}</strong></a>
                     <span>
                         <i class="fa fa-calendar"></i>
-                        {{date('d-F-Y', strtotime($activity->start_date))}}
+                        {{date('d F, Y', strtotime($activity->start_date))}}
                       </span>
-                    <span class="view-events"><a href="{{route('activity')}}">view events</a></span>
+                    <span class="view-events"><a href="{{route('activity.see', $activity->slug)}}">view </a></span>
                 </div>
             </div>
             @endforeach

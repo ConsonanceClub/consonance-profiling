@@ -39,7 +39,7 @@ class PostController extends Controller
         $this->validate(request(), [
 
             'image_url' => 'required',
-            'title' => 'required|max:50',
+            'title' => 'required|unique:posts|max:50',
             'description' => 'required',
 
         ]);
@@ -66,11 +66,13 @@ class PostController extends Controller
 
         $post->title = $request->title;
 
+        $post->slug = str_slug($request->title, '-');
+
         $post->description = $request->description;
 
         $post->save();
 
-        return redirect(route('post.index', $grouping->id));
+        return redirect(route('post.index', $grouping->slug))->with('message', 'The Post has been ctrated successfully');
 
     }
 
@@ -92,7 +94,6 @@ class PostController extends Controller
 
         $this->validate(request(), [
 
-            'image_url' => 'required',
             'title' => 'required|max:50',
             'description' => 'required',
 
@@ -110,21 +111,27 @@ class PostController extends Controller
 
 //        $grouping = Group::find($group);
 
-        $post =  Post::find($post);
+        $postn =  Post::find($post);
 
-        $post->image_url = $name;
+        if ($file = $request->file('image_url')) {
+
+            $postn->image_url = $name;
+
+        }
 
 //        $post->group_id = $grouping->id;
 
-        $post->user_id = $request->user_id;
+        $postn->user_id = $request->user_id;
 
-        $post->title = $request->title;
+        $postn->title = $request->title;
 
-        $post->description = $request->description;
+        $postn->slug = str_slug($request->title, '-');
 
-        $post->save();
+        $postn->description = $request->description;
 
-        return redirect(route('post.index', $post->group_id));
+        $postn->save();
+
+        return redirect(route('post.index', $postn->group->slug))->with('message_update', 'The post has been updated successfully');;
 
 
     }
@@ -138,7 +145,7 @@ class PostController extends Controller
 
         $posting->delete();
 
-        return back();
+        return back()->with('message_delete', 'The Post has been deleted successfully');
 
     }
 
