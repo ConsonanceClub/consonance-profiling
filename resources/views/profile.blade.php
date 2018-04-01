@@ -44,14 +44,14 @@
                     <div class="p-info form-group col-lg-12">
                         <input type="text" placeholder="Contact Info" id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20">
                     </div>
-                    <!--
+
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Projects" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Profession"  value="{{Auth::user()->profession}}" class="form-control text-center padding-20">
                     </div>
                     <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="About Me" class="form-control text-center padding-20">
+                        <input type="text" placeholder="Address" value="{{Auth::user()->address}}" class="form-control text-center padding-20">
                     </div>
-                    -->
+
                 </div>
 		</div>
 
