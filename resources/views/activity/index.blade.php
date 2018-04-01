@@ -76,7 +76,7 @@
                                                         <span>
                                                             <i class="fa fa-calendar event-id"></i>
                                                                 </span>
-                                                        <a href="{{route('activity.see', $activity->id)}}" class="event"><h4>{{$activity->title}}</h4></a>
+                                                        <a href="{{route('activity.see', $activity->slug)}}" class="event"><h4>{{$activity->title}}</h4></a>
                                                         <p>{{str_limit($activity->body, $limit = 180, $end = '...')}}</p>
                                                         <ul class="mt-20">
                                                             <li>
@@ -87,10 +87,12 @@
                                                                 <i class="fa fa-clock-o"></i>
                                                                 <span>{{date('ga', strtotime($activity->start_date))}}</span>
                                                             </li>
-                                                            {{--<li>--}}
-                                                                {{--<i class="fa fa-map-pin"></i>--}}
-                                                                {{--<span> Landmark Event Centre</span>--}}
-                                                            {{--</li>--}}
+                                                            @if($activity->location)
+                                                            <li>
+                                                                <i class="fa fa-map-pin"></i>
+                                                                <span>{{$activity->location}}</span>
+                                                            </li>
+                                                            @endif
                                                             <br>
 
                                                         </ul>
@@ -108,21 +110,11 @@
 
                                                             </li>
                                                             <li>
-                                                                <a href="{{route('activity.see', $activity->id)}}"><span><i class="fa fa-comment"></i></span> Comment</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-facebook"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <i class="fa fa-twitter"></i>
-                                                                </a>
+                                                                <a href="{{route('activity.see', $activity->slug)}}"><span><i class="fa fa-comment"></i></span> Comment</a>
                                                             </li>
 
                                                             <li class="view-btn">
-                                                                <a href="{{route('activity.see', $activity->id)}}">view</a>
+                                                                <a href="{{route('activity.see', $activity->slug)}}">view</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -157,7 +149,7 @@
                                                                 <img class="img-responsive" src="/ActivityPics/{{$event->image_url ? $event->image_url : "No photo"}}" alt="">
                                                             </div>
                                                             <p class="post-time">{{date('jS F, Y', strtotime($event->start_date))}} | {{date('ga', strtotime($event->start_date))}}</p>
-                                                            <a href="{{route('activity.see', $event->id)}}" class="event">
+                                                            <a href="{{route('activity.see', $event->slug)}}" class="event">
                                                                 <h4>{{$event->title}}
                                                                     <span>
                                                                       <i class="fa fa-calendar event-id"></i>
@@ -174,10 +166,10 @@
                                                                     <i class="fa fa-clock-o"></i>
                                                                     <span>{{date('ga', strtotime($event->start_date))}}</span>
                                                                 </li>
-                                                                {{--<li>--}}
-                                                                    {{--<i class="fa fa-map-pin"></i>--}}
-                                                                    {{--<span> Landmark Event Centre</span>--}}
-                                                                {{--</li>--}}
+                                                                <li>
+                                                                    <i class="fa fa-map-pin"></i>
+                                                                    <span>{{$event->location}}</span>
+                                                                </li>
                                                                 <br>
 
                                                             </ul>
@@ -186,14 +178,14 @@
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="{{route('activity.see', $event->id)}}">
+                                                                    <a href="{{route('activity.see', $event->slug)}}">
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="{{route('activity.see', $event->id)}}">view</a>
+                                                                    <a href="{{route('activity.see', $event->slug)}}">view</a>
 
                                                                 </li>
                                                             </ul>
@@ -217,7 +209,7 @@
                                                     <div class="event-activity mt-20 mb-40">
                                                         <div class="event-info">
                                                             <p class="post-time">{{date('jS F, Y', strtotime($meetup->start_date))}} | {{date('ga', strtotime($meetup->start_date))}}</p>
-                                                            <a href="{{route('activity.see', $meetup->id)}}" class="event">
+                                                            <a href="{{route('activity.see', $meetup->slug)}}" class="event">
                                                                 <h4>{{$meetup->title}}
                                                                     <span>
                                                                       <i class="fa fa-users event-id"></i>
@@ -230,6 +222,12 @@
                                                                     <span>{{date('jS F, Y', strtotime($meetup->start_date))}}, </span>
                                                                     <span>{{date('ga', strtotime($meetup->start_date))}}</span>
                                                                 </li>
+                                                                @if($meetup->location)
+                                                                    <li>
+                                                                        <i class="fa fa-map-pin"></i>
+                                                                        <span>{{$meetup->location}}</span>
+                                                                    </li>
+                                                                @endif
                                                                 <br>
 
                                                             </ul>
@@ -238,14 +236,14 @@
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="{{route('activity.see', $meetup->id)}}">
+                                                                    <a href="{{route('activity.see', $meetup->slug)}}">
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="{{route('activity.see', $meetup->id)}}">view</a>
+                                                                    <a href="{{route('activity.see', $meetup->slug)}}">view</a>
 
                                                                 </li>
                                                             </ul>
@@ -271,7 +269,7 @@
                                                     <div class="event-activity mt-20 mb-40">
                                                         <div class="event-info">
                                                             <p class="post-time">{{date('jS F, Y', strtotime($project->start_date))}} | {{date('ga', strtotime($project->start_date))}}</p>
-                                                            <a href="{{route('activity.see', $project->id)}}" class="event">
+                                                            <a href="{{route('activity.see', $project->slug)}}" class="event">
                                                                 <h4>{{$project->title}}
                                                                     <span>
                                                                       <i class="fa fa-folder event-id"></i>
@@ -285,20 +283,26 @@
                                                                     <span><strong>End date:</strong> {{date('jS F, Y', strtotime($project->start_date))}}</span>
                                                                 </li>
                                                             </ul>
+                                                            @if($project->location)
+                                                                <li>
+                                                                    <i class="fa fa-map-pin"></i>
+                                                                    <span>{{$project->location}}</span>
+                                                                </li>
+                                                            @endif
                                                             {{--<p><strong>Category:</strong> Business, Start Up, Phamarcy</p>--}}
                                                         </div>
                                                         <div class="activity-action mt-10">
                                                             <ul>
 
                                                                 <li>
-                                                                    <a href="{{route('activity.see', $project->id)}}" >
+                                                                    <a href="{{route('activity.see', $project->slug)}}" >
                                                                       <span>
                                                                         <i class="fa fa-comment"></i>
                                                                       </span> Comment</a>
                                                                 </li>
 
                                                                 <li class="view-btn">
-                                                                    <a href="{{route('activity.see', $project->id)}}">view</a>
+                                                                    <a href="{{route('activity.see', $project->slug)}}">view</a>
 
                                                                 </li>
                                                             </ul>

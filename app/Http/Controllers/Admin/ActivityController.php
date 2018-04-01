@@ -70,7 +70,6 @@ class ActivityController extends Controller
 
             $file->move('ActivityPics', $name);
 
-//            $photo = Photo::create(['name'=>$name]);
 
         }
 
@@ -79,6 +78,10 @@ class ActivityController extends Controller
         $activity->image_url = $name;
 
         $activity->title = $request->title;
+
+        $activity->slug = str_slug($request->title, '-');
+
+        $activity->location = $request->location;
 
         $activity->user_id = $request->user_id;
 
@@ -96,7 +99,7 @@ class ActivityController extends Controller
 
         $activity->save();
 
-        return redirect(route('activity.index'));
+        return redirect(route('activity.index'))->with('message', 'The activity has been created Successfully');
 
     }
 
@@ -143,13 +146,10 @@ class ActivityController extends Controller
 
         $this->validate(request(), [
 
-            'image_url' => 'required',
             'title' => 'required|max:50',
             'category_id' => 'required',
             'user_id' => 'required',
             'body' => 'required',
-            'start_date' => 'required',
-            'end_date' => 'required',
 
         ]);
 
@@ -161,17 +161,24 @@ class ActivityController extends Controller
 
             $file->move('ActivityPics', $name);
 
-//            $photo = Photo::create(['name'=>$name]);
 
         }
 
         $activity =  Activity::findOrFail($id);
 
-        $activity->image_url = $name;
+        if ($file = $request->file('image_url')) {
+
+            $activity->image_url = $name;
+
+        }
 
         $activity->title = $request->title;
 
         $activity->user_id = $request->user_id;
+
+        $activity->location = $request->location;
+
+        $activity->slug = str_slug($request->title, '-');
 
         $activity->category_id = $request->category_id;
 
@@ -179,15 +186,22 @@ class ActivityController extends Controller
 
         $activity->active = $request->active ? $request->active : 0;
 
+        if($request->start_date) {
 
         $activity->start_date = $request->start_date;
 
-        $activity->end_date = $request->end_date;
+         }
+
+        if($request->start_date) {
+
+            $activity->end_date = $request->end_date;
+
+        }
 
 
         $activity->save();
 
-        return redirect(route('activity.index'));
+        return redirect(route('activity.index'))->with('message_update', 'The activity has been updated Successfully');
 
     }
 
@@ -204,7 +218,7 @@ class ActivityController extends Controller
 
         unlink(public_path('/ActivityPics/') . $activity->image_url);
 
-        $activity->delete();
+        $activity->delete()->with('message_delete', 'The activity has been deleted Successfully');
 
         return back();
 

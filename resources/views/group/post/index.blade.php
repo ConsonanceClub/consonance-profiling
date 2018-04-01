@@ -60,27 +60,28 @@
                     <div class="row">
                         @foreach($posts as $post)
                             <div class="col-lg-6 col-md-6 col-sm-6 mb-30" >
-                                <div class="blog-box blog-2 gray-bg" style="padding-bottom: 20px">
+                                <div class="blog-box blog-2 gray-bg" >
                                     <img class="img-responsive" src="/GroupPostPics/{{$post->image_url ? $post->image_url : "No photo"}}" alt="">
                                     <div class="blog-info" id="post-{{ $post->id }}">
                                         <h4>
-                                            <a href="{{route('postn.show', $post->id)}}">{{$post->title}}</a>
+                                            <a href="{{route('postn.show', $post->slug)}}">{{$post->title}}</a>
                                         </h4>
                                         <p>
                                             {{str_limit($post->description, $limit = 100, $end = '...')}}
                                         </p>
                                         <span>
-                                          <i class="fa fa-calendar-check-o"></i>{{$post->created_at->diffForHumans()}}
+                                          <i class="fa fa-clock-o"></i> {{$post->created_at->diffForHumans()}}
                                             <div style="display:inline; padding-left: 8px;">
                                                 <input type="hidden" name="url" value="{{ route('post.like', [ 'id' => $post->id ]) }}">
 
                                             <a href="javascript:;" onclick=" toggleLike( {{$post->id }} )"  class="liken" >
                                                 <i style="font-size: 16px" class="fa {{ $post->isLiked ? 'fa-heart' : 'fa-heart-o' }}"></i>
                                                 <span class="text-muted likes-count">{{ $post->likes()->count() }} Like(s)</span>
+
                                             </a>
                                           </div>
                                         </span>
-                                        <a class="button icon-color" href="{{route('postn.show', $post->id)}}">Read More
+                                        <a class="button icon-color" href="{{route('postn.show', $post->slug)}}">Read More
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     </div>

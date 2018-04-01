@@ -45,10 +45,10 @@
                                     <th>Admin Name</th>
                                     <th>Category Name</th>
                                     <th>Title</th>
-                                    <th>Body</th>
+                                    <th>Location</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Active</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>
@@ -63,7 +63,7 @@
                                             <td>{{$activity->user->first_name}}</td>
                                             <td>{{$activity->category->name}}</td>
                                             <td>{{$activity->title}}</td>
-                                            <td>{{str_limit($activity->body, $limit = 50, $end = '...')}}</td>
+                                            <td>{{$activity->location ? $activity->title : 'No Location'}}</td>
                                             <td>{{$activity->start_date}}</td>
                                             <td>{{$activity->end_date}}</td>
                                             <td>{{$activity->active == 1 ? 'Active': 'Not Active' }}</td>
@@ -98,10 +98,10 @@
                                     <th>Admin Name</th>
                                     <th>Category Name</th>
                                     <th>Title</th>
-                                    <th>Body</th>
+                                    <th>Location</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-                                    <th>Active</th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>

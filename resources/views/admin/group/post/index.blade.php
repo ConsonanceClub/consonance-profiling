@@ -19,7 +19,7 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Group</h3>
-                    <a style="padding: 10px" href="{{route('post.create', $group->id)}}"  CLASS="col-lg-offset-5 btn btn-warning">
+                    <a style="padding: 10px" href="{{route('post.create', $group->slug)}}"  CLASS="col-lg-offset-5 btn btn-warning">
                         <i class="fa fa-user-plus" style="padding-right: 10px"></i>Create a Post For {{$group->name}}
                     </a>
                     <div class="box-tools pull-right">

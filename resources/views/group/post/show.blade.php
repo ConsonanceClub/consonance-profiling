@@ -83,13 +83,10 @@
                                                     </a>
 
                                                 </li>
+
                                                 <li>
                                                     <a href="#">
-                                                        <i class="fa fa-comment-o"></i> 4</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="fa fa-calendar-o"></i> 12 Aug 2018</a>
+                                                        <i class="fa fa-calendar-o"></i>{{$post->created_at->toFormattedDateString()}}</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -100,7 +97,7 @@
                                                     <strong>Share : </strong>
                                                     <ul>
                                                         <li>
-                                                            <a href="#">
+                                                            <a href="https://www.facebook.com/sharer/sharer.php?u=consonance.club/group/post/{{$post->slug}}">
                                                                 <i class="fa fa-facebook"></i>
                                                             </a>
                                                         </li>

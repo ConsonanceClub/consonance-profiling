@@ -66,11 +66,11 @@
                                             <img src="/GroupProfilePic/{{$group->icon_url ? $group->icon_url : "No photo"}}" alt="" class="img-size">
                                             <div class="portfolio-overlay">
                                                 <h4 class="text-gray">
-                                                    <a href="{{route('groupn.show', $group->id)}}">{{$group->name}}</a>
+                                                    <a href="{{route('groupn.show', $group->slug)}}">{{$group->name}}</a>
                                                 </h4>
 
                                             </div>
-                                            <a class="popup portfolio-img" href="{{route('groupn.show', $group->id)}}">
+                                            <a class="popup portfolio-img" href="{{route('groupn.show', $group->slug)}}">
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
 

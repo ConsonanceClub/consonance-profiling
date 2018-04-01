@@ -12,7 +12,7 @@
 
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title"> Add a group</h3>
+                            <h3 class="box-title"> Edit Post</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -26,12 +26,17 @@
                             <div class="box-body">
                                 <div class="col-lg-6 col-lg-offset-3">
                                     <div class="form-group">
-                                        <label for="title">Title</label>Post Title - {{$posting->title}}
-                                        <input type="text" class="form-control" value="{{old('title') ? old('title') : $posting->title}}" name="title" id="title" >
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" value="{{old('title') ? old('title') : $posting->title}}" name="title" id="title" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="photo_id">Profile Pic</label>
+                                        <label for="slug">Slug</label>
+                                        <input type="text"  name="slug" class="form-control" id="slug" value="{{$posting->slug}}"placeholder="Enter slug" disabled>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="photo_id">Group Pic - <img  height="30" width="30" src="/GroupPostPics/{{$posting->image_url ? $posting->image_url : "No photo"}}" alt=""></label>
                                         <input type="file" id="image_url" name="image_url">
                                     </div>
 
