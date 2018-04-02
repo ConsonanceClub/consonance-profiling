@@ -12,9 +12,9 @@
 
 ?>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" style="padding: 20px 0px">
+<nav class="navbar navbar-inverse navbar-fixed-top">
 
-	<div class="container-fluid">
+	<div class="container">
 
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -23,35 +23,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand row" href="/">
+			<a class="navbar-brand row" href="/" style="margin-left: -130px; margin-top: 8px;">
 				<img class="col-sm-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
 				<h2 class="cons col-sm-8 right text-white"><b>Consonance</b></h2>
 				<style>
-          .navbar-nav li a {
-            font-family: Quicksand, 'sans-serif';
-            font-size: 1.3em;
-					}
-					.log-out {
-						font-family: Quicksand, 'sans-serif';
-						font-size: 1.1em;
-					}
-					.log-out:hover {
-						background-color: #EEE !important;
-					}
-          .navbar-nav li a::after {
-            content: " ";
-            width: 0%;
-            display: block;
-            padding-bottom: 10px;
-            transition: 300ms all;
-            border-bottom: 2px solid #EEE;
-          }
-          .navbar-nav li:hover a::after {
-            width: 100%;
-          }
-          .navbar-nav li:active a::after {
-            width: 100%;
-          }
 					@media screen and (max-width: 700px) {
 						.cons {
 							display: none;
@@ -64,7 +39,7 @@
 					}
 					@media screen and (max-width: 767px) {
 						body {
-							padding-top: 100px !important;
+							padding-top: 70px !important;
 						}
 					}
 				</style>
@@ -75,26 +50,27 @@
 
 		<div id="navbar" class="collapse navbar-collapse">
 			@if(Auth::check())
-			<div class="navbar-right" style="margin-right: 20px">
+			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="{{route('activity')}}">Activity</a>
+						<a href="{{route('activity')}}">ACTIVITY</a>
 					</li>
 					<li>
-						<a href="{{route('groupn.index')}}">Groups</a>
+						<a href="{{route('groupn.index')}}">GROUPS</a>
 					</li>
 					@if(Auth::user()->role_id == 1)
-          <li>
-            <a href="{{url('/members')}}">Members</a>
-					</li>
+						<li>
+							<a href="{{url('/members')}}">MEMBERS</a>
+						</li>
 					@endif
 					<li><a href="">Hi {{Auth::user()->first_name}}!</a></li>
 					<li>
-						<a href="{{url('/profile')}}">Profile</a>
+						<a href="{{url('/profile')}}">PROFILE</a>
 					</li>
 
+					<a class="btn navbar-btn hidden-xs margin-left-20" style="margin-top: 30px" href="{{ route('auth.logout') }}">LOG OUT</a>
+
 				</ul>
-        <a class="btn navbar-btn hidden-xs margin-left-20 margin-top-10 log-out" style="border-radius: 20px; padding: 10px 30px" href="{{ route('auth.logout') }}">Log Out</a>
 
 				{{--Make visible on Mobile--}}
 				<!--<a class="btn navbar-btn visible-xs" href="{{-- route('member.sign-in') --}}">SIGN IN</a>-->

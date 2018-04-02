@@ -20,16 +20,16 @@ Route::group(['middleware' => 'web'], function (){
     })->name('home');
 
     Route::get('/signIn', function () {
-        return view('signIn');
+        return view('signInn');
     })->name('signIn');
 
-    Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
-        return view('signIn');
-    }]);
+    // Route::get('/member/sign-in',[ 'as'=>'member.sign-in', function () {
+    //     return view('signIn');
+    // }]);
 
-    Route::get('/member/sign-up',[ 'as'=>'member.sign-up', function () {
-        return view('signUp');
-    }]);
+    // Route::get('/member/sign-up',[ 'as'=>'member.sign-up', function () {
+    //     return view('signUp');
+    // }]);
 
     Route::get('auth/login/{driver}',[
         'uses' => 'Auth\SocialAuthController@loginUserViaDriver',
@@ -46,9 +46,9 @@ Route::group(['middleware' => 'web'], function (){
 Route::group(['middleware' => ['user.auth']], function (){
 
 
-    Route::get('/sign-in', function (){
-        return view('auth.register');
-    });
+    // Route::get('/sign-in', function (){
+    //     return view('auth.register');
+    // });
 
     Route::get('/groups', function (){
         return view('groups');
