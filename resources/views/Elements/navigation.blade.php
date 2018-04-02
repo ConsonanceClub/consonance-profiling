@@ -25,7 +25,7 @@
 			</button>
 			<a class="navbar-brand row" href="/">
 				<img class="col-sm-2 left" src="/images/logo-146x150.png" alt="Consonance-logo">
-				<h2 class="cons col-sm-8 right text-white"><b>Consonance</b></h2>
+				<h1 class="cons col-sm-8 right text-white"><b>Consonance</b></h1>
 				<style>
           .navbar-nav li a {
             font-family: Quicksand, 'sans-serif';
