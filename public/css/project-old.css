@@ -29,31 +29,30 @@
   top: 11px;
   height: 30px;
 }
-.a-project {
-  padding: 10px;
+.project {
+  padding: 30px;
 }
-.project-card {
-  box-shadow: 0px 1px 2px 2px rgba(0, 0, 0, 0.1);
+.card {
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  box-shadow: 0px 1px 2px 3px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   transition: all 500ms;
-  display: block;
-  overflow: hidden;
 }
-.project-card:hover {
+.card:hover {
   box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.3);
 }
-.project-card .card-image {
+.card .card-image {
   max-width: 100%;
 }
 
-.project-card .card-header {
+.card .card-header {
   border-top: 1px solid #aaa;
   margin: 0;
 }
-.project-card .card-body .tags {
+.card .card-body .tags {
   padding: 10px 0px;
 }
-.project-card .card-header,
-.project-card .card-body {
-  padding: 5px 15px 15px 15px;
+.card .card-header,
+.card .card-body {
+  padding: 5px 10px 10px 10px;
 }
