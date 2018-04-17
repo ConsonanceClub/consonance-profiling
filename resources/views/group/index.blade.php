@@ -71,7 +71,7 @@
 
                                             </div>
                                             <a class="popup portfolio-img" href="{{route('groupn.show', $group->slug)}}">
-                                                <i class="fa fa-angle-right"></i>
+                                                <i class="fa fa-angle-right" style="margin:auto;"></i>
                                             </a>
 
                                         </div>

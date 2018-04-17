@@ -1,95 +1,124 @@
-<?php
-/**
- *
- * Description
- *
- * @package        Consonance
- * @category       Source
- * @author         Ashinze Ekene <ashinzekene@gmail.com> {@link http://github.com/ashinzekene}
- * @date           2018-02-16
- *
- */
-?>
-
 {{--use Default Layout--}}
 @extends('Layouts.default')
 
-@push('scripts')
-<link rel="stylesheet" href="/css/profile.css">
-@endpush
+
 {{--set Title--}}
 @section('title', 'Profile')
 
 {{--set content--}}
 @section('content')
-	<div class="row">
-		<div class="col-md-offset-4 col-sm-6 col-md-4">
-                <h3 class="text-white text-uppercase"><strong>Personal Information</strong></h3>
+    
+    <div class="wrapper">
+    
+        <section class="user-profile page-section-ptb" style="background-image: url(/images/12.jpg);">
+            <div class="container">
                 <div class="row">
-                    <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Your name" value="{{Auth::user()->first_name . ' ' .Auth::user()->last_name  }}"
-                               class="form-control text-center padding-20" id="name">
-                    </div>
-                    <div class="p-info form-group col-lg-12">
-                        @if(Auth::user()->role_id == 1)
-                            <input type="text" placeholder="Position" readonly  id="position" value="Admin" class="form-control text-center padding-20" style="background-color: transparent">
-                        @else
-                            <input type="text" placeholder="Position" readonly  id="position"  value="Member" class="form-control text-center padding-20" style="background-color: transparent">
-                        @endif
 
-                    </div>
-                    <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Community Role" readonly  id="com_role" value="Active Contributor" class="form-control text-center padding-20" style="background-color: transparent">
-                    </div>
-                    <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Contact Info" readonly id="email" value="{{Auth::user()->email}}" class="form-control text-center padding-20" style="background-color: transparent">
-                    </div>
-
-                    <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Profession" id="profession"  value="{{Auth::user()->profession}}" class="form-control text-center padding-20">
-                    </div>
-                    <div class="p-info form-group col-lg-12">
-                        <input type="text" placeholder="Address"  id="address" value="{{Auth::user()->address}}" class="form-control text-center padding-20">
-                    </div>
-
-                </div>
-		</div>
-
-		<!-- Alternate sign in-->
-		<div class="col-sm-6 col-md-4">
-            <h3 class="text-white text-uppercase"><strong>BIO</strong></h3>
-            <div class="bio-text">
-                <textarea class="form-control" name="bio"  id="profile-bio" cols="30" rows="10">{{Auth::user()->short_bio}}
-                </textarea>
-            </div>
-            <h3 class="text-white text-uppercase"><strong>SCHOOL</strong></h3>
-            <div class="bio-text">
-                <input type="text" id="school" placeholder="Insert school name" value="{{Auth::user()->school}}" class="form-control padding-20 text-center">
-            </div>
-            <h3 class="text-white text-uppercase"><strong>INTRESTS</strong></h3>
-            {{$count = 0}}
-
-                <div class="bio-text row margin-bottom-10">
-                    @foreach(\App\Models\Interest::all() as  $key => $value)
-                        <div class="col-xs-2 col-sm-2 s-boxes "><a>{{$value->name}}</a>
-                            <input type="checkbox" class="interest-cbox" name="" {{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}} id="{{$value->name}}">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="profile-img col-md-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="img-background">
+                                        <div class="user-img mb-20 text-center" style="background-image: url(/images/13.jpg)">
+                                            <img class="img-responsive mt-40 mb-40 text-center" src="{{Auth::user()->avatar}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    @endforeach
-                </div>
-            <button class="button" onclick="updateProfile()" style="float: right;
-                                        background-color: #555555c9;
-                                        border: none;
-                                        color: white;
-                                        padding: 15px 32px;
-                                        text-align: center;
-                                        text-decoration: none;
-                                        display: inline-block;
-                                        font-size: 16px;
-                                        margin: 4px 2px;
-                                        cursor: pointer;">Save</button>
-		</div>
 
-	</div>
+                        <div class="personal-info col-md-4 mb-20">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-center mb-20">Personal Information</h3>
+                                    <form>
+                                        <div class="contact-form dark-form clearfix">
+                                            <div>
+                                                <input id="name" type="text" placeholder="Name*" class="form-control text-center"  value="{{Auth::user()->first_name . ' ' .Auth::user()->last_name}}">
+                                            </div>
+                                            <div>
+                                            @if(Auth::user()->role_id == 1)
+                                                <input id="position" type="text" placeholder="Position*" readonly value="Admin" class="form-control text-center">
+                                            @else
+                                                <input id="position" type="text" placeholder="Position*" readonly value="Member" class="form-control text-center">
+                                            @endif
+                                            </div>
+                                            <div>
+                                                <input id="com-role" type="text" placeholder="Community role*" class="form-control text-center" value="Active Contributor">
+                                            </div>
+                                            <div>
+                                                <input type="email" placeholder="Email*" readonly class="form-control text-center" name="email" value="{{Auth::user()->email}}">
+                                            </div>
+                                            <div>
+                                                <input type="text" placeholder="Profession*" class="form-control text-center" name="profession" value="{{Auth::user()->profession}}">
+                                            </div>
+                                            <div>
+                                                <input type="text" placeholder="Address*" class="form-control text-center" name="address" value="{{Auth::user()->address}}">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="user-bio col-md-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="text-center mb-20">Bio</h3>
+                                    <form class="form-horizontal">
+                                        <div class="contact-form dark-form clearfix">
+                                            <div class="textarea">
+                                                <textarea class="form-control input-message" placeholder="Bio*" rows="7" name="message">{{Auth::user()->short_bio}}</textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <h3 class="text-center mt-20 mb-20">School</h3>
+                                        <form class="form-horizontal">
+                                            <div class="contact-form dark-form clearfix">
+                                                <div class="col-md-12">
+                                                    <input type="text" placeholder="School attended*" class="form-control text-center" name="school" value="{{Auth::user()->school}}">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="text-center mt-20 mb-20">Interests</h3>
+                                        <form class="form-horizontal">
+                                            <div class="remember-checkbox mb-30">
+                                                @foreach(\App\Models\Interest::all() as $key => $value)
+                                                <input type="checkbox" class="form-control" name="{{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}}" id="{{$value->name}}">
+                                                <label class="text-dark" for="{{$value->name}}"> <a href="javascript:void(0)">{{$value->name}}</a></label>
+                                                @endforeach
+                                            </div>
+                                            <div class="mt-20 text-center">
+                                                <div class="col-md-12">
+                                                    <button id="save" name="save" type="submit" value="Save" class="button">SAVE
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+
+<!--====jquery====-->
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/plugins-jquery.js"></script>
+<script type="text/javascript">var plugin_path = 'js/';</script>
+<script type="text/javascript" src="js/custom.js"></script>
 
 @endsection
 

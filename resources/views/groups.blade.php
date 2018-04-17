@@ -15,7 +15,7 @@
 @extends('Layouts.default')
 
 {{--set Title--}}
-@section('title', 'SignIn')
+@section('title', 'Groups')
 
 {{--set content--}}
 @section('content')

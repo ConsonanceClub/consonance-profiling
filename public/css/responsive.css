@@ -1851,14 +1851,16 @@ nav.group-nav ul li.active { border-bottom: 3px solid #323232; }
 nav.group-nav ul li:hover { border-bottom: 3px solid #84ba3f; }
 nav.group-nav ul li a { text-transform: uppercase; color: #323232; padding: 5px; }
 
+
+
 /*************************************
              v1.0.3
 **************************************/
- .slider-parallax.typer-banner.business h1 { font-size: 24px; line-height: 28px; }
- .slider-parallax.typer-banner.business p { font-size: 18px; line-height: 28px; margin-top: 10px !important; }
- .counter.big-counter .timer { font-size: 40px; line-height: 40px; }
+.slider-parallax.typer-banner.business h1 { font-size: 24px; line-height: 28px; }
+.slider-parallax.typer-banner.business p { font-size: 18px; line-height: 28px; margin-top: 10px !important; }
+.counter.big-counter .timer { font-size: 40px; line-height: 40px; }
 .action-box.theme-bg { padding: 30px 0; }
- .slider-parallax.banner-personal .slider-content span { font-size: 50px; line-height: 50px; }
+.slider-parallax.banner-personal .slider-content span { font-size: 50px; line-height: 50px; }
 .slider-parallax.banner-personal .slider-content h1 { font-size: 40px; line-height: 40px; margin-top: -20px; }
 .slider-parallax.banner-personal .slider-content h1 strong { font-size: 48px; line-height: 50px; }
 

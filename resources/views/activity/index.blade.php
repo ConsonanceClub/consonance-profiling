@@ -1,7 +1,7 @@
 @extends('Layouts.default')
 
 {{--set Title--}}
-@section('title', 'Consonance - Acticity')
+@section('title', 'Consonance - Activity')
 
 @section('styles')
 

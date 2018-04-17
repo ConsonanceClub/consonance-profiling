@@ -19,7 +19,7 @@
 
 {{--set content--}}
 @section('content')
-    <div class="container-fluid banner">
+   <!-- <div class="container-fluid banner">
         <h2>$GroupName</h2>
     </div>
 
@@ -104,7 +104,7 @@
                 </div>
         </div>
 
-    </section>
+    </section> -->
 
 @endsection
 

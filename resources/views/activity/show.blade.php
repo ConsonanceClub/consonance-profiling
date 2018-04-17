@@ -1,7 +1,7 @@
 @extends('Layouts.default')
 
 {{--set Title--}}
-@section('title', 'Consonance - Acticity')
+@section('title', 'Consonance - Activity')
 
 @section('styles')
 
@@ -128,26 +128,24 @@
                                         <!-- =======================
                                                               Leave a reply ========================= -->
 
-                                        <br/>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12">
-
-                                                <h4 class="comment-title mb-30">Leave a Reply </h4>
-
-
-                                                <form action="{{route('activity.comment', $activity->id)}}" role="form" method="post">
-                                                    {{csrf_field()}}
-                                                    <div class="section-field col-md-10 clearfix" style="display: inline;">
-                                                        <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
-                                                    </div>
-                                                    <button type="submit" class="comment-btn1">SEND <i class="fa fa-send" style="font-size: 16px; margin-top: 5px; padding-left: 7px; "></i></button>
-                                                </form>
-
-
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12">
+                                            <h4 class="comment-title mb-30">Leave a Reply</h4>
+                                            <form action="{{route('activity.comment', $activity->id)}}" role="form" method="post">
+                                                {{csrf_field()}}
+                                                <div class="section-field col-md-10 clearfix" style="display: inline;">
+                                                    <input class="form-control" name="comment" type="text" placeholder="Post a comment..." required/>
+                                                </div>
+                                            <div>
+                                                <button type="submit" class="button">SEND</button>
                                             </div>
+                                            </form>
+
+
                                         </div>
                                     </div>
-
+                                </div>
                                 </div>
 
 
@@ -166,11 +164,11 @@
                             </div>
 
                         </div>
-
+                    
+                    </div>
                         <!-- ======================
                   grid-layout -->
-
-                    </div>
+                  
                 </div>
             </div>
         </section>
