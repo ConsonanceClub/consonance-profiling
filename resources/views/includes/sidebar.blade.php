@@ -12,7 +12,15 @@
                 <div class="recent-event-info">
                     <a href="{{route('activity.see', $activity->slug)}}"><strong>{{$activity->title}}</strong></a>
                     <span>
-                        <i class="fa fa-calendar"></i>
+                        <i class="fa  @if($activity->category_id == 2 )
+                        {{'fa-calendar'}}
+                        @elseif ($activity->category_id == 2)
+                        {{'fa-calendar'}}
+                        @elseif ($activity->category_id == 1)
+                        {{'fa-users'}}
+                        @elseif ($activity->category_id == 3 )
+                        {{'fa-folder'}}
+                        @endif"></i>
                         {{date('d F, Y', strtotime($activity->start_date))}}
                       </span>
                     <span class="view-events"><a href="{{route('activity.see', $activity->slug)}}">view </a></span>

@@ -76,7 +76,9 @@
                                                         <span>
                                                              <i class="fa
                                                                  @if($activity->category_id == 2 )
-                                                                        {{'fa-calender'}}
+                                                                        {{'fa-calendar'}}
+                                                                    @elseif ($activity->category_id == 2)
+                                                                        {{'fa-calendar'}}
                                                                     @elseif ($activity->category_id == 1)
                                                                         {{'fa-users'}}
                                                                     @elseif ($activity->category_id == 3 )

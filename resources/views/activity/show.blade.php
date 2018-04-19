@@ -61,13 +61,14 @@
                                     <div class="event-head">
                                         <div class="event-icon" style="padding-top: 20px">
                                             <i class="fa
-
-                                            @if($activity->category_id == 2 )
-                                                {{'fa-calender'}}
-                                                @elseif ($activity->category_id == 1)
-                                                {{'fa-users'}}
-                                                @elseif ($activity->category_id == 3 )
-                                                {{'fa-folder'}}
+ @if($activity->category_id == 2 )
+                                            {{'fa-calendar'}}
+                                            @elseif ($activity->category_id == 2)
+                                            {{'fa-calendar'}}
+                                            @elseif ($activity->category_id == 1)
+                                            {{'fa-users'}}
+                                            @elseif ($activity->category_id == 3 )
+                                            {{'fa-folder'}}
                                             @endif ">
                                             </i>
                                         </div>
