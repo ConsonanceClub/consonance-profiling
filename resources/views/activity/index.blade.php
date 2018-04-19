@@ -74,7 +74,15 @@
                                                         </div>
                                                         <p class="post-time">{{date('jS F, Y', strtotime($activity->start_date))}} | {{date('ga', strtotime($activity->start_date))}}</p>
                                                         <span>
-                                                            <i class="fa fa-calendar event-id"></i>
+                                                             <i class="fa
+                                                                 @if($activity->category_id == 2 )
+                                                                        {{'fa-calender'}}
+                                                                    @elseif ($activity->category_id == 1)
+                                                                        {{'fa-users'}}
+                                                                    @elseif ($activity->category_id == 3 )
+                                                                        {{'fa-folder'}}
+                                                                  @endif event-id">
+                                                            </i>
                                                                 </span>
                                                         <a href="{{route('activity.see', $activity->slug)}}" class="event"><h4>{{$activity->title}}</h4></a>
                                                         <p>{{str_limit($activity->body, $limit = 180, $end = '...')}}</p>

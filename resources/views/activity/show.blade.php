@@ -60,7 +60,16 @@
                                 <div class="event-container" style="box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.06)">
                                     <div class="event-head">
                                         <div class="event-icon" style="padding-top: 20px">
-                                            <i class="fa fa-calendar"></i>
+                                            <i class="fa
+
+                                            @if($activity->category_id == 2 )
+                                                {{'fa-calender'}}
+                                                @elseif ($activity->category_id == 1)
+                                                {{'fa-users'}}
+                                                @elseif ($activity->category_id == 3 )
+                                                {{'fa-folder'}}
+                                            @endif ">
+                                            </i>
                                         </div>
                                         <img class="img-responsive" src="/ActivityPics/{{$activity->image_url ? $activity->image_url : "No photo"}}" alt="">
                                     </div>

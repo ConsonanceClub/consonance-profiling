@@ -30,6 +30,8 @@ class ActivityController extends Controller
 
         $postsAll = Post::latest()->take(4)->get();
 
+
+
         $cat = Category::all();
 
         $met = Category::where('name', 'Meetups')->first();
@@ -37,11 +39,11 @@ class ActivityController extends Controller
         $ev = Category::where('name', 'Events')->first();
         $pjt = Category::where('name', 'Projects')->first();
 
-        $meetups = Activity::whereActive(1)->where('category_id', $met->id)->get();
+        $meetups = Activity::whereActive(1)->where('category_id', $met->id)->latest()->take(8)->get();
 
-        $events = Activity::whereActive(1)->where('category_id', $ev->id)->get();
+        $events = Activity::whereActive(1)->where('category_id', $ev->id)->latest()->take(8)->get();
 
-        $projects = Activity::whereActive(1)->where('category_id', $pjt->id)->get();
+        $projects = Activity::whereActive(1)->where('category_id', $pjt->id)->latest()->take(8)->get();
 
 //        return $projects;
 
