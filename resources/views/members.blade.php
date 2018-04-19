@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/members.css">
     <link rel="stylesheet" type="text/css" href="../../css/special/css/shortcodes/shortcodes.css" />
     <link rel="stylesheet" type="text/css" href="../../css/special/css/plugins-css.css" />
+
+{{--set Title--}}
+@section('title', 'Members')
 </head>
 
 <body>

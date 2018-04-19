@@ -43,9 +43,6 @@
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="breadcrumb-item">
                                     <a href="">Group</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">{{$group->name}}</li>

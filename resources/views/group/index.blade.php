@@ -50,7 +50,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="activity.html">Home</a>
+                                        <a href="activity.html">Activity stream</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">Groups</li>
                                 </ol>
@@ -65,15 +65,13 @@
                                         <div class="portfolio-item">
                                             <img src="/GroupProfilePic/{{$group->icon_url ? $group->icon_url : "No photo"}}" alt="" class="img-size">
                                             <div class="portfolio-overlay">
-                                                <h4 class="text-gray">
+                                                <h4 class="text-gray text-center">
                                                     <a href="{{route('groupn.show', $group->slug)}}">{{$group->name}}</a>
                                                 </h4>
-
                                             </div>
                                             <a class="popup portfolio-img" href="{{route('groupn.show', $group->slug)}}">
-                                                <i class="fa fa-angle-right" style="margin:auto;"></i>
+                                                <i class="fa fa-angle-right" ></i>
                                             </a>
-
                                         </div>
                                     </div>
                                     @endforeach
