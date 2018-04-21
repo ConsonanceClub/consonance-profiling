@@ -132,7 +132,7 @@
 .mega-menu > section.menu-list-items {  float: none; }
 .mega-menu > section.menu-list-items > .container,
 .mega-menu > section.menu-list-items > .container > .row,
-.mega-menu > section.menu-list-items > .container > .row > div { height: 100%; }
+.mega-menu > section.menu-list-items > .container > .row > div:not(".navbar-div") { height: 100%; }
 .mega-menu > section.menu-list-items .menu-bar {  height: 100%; }
 .mega-menu > section.menu-list-items .menu-bar > ul{ display: table !important; height: 100%; }
 .mega-menu > section.menu-list-items .menu-bar > ul > li { display: table-cell; vertical-align: middle; float: none; }

@@ -11,7 +11,7 @@
       <section class="menu-list-items">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 header-div">
               <!-- menu logo -->
               <ul class="menu-logo col-md-3">
                 <li>
