@@ -27,7 +27,7 @@
 @include('Elements.navigation')
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-bottom: 201px; background-color: white;">
     <div class="row">
         <div class="filter">
             <ul class="nav nav-pills">
@@ -61,14 +61,14 @@
 
     @foreach(\App\User::all() as $key => $value)
      <div class="modal fade" id="id-modal-{{$key}}" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-dialog modal-sm" role="document" style="width: 450px; max-width: 100%;">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                   <div class="section-title mb-10">
-                    <div class="event-modal-image text-center member">
+                    <div class="event-modal-image text-center member" style="float: inherit; width: 100%">
                       <img src="{{$value->avatar}}" class="avatar">
                     </div>
                   </div>
