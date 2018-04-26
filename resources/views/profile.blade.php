@@ -44,7 +44,7 @@
                                             @endif
                                             </div>
                                             <div>
-                                                <input id="com-role" type="text" placeholder="Community role*" class="form-control text-center" value="Active Contributor">
+                                                <input id="com-role" type="text" placeholder="Community role*" readonly class="form-control text-center" value="Active Contributor">
                                             </div>
                                             <div>
                                                 <input id="email" type="email" placeholder="Email*" readonly class="form-control text-center" name="email" value="{{Auth::user()->email}}">
