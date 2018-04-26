@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="row">
                                         <h3 class="text-center mt-20 mb-20">Interests</h3>
-                                        <form class="form-horizontal">
+                                        <div class="form-horizontal" >
                                             <div class="remember-checkbox mb-30">
                                                 @foreach(\App\Models\Interest::all() as $key => $value)
                                                 <input type="checkbox" class="form-control" name="{{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}}" id="{{$value->name}}">
@@ -97,7 +97,7 @@
                                                     </button>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
