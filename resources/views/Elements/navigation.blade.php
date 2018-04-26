@@ -54,7 +54,7 @@
                                       <i class="fa fa-user"></i> View Profile</a>
                               </li>
                               <li>
-                                  <a href="Sign-out.html">
+                                  <a href="{{url('/logout')}}">
                                       <i class="fa fa-sign-out"></i> Sign Out </a>
                               </li>
                           </ul>
