@@ -47,13 +47,13 @@
                                                 <input id="com-role" type="text" placeholder="Community role*" class="form-control text-center" value="Active Contributor">
                                             </div>
                                             <div>
-                                                <input type="email" placeholder="Email*" readonly class="form-control text-center" name="email" value="{{Auth::user()->email}}">
+                                                <input id="email" type="email" placeholder="Email*" readonly class="form-control text-center" name="email" value="{{Auth::user()->email}}">
                                             </div>
                                             <div>
-                                                <input type="text" placeholder="Profession*" class="form-control text-center" name="profession" value="{{Auth::user()->profession}}">
+                                                <input id="profession" type="text" placeholder="Profession*" class="form-control text-center" name="profession" value="{{Auth::user()->profession}}">
                                             </div>
                                             <div>
-                                                <input type="text" placeholder="Address*" class="form-control text-center" name="address" value="{{Auth::user()->address}}">
+                                                <input id="address" type="text" placeholder="Address*" class="form-control text-center" name="address" value="{{Auth::user()->address}}">
                                             </div>
                                         </div>
                                     </form>
