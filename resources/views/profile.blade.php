@@ -93,7 +93,7 @@
                                             </div>
                                             <div class="mt-20 text-center">
                                                 <div class="col-md-12">
-                                                    <button id="save" name="save" type="submit" value="Save" class="button">SAVE
+                                                    <button id="save" name="save" value="Save" class="button" onclick="updateProfile()">SAVE
                                                     </button>
                                                 </div>
                                             </div>
