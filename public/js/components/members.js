@@ -2,7 +2,7 @@
 
 function updateProfile() {
 
-    const interests = $('.interest-cbox:checkbox');
+    const interests = $('.form-control:checkbox');
     const name = $('#name').val();
     const email = $('#email').val();
     const bio = $('#profile-bio').val();
@@ -10,6 +10,7 @@ function updateProfile() {
     const profession = $('#profession').val();
     const address = $('#address').val();
     const checkedInterests = {};
+
 
 
     for(let i = 0; i < interests.length; i++){
@@ -20,12 +21,17 @@ function updateProfile() {
         }
     }
 
+    console.log( name, email, bio, school, profession, address, checkedInterests);
+
     $.ajax({
         url:'/update-profile',
         type:'GET',
         data:{interests:checkedInterests, name:name, bio:bio, email:email, school:school, profession:profession, address:address},
         success:function (data) {
             const result = JSON.parse(data);
+            if(result){
+                $('.alert alert-success').show();
+            }
         }
     });
 }
