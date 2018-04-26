@@ -68,7 +68,7 @@
                                     <form class="form-horizontal">
                                         <div class="contact-form dark-form clearfix">
                                             <div class="textarea">
-                                                <textarea class="form-control input-message" placeholder="Bio*" rows="7" name="message">{{Auth::user()->short_bio}}</textarea>
+                                                <textarea class="form-control input-message" id="profile-bio" placeholder="Bio*" rows="7" name="message">{{Auth::user()->short_bio}}</textarea>
                                             </div>
                                         </div>
                                     </form>
@@ -77,7 +77,7 @@
                                         <form class="form-horizontal">
                                             <div class="contact-form dark-form clearfix">
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="School attended*" class="form-control text-center" name="school" value="{{Auth::user()->school}}">
+                                                    <input type="text" id="school" placeholder="School attended*" class="form-control text-center" name="school" value="{{Auth::user()->school}}">
                                                 </div>
                                             </div>
                                         </form>
@@ -87,8 +87,8 @@
                                         <div class="form-horizontal" >
                                             <div class="remember-checkbox mb-30">
                                                 @foreach(\App\Models\Interest::all() as $key => $value)
-                                                <input type="checkbox" class="form-control" name="{{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}}" id="{{$value->name}}">
-                                                <label class="text-dark" for="{{$value->name}}"> <a href="javascript:void(0)">{{$value->name}}</a></label>
+                                                    <input type="checkbox" class="form-control" name="" {{(in_array($value->name, \App\Models\Profile::interests()))?'checked':''}} id="{{$value->name}}">
+                                                    <label class="text-dark" for="{{$value->name}}"> <a href="javascript:void(0)">{{$value->name}}</a></label>
                                                 @endforeach
                                             </div>
                                             <div class="mt-20 text-center">
