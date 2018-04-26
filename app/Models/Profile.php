@@ -18,6 +18,7 @@ class Profile
 {
     public function updateUserDetails($name, $bio, $email, $school, $profession, $address){
         $id = Auth::user()->id;
+
         $user = User::find($id);
         if(isset($name)){
             if(strpos($name,' ') === false){
