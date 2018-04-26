@@ -30,7 +30,10 @@ function updateProfile() {
         success:function (data) {
             const result = JSON.parse(data);
             if(result){
-                $('.alert alert-success').show();
+                $('#success').show();
+                setTimeout(function () {
+                    $('#success').hide();
+                }, 5000);
             }
         }
     });
