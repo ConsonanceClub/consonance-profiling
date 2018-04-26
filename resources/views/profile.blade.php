@@ -62,7 +62,7 @@
 
                             <div class="row">
                                 <div class="alert alert-success" id="success">
-                                    <strong>Success!</strong> Indicates a successful or positive action.
+                                    <strong>Success!</strong> Your data has been updated!
                                 </div>
                             </div>
                         </div>
