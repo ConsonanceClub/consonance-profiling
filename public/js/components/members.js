@@ -21,8 +21,6 @@ function updateProfile() {
         }
     }
 
-    console.log( name, email, bio, school, profession, address, checkedInterests);
-
     $.ajax({
         url:'/update-profile',
         type:'GET',
