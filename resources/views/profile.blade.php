@@ -59,6 +59,12 @@
                                     </form>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="alert alert-success" id="success">
+                                    <strong>Success!</strong> Indicates a successful or positive action.
+                                </div>
+                            </div>
                         </div>
 
                         <div class="user-bio col-md-4">
@@ -119,6 +125,9 @@
 <script type="text/javascript" src="js/plugins-jquery.js"></script>
 <script type="text/javascript">var plugin_path = 'js/';</script>
 <script type="text/javascript" src="js/custom.js"></script>
+    <script>
+        $('#success').hide();
+    </script>
 
 @endsection
 
