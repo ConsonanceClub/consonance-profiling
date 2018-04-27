@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->default(2);
             $table->string('state')->default();
             $table->string('skills')->default();
-            $table->string('short_bio', 1024)->default('');
+            $table->string('short_bio', 1024)->default(' ');
             $table->string('avatar', 1024)->default('');
             $table->string('medium_username', 45)->default('');
             $table->string('medium_url', 45)->default();
