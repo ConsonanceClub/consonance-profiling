@@ -29,11 +29,11 @@
                   <li>
                     <a href="{{route('groupn.index')}}">Groups</a>
                   </li>
-                    @if(Auth::user()->role_id == 1)
+            @if(Auth::user()->role_id == 1)
                   <li>
                     <a href="{{url('/members')}}">Members</a>
                   </li>
-									@endif
+            @endif
                   <li>
                     <a href="">Hi {{isset(Auth::user()->first_name)?Auth::user()->first_name:'Friend'}}! </a>
                   </li>
