@@ -40,7 +40,6 @@
                 </ul>
               </div>
 
-              
               <div class="spacer col-md-3">
                   <ul class="thumb menu-links mt-30">
                       <li>
