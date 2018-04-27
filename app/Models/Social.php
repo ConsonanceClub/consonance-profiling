@@ -27,10 +27,10 @@ class Social
         $this->lastName = $name[1];
         $this->userName = isset($user->{$username})?$user->{$username}:'';
         $this->email = isset($user->{$email})?$user->{$email}:'';
-        if(!is_null($innerUser)){
-            $this->url = $innerUser[$url];
-            $this->avatar = $user[$avatar];
-            $this->bio = $user[$bio];
+        if(!is_null($innerUser)){$user[$bio]
+            $this->url = isset($innerUser[$url])?$innerUser[$url]:'';
+            $this->avatar = isset($user[$avatar])?$user[$avatar]:'';
+            $this->bio = isset($user[$bio])?$user[$bio]:'';
         }
     }
 
