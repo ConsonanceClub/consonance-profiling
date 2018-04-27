@@ -35,7 +35,7 @@
                   </li>
 									@endif
                   <li>
-                    <a href="">Hi {{isset(Auth::user()->first_name)?uth::user()->first_name:'Friend'}}! </a>
+                    <a href="">Hi {{isset(Auth::user()->first_name)?Auth::user()->first_name:'Friend'}}! </a>
                   </li>
                 </ul>
               </div>
