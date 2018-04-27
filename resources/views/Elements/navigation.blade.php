@@ -20,7 +20,7 @@
                 </li>
               </ul>
               <!-- menu links -->
-							@if(Auth::check())
+            @if(Auth::check())
               <div class="menu-bar col-md-6">
                 <ul class="menu-links" style="float: right;">
                   <li>
@@ -29,7 +29,7 @@
                   <li>
                     <a href="{{route('groupn.index')}}">Groups</a>
                   </li>
-									@if(Auth::user()->role_id == 1)
+                    @if(Auth::user()->role_id == 1)
                   <li>
                     <a href="{{url('/members')}}">Members</a>
                   </li>
@@ -61,7 +61,7 @@
                       </li>
                   </ul>
               </div>
-							@endif
+            @endif
             </div>
           </div>
         </div>
