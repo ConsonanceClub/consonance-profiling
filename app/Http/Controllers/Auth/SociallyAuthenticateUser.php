@@ -32,7 +32,7 @@ class SociallyAuthenticateUser
             }
 
         }catch (InvalidStateException $exception){
-            return redirect()->route("auth/login/{$this->driver}");
+            return redirect()->route("social.auth", ['driver'=>$this->driver]);
         }catch (Exception $exception){
             return redirect()->route('signIn');
         }
