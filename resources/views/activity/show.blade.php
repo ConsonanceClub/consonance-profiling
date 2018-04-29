@@ -35,7 +35,7 @@
 
     <div class="wrapper">
 
-        <section class="page-section-ptb">
+        <section style="height:100px" class="page-section-ptb">
             <div class="container">
                 <div class="row">
 
