@@ -19,6 +19,8 @@
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset('css/prism.css')}}">
+
 @endsection
 
 {{--set content--}}
@@ -91,7 +93,7 @@
                                             </ul>
                                         </div>
                                         <div class="entry-content">
-                                            {{$post->description}}
+                                            {!! htmlspecialchars_decode($post->description) !!}
                                             <div class="entry-share clearfix">
                                                 <div class="social list-style-none pull-right">
                                                     <strong>Share : </strong>
@@ -204,7 +206,7 @@
     <script type="text/javascript" src="{{asset('js/plugins-jquery.js')}}"></script>
     <script type="text/javascript">var plugin_path = 'js/';</script>
     <script type="text/javascript" src="{{asset('js/custom.js')}}"></script>
-
+    <script type="text/javascript" src="{{asset('js/prism.js')}}"></script>
 
     <script>
 

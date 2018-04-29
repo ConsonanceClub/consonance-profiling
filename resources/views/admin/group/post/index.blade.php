@@ -45,7 +45,6 @@
                                     <th>Photo</th>
                                     <th>Author</th>
                                     <th>Post Title</th>
-                                    <th>Description</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>
@@ -59,7 +58,6 @@
                                             <td><img  height="30" width="30" src="/GroupPostPics/{{$post->image_url ? $post->image_url : "No photo"}}" alt=""></td>
                                             <td>{{$post->user->first_name}}</td>
                                             <td>{{$post->title}}</td>
-                                            <td>{{str_limit($post->description, $limit = 100, $end = '...')}}</td>
                                             <td><a href="{{route('post.edit', $post->id)}}"><span class="fa fa-edit"></span></a></td>
                                             <td>
                                                 <form method="post" id="delete-form-{{$post->id}}" action="{{route('post.destroy', $post->id)}}">
@@ -90,7 +88,6 @@
                                     <th>Photo</th>
                                     <th>Author</th>
                                     <th>Post Title</th>
-                                    <th>Description</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Created at</th>

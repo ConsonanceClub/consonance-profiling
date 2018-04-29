@@ -77,14 +77,14 @@
 
 
 
-                                <div class="form-group">
-                                    <label for="password">Password:</label>
-                                    <input type="password" class="form-control" value="{{old('password')}}" name="password" id="password" placeholder="Enter password">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password_confirmation">Password Confirmation:</label>
-                                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Enter password">
-                                </div>
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="password">Password:</label>--}}
+                                    {{--<input type="password" class="form-control" value="{{old('password')}}" name="password" id="password" placeholder="Enter password">--}}
+                                {{--</div>--}}
+                                {{--<div class="form-group">--}}
+                                    {{--<label for="password_confirmation">Password Confirmation:</label>--}}
+                                    {{--<input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Enter password">--}}
+                                {{--</div>--}}
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                     <a href="{{route('admin.index')}}" class="btn btn-danger">Back</a>
