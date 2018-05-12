@@ -63,9 +63,9 @@
                                         <h4>
                                             <a href="{{route('postn.show', $post->slug)}}">{{$post->title}}</a>
                                         </h4>
-                                        <p>
-                                            {{str_limit($post->description, $limit = 100, $end = '...')}}
-                                        </p>
+                                        {{--<p>--}}
+                                            {{--{{str_limit($post->description, $limit = 100, $end = '...')}}--}}
+                                        {{--</p>--}}
                                         <span>
                                           <i class="fa fa-clock-o"></i> {{$post->created_at->diffForHumans()}}
                                             <div style="display:inline; padding-left: 8px;">

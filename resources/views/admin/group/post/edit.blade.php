@@ -64,7 +64,8 @@
 
                                     <div class="form-group ">
                                         <label>Description</label>
-                                        <textarea rows="5" class="form-control" placeholder="Place message Here....." id="description" name="description" required>{{old('description') ? old('description') : $posting->description}}</textarea>
+                                        <textarea  name="description"
+                                                   style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"id="editor1" required>{{old('description') ? old('description') : $posting->description}}</textarea>
                                     </div>
 
                                     <div class="form-group">
@@ -88,5 +89,21 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+@endsection
+
+@section('scripts')
+
+    <script>
+        $(function () {
+            // Replace the <textarea id="editor1"> with a CKEditor
+            // instance, using default configuration.
+            CKEDITOR.replace('editor1');
+            //bootstrap WYSIHTML5 - text editor
+            $('.textarea').wysihtml5();
+        });
+    </script>
+
+    <script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
 @endsection

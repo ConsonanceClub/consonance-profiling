@@ -311,10 +311,10 @@
                                                                       </span> Comment</a>
                                                                 </li>
 
-                                                                <li class="view-btn">
-                                                                    <a href="{{route('activity.see', $project->slug)}}">view</a>
+                                                                {{--<li class="view-btn">--}}
+                                                                    {{--<a href="{{route('activity.see', $project->slug)}}">view</a>--}}
 
-                                                                </li>
+                                                                {{--</li>--}}
                                                             </ul>
                                                         </div>
                                                     </div>

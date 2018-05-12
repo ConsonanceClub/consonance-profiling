@@ -19,9 +19,9 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Admin</h3>
-                    <a style="padding: 10px" href="{{route('admin.create')}}"  CLASS="col-lg-offset-5 btn btn-warning">
-                        <i class="fa fa-user-plus" style="padding-right: 10px"></i>Create a new User or Admin
-                    </a>
+                    {{--<a style="padding: 10px" href="{{route('admin.create')}}"  CLASS="col-lg-offset-5 btn btn-warning">--}}
+                        {{--<i class="fa fa-user-plus" style="padding-right: 10px"></i>Create a new User or Admin--}}
+                    {{--</a>--}}
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                                 title="Collapse">
