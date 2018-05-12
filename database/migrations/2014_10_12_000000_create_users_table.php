@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->default(2);
             $table->string('state')->nullable();
             $table->string('skills')->nullable();
-            $table->string('short_bio')->nullable();
+            $table->longText('short_bio')->nullable();
             $table->string('avatar')->nullable();
             $table->string('medium_username')->nullable();
             $table->string('medium_url')->nullable();
@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('twitter_url')->nullable();
             $table->string('github_username')->nullable();
             $table->string('github_url')->nullable();
-            $table->string('linkedin_username')->nullable();
+            $table->string('linkedin_username', )->nullable();
             $table->string('linkedin_url')->nullable();
             $table->string('slack_username')->nullable();
             $table->string('school')->nullable();
