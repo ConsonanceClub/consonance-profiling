@@ -24,7 +24,7 @@
               <div class="menu-bar col-md-6">
                 <ul class="menu-links" style="float: right;">
                   <li>
-                    <a href="{{route('activity')}}">Activity</a>
+                    <a href="{{route('activity')}}">Activity </a>
                   </li>
                   <li>
                     <a href="{{route('groupn.index')}}">Groups</a>
