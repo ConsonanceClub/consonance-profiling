@@ -5,6 +5,7 @@
 
 @section('styles')
 
+
     <link rel="stylesheet" type="text/css" href="{{asset('css/plugins-css.css')}}" />
 
     <!-- Typography -->
