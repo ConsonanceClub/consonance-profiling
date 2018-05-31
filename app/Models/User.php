@@ -67,7 +67,4 @@ class User extends Authenticatable
         return false;
     }
 
-    /*function school(){
-        //return $this->hasOne('App\Models\School', 'id');
-    }*/
 }
